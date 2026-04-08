@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 960 720" preserveAspectRatio="none" onload="loadCustomMenu();" onmousedown="handleMouseDownChrome(evt);">
+ <g transform="translate(0.5,0.5)">
+  <g />
+  <g class="s0">
+   <rect x="-1" y="-1" width="961" height="721" />
+  </g>
+  <g class="s1">
+   <g class="s2">
+    <text x="540" y="713">Source: LSEG Datastream / Fathom Consulting</text>
+   </g>
+  </g>
+  <g class="s3">
+   <g class="s4">
+    <text x="41" y="41">Global working age population</text>
+   </g>
+   <g class="s5">
+    <text x="41" y="79">Billions</text>
+   </g>
+   <g class="s6">
+    <text x="41" y="88" />
+   </g>
+   <g class="s7">
+    <line x1="41" y1="581" x2="936" y2="581" />
+    <line x1="41" y1="500" x2="936" y2="500" />
+    <line x1="41" y1="419" x2="936" y2="419" />
+    <line x1="41" y1="339" x2="936" y2="339" />
+    <line x1="41" y1="258" x2="936" y2="258" />
+    <line x1="41" y1="177" x2="936" y2="177" />
+    <line x1="41" y1="96" x2="936" y2="96" />
+   </g>
+   <g class="s8">
+    <line x1="41" y1="581" x2="936" y2="581" />
+   </g>
+   <g style="clip-path:url(#c0);">
+    <g id="n0">
+     <g class="s9">
+      <polyline points="48,535 61,535 75,534 88,533 102,533 115,532 129,531 142,531 156,530 169,530 183,529 196,528 210,528 223,527 237,526 250,526 264,525 277,524 291,524 304,523 318,523 331,522 345,521 358,521 372,520 385,519 399,519 412,518 426,518 439,517 453,517 466,517 480,516 493,516 507,515 520,515 534,514 547,514 561,513 574,513 588,512 602,512 615,512 628,511 642,511 656,510 669,510 683,509 696,509 710,508 723,508 737,508 750,508 764,508 777,508 791,507 804,507 818,507 831,507 845,507 858,507 872,508 885,508 899,507 912,507" />
+     </g>
+     <g class="s10">
+      <polygon points="48,535 61,535 75,534 88,533 102,533 115,532 129,531 142,531 156,530 169,530 183,529 196,528 210,528 223,527 237,526 250,526 264,525 277,524 291,524 304,523 318,523 331,522 345,521 358,521 372,520 385,519 399,519 412,518 426,518 439,517 453,517 466,517 480,516 493,516 507,515 520,515 534,514 547,514 561,513 574,513 588,512 602,512 615,512 628,511 642,511 656,510 669,510 683,509 696,509 710,508 723,508 737,508 750,508 764,508 777,508 791,507 804,507 818,507 831,507 845,507 858,507 872,508 885,508 899,507 912,507 912,581 899,581 885,581 872,581 858,581 845,581 831,581 818,581 804,581 791,581 777,581 764,581 750,581 737,581 723,581 710,581 696,581 683,581 669,581 656,581 642,581 628,581 615,581 602,581 588,581 574,581 561,581 547,581 534,581 520,581 507,581 493,581 480,581 466,581 453,581 439,581 426,581 412,581 399,581 385,581 372,581 358,581 345,581 331,581 318,581 304,581 291,581 277,581 264,581 250,581 237,581 223,581 210,581 196,581 183,581 169,581 156,581 142,581 129,581 115,581 102,581 88,581 75,581 61,581 48,581" />
+     </g>
+     <g class="s11" />
+    </g>
+    <g id="n1">
+     <g class="s12">
+      <polyline points="48,447 61,445 75,443 88,441 102,438 115,436 129,433 142,429 156,426 169,423 183,419 196,416 210,412 223,409 237,405 250,402 264,398 277,394 291,390 304,385 318,381 331,376 345,371 358,366 372,362 385,357 399,352 412,347 426,343 439,338 453,333 466,329 480,325 493,320 507,316 520,311 534,306 547,301 561,296 574,291 588,286 602,281 615,275 628,270 642,265 656,260 669,255 683,250 696,245 710,240 723,236 737,232 750,228 764,224 777,220 791,216 804,213 818,210 831,207 845,204 858,201 872,198 885,195 899,192 912,188" />
+     </g>
+     <g class="s13">
+      <polygon points="48,447 61,445 75,443 88,441 102,438 115,436 129,433 142,429 156,426 169,423 183,419 196,416 210,412 223,409 237,405 250,402 264,398 277,394 291,390 304,385 318,381 331,376 345,371 358,366 372,362 385,357 399,352 412,347 426,343 439,338 453,333 466,329 480,325 493,320 507,316 520,311 534,306 547,301 561,296 574,291 588,286 602,281 615,275 628,270 642,265 656,260 669,255 683,250 696,245 710,240 723,236 737,232 750,228 764,224 777,220 791,216 804,213 818,210 831,207 845,204 858,201 872,198 885,195 899,192 912,188 912,507 899,507 885,508 872,508 858,507 845,507 831,507 818,507 804,507 791,507 777,508 764,508 750,508 737,508 723,508 710,508 696,509 683,509 669,510 656,510 642,511 628,511 615,512 602,512 588,512 574,513 561,513 547,514 534,514 520,515 507,515 493,516 480,516 466,517 453,517 439,517 426,518 412,518 399,519 385,519 372,520 358,521 345,521 331,522 318,523 304,523 291,524 277,524 264,525 250,526 237,526 223,527 210,528 196,528 183,529 169,530 156,530 142,531 129,531 115,532 102,533 88,533 75,534 61,535 48,535" />
+     </g>
+     <g class="s14" />
+    </g>
+    <g id="n2">
+     <g class="s15">
+      <polyline points="48,442 61,440 75,438 88,435 102,433 115,430 129,427 142,424 156,420 169,417 183,413 196,409 210,406 223,402 237,398 250,394 264,391 277,387 291,382 304,377 318,373 331,368 345,363 358,358 372,353 385,348 399,343 412,338 426,333 439,328 453,323 466,318 480,314 493,309 507,304 520,299 534,294 547,289 561,283 574,278 588,272 602,267 615,261 628,255 642,250 656,244 669,238 683,233 696,228 710,223 723,218 737,213 750,208 764,204 777,200 791,196 804,191 818,188 831,184 845,180 858,176 872,173 885,169 899,165 912,160" />
+     </g>
+     <g class="s16">
+      <polygon points="48,442 61,440 75,438 88,435 102,433 115,430 129,427 142,424 156,420 169,417 183,413 196,409 210,406 223,402 237,398 250,394 264,391 277,387 291,382 304,377 318,373 331,368 345,363 358,358 372,353 385,348 399,343 412,338 426,333 439,328 453,323 466,318 480,314 493,309 507,304 520,299 534,294 547,289 561,283 574,278 588,272 602,267 615,261 628,255 642,250 656,244 669,238 683,233 696,228 710,223 723,218 737,213 750,208 764,204 777,200 791,196 804,191 818,188 831,184 845,180 858,176 872,173 885,169 899,165 912,160 912,507 912,188 899,192 885,195 872,198 858,201 845,204 831,207 818,210 804,213 791,216 777,220 764,224 750,228 737,232 723,236 710,240 696,245 683,250 669,255 656,260 642,265 628,270 615,275 602,281 588,286 574,291 561,296 547,301 534,306 520,311 507,316 493,320 480,325 466,329 453,333 439,338 426,343 412,347 399,352 385,357 372,362 358,366 345,371 331,376 318,381 304,385 291,390 277,394 264,398 250,402 237,405 223,409 210,412 196,416 183,419 169,423 156,426 142,429 129,433 115,436 102,438 88,441 75,443 61,445 48,447 48,535" />
+     </g>
+     <g class="s17" />
+    </g>
+    <g id="n3">
+     <g class="s18">
+      <polyline points="48,440 61,439 75,436 88,434 102,431 115,428 129,425 142,422 156,419 169,415 183,411 196,408 210,404 223,400 237,396 250,393 264,389 277,385 291,380 304,375 318,370 331,365 345,361 358,355 372,350 385,345 399,340 412,335 426,330 439,325 453,320 466,315 480,311 493,306 507,301 520,296 534,291 547,285 561,280 574,274 588,268 602,263 615,257 628,251 642,245 656,239 669,234 683,228 696,223 710,217 723,212 737,207 750,203 764,198 777,194 791,189 804,185 818,181 831,177 845,173 858,169 872,166 885,162 899,157 912,153" />
+     </g>
+     <g class="s19" />
+    </g>
+   </g>
+   <g class="s20">
+    <g class="s21">
+     <line x1="41" y1="581" x2="936" y2="581" />
+     <line x1="41" y1="581" x2="41" y2="587" />
+     <line x1="41" y1="581" x2="41" y2="587" />
+     <line x1="176" y1="581" x2="176" y2="587" />
+     <line x1="176" y1="581" x2="176" y2="587" />
+     <line x1="311" y1="581" x2="311" y2="587" />
+     <line x1="311" y1="581" x2="311" y2="587" />
+     <line x1="446" y1="581" x2="446" y2="587" />
+     <line x1="446" y1="581" x2="446" y2="587" />
+     <line x1="581" y1="581" x2="581" y2="587" />
+     <line x1="581" y1="581" x2="581" y2="587" />
+     <line x1="716" y1="581" x2="716" y2="587" />
+     <line x1="716" y1="581" x2="716" y2="587" />
+     <line x1="851" y1="581" x2="851" y2="587" />
+     <line x1="851" y1="581" x2="851" y2="587" />
+     <line x1="41" y1="581" x2="41" y2="584" />
+     <line x1="41" y1="581" x2="41" y2="584" />
+     <line x1="55" y1="581" x2="55" y2="584" />
+     <line x1="55" y1="581" x2="55" y2="584" />
+     <line x1="68" y1="581" x2="68" y2="584" />
+     <line x1="68" y1="581" x2="68" y2="584" />
+     <line x1="81" y1="581" x2="81" y2="584" />
+     <line x1="81" y1="581" x2="81" y2="584" />
+     <line x1="95" y1="581" x2="95" y2="584" />
+     <line x1="95" y1="581" x2="95" y2="584" />
+     <line x1="109" y1="581" x2="109" y2="584" />
+     <line x1="109" y1="581" x2="109" y2="584" />
+     <line x1="122" y1="581" x2="122" y2="584" />
+     <line x1="122" y1="581" x2="122" y2="584" />
+     <line x1="136" y1="581" x2="136" y2="584" />
+     <line x1="136" y1="581" x2="136" y2="584" />
+     <line x1="149" y1="581" x2="149" y2="584" />
+     <line x1="149" y1="581" x2="149" y2="584" />
+     <line x1="163" y1="581" x2="163" y2="584" />
+     <line x1="163" y1="581" x2="163" y2="584" />
+     <line x1="176" y1="581" x2="176" y2="584" />
+     <line x1="176" y1="581" x2="176" y2="584" />
+     <line x1="190" y1="581" x2="190" y2="584" />
+     <line x1="190" y1="581" x2="190" y2="584" />
+     <line x1="203" y1="581" x2="203" y2="584" />
+     <line x1="203" y1="581" x2="203" y2="584" />
+     <line x1="217" y1="581" x2="217" y2="584" />
+     <line x1="217" y1="581" x2="217" y2="584" />
+     <line x1="230" y1="581" x2="230" y2="584" />
+     <line x1="230" y1="581" x2="230" y2="584" />
+     <line x1="244" y1="581" x2="244" y2="584" />
+     <line x1="244" y1="581" x2="244" y2="584" />
+     <line x1="257" y1="581" x2="257" y2="584" />
+     <line x1="257" y1="581" x2="257" y2="584" />
+     <line x1="271" y1="581" x2="271" y2="584" />
+     <line x1="271" y1="581" x2="271" y2="584" />
+     <line x1="284" y1="581" x2="284" y2="584" />
+     <line x1="284" y1="581" x2="284" y2="584" />
+     <line x1="298" y1="581" x2="298" y2="584" />
+     <line x1="298" y1="581" x2="298" y2="584" />
+     <line x1="311" y1="581" x2="311" y2="584" />
+     <line x1="311" y1="581" x2="311" y2="584" />
+     <line x1="325" y1="581" x2="325" y2="584" />
+     <line x1="325" y1="581" x2="325" y2="584" />
+     <line x1="338" y1="581" x2="338" y2="584" />
+     <line x1="338" y1="581" x2="338" y2="584" />
+     <line x1="352" y1="581" x2="352" y2="584" />
+     <line x1="352" y1="581" x2="352" y2="584" />
+     <line x1="365" y1="581" x2="365" y2="584" />
+     <line x1="365" y1="581" x2="365" y2="584" />
+     <line x1="379" y1="581" x2="379" y2="584" />
+     <line x1="379" y1="581" x2="379" y2="584" />
+     <line x1="392" y1="581" x2="392" y2="584" />
+     <line x1="392" y1="581" x2="392" y2="584" />
+     <line x1="406" y1="581" x2="406" y2="584" />
+     <line x1="406" y1="581" x2="406" y2="584" />
+     <line x1="419" y1="581" x2="419" y2="584" />
+     <line x1="419" y1="581" x2="419" y2="584" />
+     <line x1="433" y1="581" x2="433" y2="584" />
+     <line x1="433" y1="581" x2="433" y2="584" />
+     <line x1="446" y1="581" x2="446" y2="584" />
+     <line x1="446" y1="581" x2="446" y2="584" />
+     <line x1="460" y1="581" x2="460" y2="584" />
+     <line x1="460" y1="581" x2="460" y2="584" />
+     <line x1="473" y1="581" x2="473" y2="584" />
+     <line x1="473" y1="581" x2="473" y2="584" />
+     <line x1="487" y1="581" x2="487" y2="584" />
+     <line x1="487" y1="581" x2="487" y2="584" />
+     <line x1="500" y1="581" x2="500" y2="584" />
+     <line x1="500" y1="581" x2="500" y2="584" />
+     <line x1="514" y1="581" x2="514" y2="584" />
+     <line x1="514" y1="581" x2="514" y2="584" />
+     <line x1="527" y1="581" x2="527" y2="584" />
+     <line x1="527" y1="581" x2="527" y2="584" />
+     <line x1="541" y1="581" x2="541" y2="584" />
+     <line x1="541" y1="581" x2="541" y2="584" />
+     <line x1="554" y1="581" x2="554" y2="584" />
+     <line x1="554" y1="581" x2="554" y2="584" />
+     <line x1="568" y1="581" x2="568" y2="584" />
+     <line x1="568" y1="581" x2="568" y2="584" />
+     <line x1="581" y1="581" x2="581" y2="584" />
+     <line x1="581" y1="581" x2="581" y2="584" />
+     <line x1="595" y1="581" x2="595" y2="584" />
+     <line x1="595" y1="581" x2="595" y2="584" />
+     <line x1="608" y1="581" x2="608" y2="584" />
+     <line x1="608" y1="581" x2="608" y2="584" />
+     <line x1="622" y1="581" x2="622" y2="584" />
+     <line x1="622" y1="581" x2="622" y2="584" />
+     <line x1="635" y1="581" x2="635" y2="584" />
+     <line x1="635" y1="581" x2="635" y2="584" />
+     <line x1="649" y1="581" x2="649" y2="584" />
+     <line x1="649" y1="581" x2="649" y2="584" />
+     <line x1="662" y1="581" x2="662" y2="584" />
+     <line x1="662" y1="581" x2="662" y2="584" />
+     <line x1="676" y1="581" x2="676" y2="584" />
+     <line x1="676" y1="581" x2="676" y2="584" />
+     <line x1="689" y1="581" x2="689" y2="584" />
+     <line x1="689" y1="581" x2="689" y2="584" />
+     <line x1="703" y1="581" x2="703" y2="584" />
+     <line x1="703" y1="581" x2="703" y2="584" />
+     <line x1="716" y1="581" x2="716" y2="584" />
+     <line x1="716" y1="581" x2="716" y2="584" />
+     <line x1="730" y1="581" x2="730" y2="584" />
+     <line x1="730" y1="581" x2="730" y2="584" />
+     <line x1="743" y1="581" x2="743" y2="584" />
+     <line x1="743" y1="581" x2="743" y2="584" />
+     <line x1="757" y1="581" x2="757" y2="584" />
+     <line x1="757" y1="581" x2="757" y2="584" />
+     <line x1="770" y1="581" x2="770" y2="584" />
+     <line x1="770" y1="581" x2="770" y2="584" />
+     <line x1="784" y1="581" x2="784" y2="584" />
+     <line x1="784" y1="581" x2="784" y2="584" />
+     <line x1="797" y1="581" x2="797" y2="584" />
+     <line x1="797" y1="581" x2="797" y2="584" />
+     <line x1="811" y1="581" x2="811" y2="584" />
+     <line x1="811" y1="581" x2="811" y2="584" />
+     <line x1="824" y1="581" x2="824" y2="584" />
+     <line x1="824" y1="581" x2="824" y2="584" />
+     <line x1="838" y1="581" x2="838" y2="584" />
+     <line x1="838" y1="581" x2="838" y2="584" />
+     <line x1="851" y1="581" x2="851" y2="584" />
+     <line x1="851" y1="581" x2="851" y2="584" />
+     <line x1="865" y1="581" x2="865" y2="584" />
+     <line x1="865" y1="581" x2="865" y2="584" />
+     <line x1="879" y1="581" x2="879" y2="584" />
+     <line x1="879" y1="581" x2="879" y2="584" />
+     <line x1="892" y1="581" x2="892" y2="584" />
+     <line x1="892" y1="581" x2="892" y2="584" />
+     <line x1="906" y1="581" x2="906" y2="584" />
+     <line x1="906" y1="581" x2="906" y2="584" />
+     <line x1="919" y1="581" x2="919" y2="584" />
+     <line x1="919" y1="581" x2="919" y2="584" />
+     <line x1="933" y1="581" x2="933" y2="584" />
+     <line x1="933" y1="581" x2="933" y2="584" />
+     <g class="s22">
+      <g class="s23">
+       <text x="41" y="618">1960</text>
+       <text x="176" y="618">1970</text>
+       <text x="311" y="618">1980</text>
+       <text x="446" y="618">1990</text>
+       <text x="581" y="618">2000</text>
+       <text x="716" y="618">2010</text>
+       <text x="851" y="618">2020</text>
+      </g>
+     </g>
+     <g class="s22">
+      <g class="s23" />
+     </g>
+    </g>
+    <g class="s24" />
+    <g class="s25">
+     <line x1="41" y1="581" x2="41" y2="96" />
+     <line x1="41" y1="581" x2="35" y2="581" />
+     <line x1="41" y1="581" x2="35" y2="581" />
+     <line x1="41" y1="500" x2="35" y2="500" />
+     <line x1="41" y1="500" x2="35" y2="500" />
+     <line x1="41" y1="419" x2="35" y2="419" />
+     <line x1="41" y1="419" x2="35" y2="419" />
+     <line x1="41" y1="339" x2="35" y2="339" />
+     <line x1="41" y1="339" x2="35" y2="339" />
+     <line x1="41" y1="258" x2="35" y2="258" />
+     <line x1="41" y1="258" x2="35" y2="258" />
+     <line x1="41" y1="177" x2="35" y2="177" />
+     <line x1="41" y1="177" x2="35" y2="177" />
+     <line x1="41" y1="96" x2="35" y2="96" />
+     <line x1="41" y1="96" x2="35" y2="96" />
+     <line x1="41" y1="565" x2="38" y2="565" />
+     <line x1="41" y1="565" x2="38" y2="565" />
+     <line x1="41" y1="549" x2="38" y2="549" />
+     <line x1="41" y1="549" x2="38" y2="549" />
+     <line x1="41" y1="532" x2="38" y2="532" />
+     <line x1="41" y1="532" x2="38" y2="532" />
+     <line x1="41" y1="516" x2="38" y2="516" />
+     <line x1="41" y1="516" x2="38" y2="516" />
+     <line x1="41" y1="484" x2="38" y2="484" />
+     <line x1="41" y1="484" x2="38" y2="484" />
+     <line x1="41" y1="468" x2="38" y2="468" />
+     <line x1="41" y1="468" x2="38" y2="468" />
+     <line x1="41" y1="452" x2="38" y2="452" />
+     <line x1="41" y1="452" x2="38" y2="452" />
+     <line x1="41" y1="436" x2="38" y2="436" />
+     <line x1="41" y1="436" x2="38" y2="436" />
+     <line x1="41" y1="403" x2="38" y2="403" />
+     <line x1="41" y1="403" x2="38" y2="403" />
+     <line x1="41" y1="387" x2="38" y2="387" />
+     <line x1="41" y1="387" x2="38" y2="387" />
+     <line x1="41" y1="371" x2="38" y2="371" />
+     <line x1="41" y1="371" x2="38" y2="371" />
+     <line x1="41" y1="355" x2="38" y2="355" />
+     <line x1="41" y1="355" x2="38" y2="355" />
+     <line x1="41" y1="322" x2="38" y2="322" />
+     <line x1="41" y1="322" x2="38" y2="322" />
+     <line x1="41" y1="306" x2="38" y2="306" />
+     <line x1="41" y1="306" x2="38" y2="306" />
+     <line x1="41" y1="290" x2="38" y2="290" />
+     <line x1="41" y1="290" x2="38" y2="290" />
+     <line x1="41" y1="274" x2="38" y2="274" />
+     <line x1="41" y1="274" x2="38" y2="274" />
+     <line x1="41" y1="242" x2="38" y2="242" />
+     <line x1="41" y1="242" x2="38" y2="242" />
+     <line x1="41" y1="225" x2="38" y2="225" />
+     <line x1="41" y1="225" x2="38" y2="225" />
+     <line x1="41" y1="209" x2="38" y2="209" />
+     <line x1="41" y1="209" x2="38" y2="209" />
+     <line x1="41" y1="193" x2="38" y2="193" />
+     <line x1="41" y1="193" x2="38" y2="193" />
+     <line x1="41" y1="161" x2="38" y2="161" />
+     <line x1="41" y1="161" x2="38" y2="161" />
+     <line x1="41" y1="145" x2="38" y2="145" />
+     <line x1="41" y1="145" x2="38" y2="145" />
+     <line x1="41" y1="128" x2="38" y2="128" />
+     <line x1="41" y1="128" x2="38" y2="128" />
+     <line x1="41" y1="112" x2="38" y2="112" />
+     <line x1="41" y1="112" x2="38" y2="112" />
+     <g class="s26">
+      <g class="s27">
+       <text x="25" y="591" transform="rotate(360 25,581)">0</text>
+       <text x="25" y="510" transform="rotate(360 25,500)">1</text>
+       <text x="25" y="429" transform="rotate(360 25,419)">2</text>
+       <text x="25" y="349" transform="rotate(360 25,339)">3</text>
+       <text x="25" y="268" transform="rotate(360 25,258)">4</text>
+       <text x="25" y="187" transform="rotate(360 25,177)">5</text>
+       <text x="25" y="106" transform="rotate(360 25,96)">6</text>
+      </g>
+     </g>
+     <g class="s26">
+      <g class="s27" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g class="s28">
+   <g onclick="ntfy('click', {'id':'c0p0b'});" onmousemove="if(pghk()) sfade(evt.target,0.6);" onmouseout="if(pghk()) sfade(evt.target);" onmousedown="if(pghk()){if(evt.button == 2){ sfade(evt.target) }}">
+    <rect x="41" y="581" width="895" height="49" />
+   </g>
+  </g>
+  <g class="s29">
+   <g class="s30">
+    <rect x="44" y="633" width="809" height="60" />
+   </g>
+   <g class="s9">
+    <polyline points="49,638 67,649 85,642 103,647" />
+   </g>
+   <g class="s10">
+    <polygon points="49,638 67,649 85,642 103,647 103,656 49,656" />
+   </g>
+   <g class="s11" />
+   <g class="s31">
+    <text x="112" y="657">High income countries</text>
+   </g>
+   <g class="s12">
+    <polyline points="495,638 513,649 531,642 549,647" />
+   </g>
+   <g class="s13">
+    <polygon points="495,638 513,649 531,642 549,647 549,656 495,656" />
+   </g>
+   <g class="s14" />
+   <g class="s32">
+    <text x="558" y="657">Middle income countries</text>
+   </g>
+   <g class="s15">
+    <polyline points="49,665 67,676 85,669 103,674" />
+   </g>
+   <g class="s16">
+    <polygon points="49,665 67,676 85,669 103,674 103,683 49,683" />
+   </g>
+   <g class="s17" />
+   <g class="s33">
+    <text x="112" y="684">Low income countries</text>
+   </g>
+   <g class="s18">
+    <polyline points="495,674 549,674" />
+   </g>
+   <g class="s19" />
+   <g class="s34">
+    <text x="558" y="684">Global</text>
+   </g>
+  </g>
+  <g />
+ </g>
+ <defs>
+  <clipPath id="c0">
+   <rect x="41" y="96" width="895" height="485" />
+  </clipPath>
+  <menu id="CustomMenu" xmlns="ns_custommenu">
+   <item action="CopySVG">&amp;Copy SVG</item>
+   <item action="SaveAs">&amp;Save SVG As...</item>
+   <item action="ViewSource">View Sourc&amp;e...</item>
+   <item action="About">About SVG Viewer...</item>
+  </menu>
+ </defs>
+ <style type="text/css">
+  <![CDATA[
+   svg { font-family:Tahoma; stroke:black; shape-rendering:auto; width:100%; height:100%;}
+   line, polyline { fill:none; stroke-linejoin:round; }
+   text { stroke:none; fill:black; fill-opacity:1; text-rendering:geometricPrecision; pointer-events:none; }
+   .selectedEvent { stroke-opacity: 0.6; stroke-dasharray: 0; }
+   .s0 { stroke:none; fill:#171717; }
+   .s1 { font-family:"Arial"; font-size:19px; font-weight:normal; font-style:italic; } .s1 text { fill:#C0C0C0; text-decoration:none; white-space:pre; }
+   .s2 { text-anchor:start; }
+   .s3 { stroke:#FFFFFF; stroke-width:1; font-family:"Arial"; font-size:21px; font-weight:normal; font-style:normal; } .s3 text { fill:#FFFFFF; text-decoration:none; }
+   .s4 { text-anchor:start; font-family:"Arial"; font-size:37px; font-weight:bold; font-style:normal; } .s4 text { fill:#FFFFFF; text-decoration:none; }
+   .s5 { text-anchor:start; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s5 text { fill:#FFFFFF; text-decoration:none; }
+   .s6 { text-anchor:middle; font-family:"Arial"; font-size:19px; font-weight:normal; font-style:normal; } .s6 text { fill:#FFFFFF; text-decoration:none; }
+   .s7 { stroke:#36494F; stroke-opacity:0.50; stroke-width:1; stroke-dasharray:1,2; }
+   .s8 { stroke:#FFFFFF; stroke-width:1; stroke-dasharray:none; }
+   .s9 { stroke:#FF9900; stroke-width:4; stroke-dasharray:none; }
+   .s10 { stroke-width:0; fill:#FF9900; fill-opacity:0.39; }
+   .s11 { stroke:#FF9900; stroke-width:2; stroke-dasharray:none; fill:#FF9900; }
+   .s12 { stroke:#00CCFF; stroke-width:4; stroke-dasharray:none; }
+   .s13 { stroke-width:0; fill:#00CCFF; fill-opacity:0.39; }
+   .s14 { stroke:#00CCFF; stroke-width:2; stroke-dasharray:none; fill:#00CCFF; }
+   .s15 { stroke:#008000; stroke-width:4; stroke-dasharray:none; }
+   .s16 { stroke-width:0; fill:#008000; fill-opacity:0.39; }
+   .s17 { stroke:#0000FF; stroke-width:2; stroke-dasharray:none; fill:#0000FF; }
+   .s18 { stroke:#800080; stroke-width:4; stroke-dasharray:none; }
+   .s19 { stroke:#00FFFF; stroke-width:2; stroke-dasharray:none; fill:#00FFFF; }
+   .s20 { stroke:#FFFFFF; font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s20 text { fill:#FFFFFF; text-decoration:none; }
+   .s21 { stroke-width:1; stroke-dasharray:none; }
+   .s22 { text-anchor:middle; }
+   .s23 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s23 text { fill:#FFFFFF; text-decoration:none; }
+   .s24 { stroke-width:1; stroke-dasharray:none; }
+   .s25 { stroke-width:1; stroke-dasharray:none; }
+   .s26 { text-anchor:end; }
+   .s27 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s27 text { fill:#FFFFFF; text-decoration:none; }
+   .s28 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; }
+   .s29 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s29 text { fill:#FFFFFF; text-decoration:none; }
+   .s30 { stroke:none; stroke-width:1; fill:none; }
+   .s31 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s31 text { fill:#FFFFFF; text-decoration:none; }
+   .s32 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s32 text { fill:#FFFFFF; text-decoration:none; }
+   .s33 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s33 text { fill:#FFFFFF; text-decoration:none; }
+   .s34 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s34 text { fill:#FFFFFF; text-decoration:none; }
+  ]]>
+ </style>
+ <script type="text/ecmascript">
+  <![CDATA[
+   function loadCustomMenu(){ var menuDef = document.getElementById("CustomMenu"); if(parent && parent.chartLoaded) { parent.chartLoaded(); } if (menuDef && typeof parseXML === "function"){var newMenuRoot = parseXML(printNode(menuDef), contextMenu);contextMenu.replaceChild(newMenuRoot, contextMenu.firstChild);}}
+   function handleMouseDownChrome(evt){ if(evt.which && evt.which != 3){ if(evt.preventDefault) { evt.preventDefault()} else {evt.returnValue = false} }}
+   function toxy(e){return {x:e.clientX*(960/innerWidth),y:e.clientY*(720/innerHeight)};}
+   function getd(){return  {'w':innerWidth,'h':innerHeight};};
+   function lmtp(p,xl,yb,xr,yt){return {x:Math.max(Math.min(p.x,960-xr),xl),y:Math.max(Math.min(p.y,720-yt),yb)};}
+   function clmp(n,l,h){return Math.max(Math.min(n,h),l);};
+   function attr(e,k,v){if(v!=undefined){e.setAttribute(k,v);}else return e.getAttribute(k);}
+   function nattr(e,k){return Number(attr(e,k));}
+   function byid(s){return document.getElementById(s);}
+   function each(a,f){for(var i=0;i<a.length;++i)f((a instanceof Array)?a[i]:a.item(i),i);};
+   function fade(e,o){attr(e,'style',(o==undefined)?'':('fill-opacity:'+o));}
+   function sfade(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o));}
+   function mkpt(x,y){return {'x':x,'y':y};};
+   function ntfy(m, a){try{parent.onSvgNotify(m, a);}catch(e){}}
+   function pghk(){try{return parent.onSvgNotify!=null;}catch(e){return false;}}
+   function show(e,c){e.setAttribute('display',c?'inherit':'none');e.setAttribute('display',c?'inherit':'none');}
+   function tags(e,t){return e.getElementsByTagName(t);}
+   function trof(g){var a=g.hasAttribute('transform')?g.getAttribute('transform').slice(10,-1).split(' '):[0,0];return a.length==2?mkpt(Number(a[0]),Number(a[1])):mkpt(0,0);};
+   function trsl(g,x,y){g.setAttribute('transform','translate('+x+' '+y+')');};
+   function pfmt(c,a){return a.f(a.c(c,a),a);}
+   function sems(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o) + ';stroke-dasharray:0');}
+   var Format = function () {    var p,        n,        s;    function fnz(n) {        return n < 10 ? '0' + n : n;    };    function frequencyConvert(i, o, f) {        var dat = offd(Math.round(i), o);        var m = dat.getUTCMonth() + 1;        var quarter = Math.floor((m - 1) / 3) + 1;        return 'Q' + Math.round(quarter);    };    function map(a, f) {        var r = new Array(a.length),            i;        for (i = 0; i < a.length; ++i)            r[i] = f(a[i]);        return r;    };    function offd(i, o) {        var w = (i > 0 ? Math.floor(i / 5) : Math.ceil(i / 5)) * 7,            r = i % 5,            d = o.getUTCDay(),            e = d - 1,            l = 5 - d;        if (r < -e) r -= 2;        else if (r > l) r += 2;return new Date(o.valueOf()+(w+r)*86400000);};    function offd_calendarDate(i, o) {        var date = new Date(o.valueOf());        date.setDate(date.getDate() + i);        return date;    };function fdtp(u,f){ var y=u.getUTCFullYear(),m=u.getUTCMonth()+1,d=u.getUTCDate();        return map(f, function (p) {            switch (p) {                case "yyyy": return y;                case "yy": return fnz(y % 100);                case "MMMM": case "MMM": return n[p][m - 1];                case "MM": return fnz(m);                case "M": return m;                case "dddd": case "ddd": return n[p][u.getUTCDay()];                case "dd": return fnz(d);                case "d": return d;                default: return p;            }        }).join("");    };    function formatd(u, f) {        var y = u.getUTCFullYear(),            m = u.getUTCMonth() + 1,            d = u.getUTCDate();        switch (f) {            case "yyyy": return y;            case "yy": return fnz(y % 100);            case "MMMM": case "MMM": return n[f][m - 1];            case "MM": return fnz(m);            case "M": return m;            case "dddd": case "ddd": return n[f][u.getUTCDay()];            case "dd": return fnz(d);            case "d": return d;            default: return f;        }    };    function getfdate(i, o, f) {        return formatd(offd(Math.round(i), o), f);    };    function getlDate(i, o) {        var date1 = '';        if (n["dddd"]) { date1 += getfdate(i, o, "dddd") + ', '; }        if (n["MMMM"]) { date1 += getfdate(i, o, "MMMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    function getSDate(i, o) {        var date1 = '';        if (n["MMM"]) { date1 += getfdate(i, o, "MMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    return {        init: function (d, D, _n, _s) {            p = { 'd': d, 'D': D };            n = _n;            s = _s;        },date:function(i,o,f){           return fdtp(offd(Math.round(i),o),p[f||'d']);        },        calendardate: function (i, o, f) {            return fdtp(offd_calendarDate(Math.round(i), o), p[f || 'd']);        },dateOriginal: function (i, o) {            return offd(Math.round(i), o);        },        convert: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n["MMMM"]) { return getfdate(i, o, "MMMM") + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getlDate(i, o);            }        },        convertSpecial: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n[f]) { return getfdate(i, o, f) + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getSDate(i, o);            }        },        real: function (n) {            return n.toString().replace('.', s);        },        nice: function (a, b) {            var g = Math.log(Math.abs(a)),                d = Math.abs(a - b),                l = Math.ceil(g / Math.LN10),                r = Math.ceil(Math.log(d) / Math.LN10),                s = l - r + ((d < 1) ? 2 : 1),                m = Math.pow(10, s - Math.floor(g / Math.LN10) - 1);            return Math.round(a * m) / m;        }    };}();
+   var d0=[];
+   Format.init(['dd','/','MM','/','yyyy'],['dd',' ','MMMM',' ','yyyy'],{'ddd':['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],'dddd':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],'MMM':['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',''],'MMMM':['January','February','March','April','May','June','July','August','September','October','November','December','']},'.');
+   ntfy('load',{'url':document.URL,'errors':d0,'val_update':[]});
+  ]]>
+ </script>
+</svg><!-- <Chart><ImageInfo Version="1.27.0" GUID="8e2a3f6099a348ba8c7829ff1a611839" DsId="ZKXF457" T1SubID="" Width="960" Height="720" Format="svg" ChartGroupUID="20c2d485-c8e1-45e0-be8a-f13addc1f513" GroupName="01. Macro" ChartName="Global working age population" ChartStyleName="" GroupNameEncoded="01.+Macro" ChartNameEncoded="Global+working+age+population" ChartStyleNameEncoded="" ShortCode="" ChartOwner="FAADMIN" TemplateId="" TemplateName="" TemplateNameEncoded="" EditionId="" EditionGenerationDate="" RefreshDate="06/04/2026 17:53:52" ExportChartsIn="" ExportChartsTo=" " ExportChartAs=" " SpecifiedCellRow="0" SpecifiedCellCol="0" NoofColumns="1" NoofChartPerPage="1" SpaceBetweenCharts="0" Transparent="0" NoofRows="1" LeftMargin="0" RightMargin="0" TopMargin="0" FootMargin="0" Orientation="" FileNameTemplate="" ImageFileName="" ChartTitle="Global working age population" DoStretch="true" Pr=""/></Chart> -->

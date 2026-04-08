@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 960 720" preserveAspectRatio="none" onload="loadCustomMenu();" onmousedown="handleMouseDownChrome(evt);">
+ <g transform="translate(0.5,0.5)">
+  <g />
+  <g class="s0">
+   <rect x="-1" y="-1" width="961" height="721" />
+  </g>
+  <g class="s1">
+   <g class="s2">
+    <text x="540" y="713">Source: LSEG Datastream / Fathom Consulting</text>
+   </g>
+  </g>
+  <g class="s3">
+   <g class="s4">
+    <text x="56" y="41">Global foreign reserves by currency</text>
+   </g>
+   <g class="s5">
+    <text x="56" y="79">Per cent</text>
+   </g>
+   <g class="s6">
+    <text x="56" y="88" />
+   </g>
+   <g class="s7">
+    <line x1="56" y1="581" x2="928" y2="581" />
+    <line x1="56" y1="520" x2="928" y2="520" />
+    <line x1="56" y1="460" x2="928" y2="460" />
+    <line x1="56" y1="399" x2="928" y2="399" />
+    <line x1="56" y1="338" x2="928" y2="338" />
+    <line x1="56" y1="278" x2="928" y2="278" />
+    <line x1="56" y1="217" x2="928" y2="217" />
+    <line x1="56" y1="157" x2="928" y2="157" />
+    <line x1="56" y1="96" x2="928" y2="96" />
+   </g>
+   <g class="s8">
+    <line x1="56" y1="581" x2="928" y2="581" />
+   </g>
+   <g style="clip-path:url(#c0);">
+    <g id="n0">
+     <g class="s9">
+      <polyline points="64,248 72,243 80,250 88,248 96,152 104,153 112,153 120,158 128,153 136,148 144,152 152,152 160,154 168,170 176,177 184,187 192,189 200,189 208,187 216,196 224,189 232,188 240,190 248,197 256,192 264,189 272,187 280,188 288,188 296,192 304,189 312,195 320,195 328,197 336,201 344,201 352,199 360,201 368,193 376,200 384,194 392,203 400,209 408,204 416,206 424,202 432,206 440,206 448,206 456,208 464,204 472,202 480,206 488,204 496,206 504,206 512,205 520,205 528,207 536,207 544,209 552,209 560,203 568,201 576,196 584,196 592,192 600,192 608,193 616,193 624,194 632,189 640,192 648,196 656,197 664,201 672,200 680,201 688,203 696,205 704,204 712,207 720,205 728,209 736,203 744,206 752,211 760,220 768,217 776,218 784,218 792,221 800,221 808,217 816,215 824,224 832,217 840,218 848,219 856,223 864,220 872,224 880,230 888,226 896,226 904,235 912,236 920,237" />
+     </g>
+     <g class="s10" />
+    </g>
+    <g id="n1">
+     <g class="s11">
+      <polyline points="64,496 72,499 80,495 88,497 96,481 104,479 112,481 120,475 128,477 136,477 144,472 152,469 160,466 168,459 176,453 184,442 192,444 200,441 208,443 216,441 224,449 232,449 240,446 248,441 256,441 264,443 272,446 280,448 288,447 296,445 304,447 312,444 320,440 328,442 336,437 344,440 352,440 360,440 368,446 376,439 384,440 392,435 400,434 408,435 416,437 424,442 432,440 440,442 448,443 456,442 464,446 472,449 480,449 488,449 496,452 504,451 512,454 520,453 528,452 536,451 544,449 552,450 560,456 568,457 576,462 584,461 592,462 600,463 608,461 616,463 624,463 632,466 640,466 648,462 656,461 664,461 672,460 680,462 688,461 696,460 704,463 712,461 720,463 728,461 736,464 744,463 752,461 760,456 768,461 776,461 784,461 792,461 800,465 808,466 816,467 824,461 832,467 840,466 848,466 856,465 864,467 872,467 880,465 888,466 896,465 904,458 912,458 920,458" />
+     </g>
+     <g class="s12" />
+    </g>
+    <g id="n2">
+     <g class="s13">
+      <polyline points="64,553 72,555 80,552 88,551 96,545 104,540 112,538 120,541 128,545 136,546 144,546 152,548 160,553 168,543 176,546 184,547 192,544 200,548 208,547 216,544 224,542 232,544 240,546 248,547 256,552 264,552 272,553 280,552 288,555 296,554 304,555 312,554 320,558 328,557 336,558 344,556 352,555 360,554 368,555 376,555 384,559 392,560 400,560 408,561 416,559 424,558 432,557 440,556 448,556 456,556 464,556 472,556 480,555 488,556 496,554 504,555 512,555 520,555 528,555 536,556 544,556 552,555 560,556 568,556 576,556 584,558 592,558 600,557 608,558 616,555 624,555 632,557 640,554 648,553 656,554 664,552 672,553 680,551 688,550 696,550 704,548 712,547 720,546 728,546 736,544 744,546 752,546 760,544 768,546 776,547 784,547 792,548 800,547 808,548 816,550 824,548 832,548 840,548 848,549 856,548 864,548 872,548 880,547 888,547 896,546 904,547 912,546 920,546" />
+     </g>
+     <g class="s14" />
+    </g>
+    <g id="n3">
+     <g class="s15">
+      <polyline points="504,568 512,568 520,567 528,567 536,567 544,567 552,567 560,567 568,567 576,567 584,567 592,568 600,568 608,568 616,568 624,568 632,568 640,568 648,568 656,568 664,568 672,569 680,569 688,569 696,570 704,569 712,569 720,569 728,570 736,570 744,569 752,568 760,568 768,568 776,567 784,567 792,566 800,565 808,565 816,565 824,566 832,567 840,566 848,566 856,566 864,566 872,565 880,564 888,564 896,565 904,565 912,565 920,566" />
+     </g>
+     <g class="s16" />
+    </g>
+    <g id="n4">
+     <g class="s17">
+      <polyline points="632,575 640,575 648,575 656,574 664,574 672,572 680,569 688,570 696,569 704,569 712,569 720,569 728,569 736,569 744,568 752,568 760,567 768,566 776,565 784,565 792,564 800,564 808,564 816,565 824,566 832,565 840,566 848,566 856,567 864,568 872,568 880,568 888,568 896,569 904,569 912,569 920,569" />
+     </g>
+     <g class="s18" />
+    </g>
+    <g id="n5">
+     <g class="s19">
+      <polyline points="64,568 72,568 80,568 88,567 96,558 104,561 112,561 120,560 128,560 136,562 144,562 152,562 160,561 168,561 176,559 184,559 192,560 200,560 208,560 216,558 224,557 232,556 240,555 248,553 256,553 264,553 272,553 280,552 288,550 296,549 304,549 312,549 320,550 328,548 336,549 344,547 352,549 360,549 368,549 376,551 384,552 392,550 400,550 408,551 416,550 424,551 432,552 440,552 448,552 456,552 464,553 472,553 480,552 488,553 496,552 504,552 512,553 520,553 528,553 536,552 544,552 552,552 560,553 568,552 576,552 584,550 592,550 600,550 608,551 616,551 624,553 632,553 640,553 648,553 656,552 664,552 672,552 680,553 688,554 696,554 704,553 712,554 720,554 728,553 736,554 744,554 752,553 760,552 768,552 776,552 784,552 792,551 800,551 808,551 816,552 824,550 832,553 840,553 848,552 856,552 864,552 872,552 880,552 888,553 896,553 904,552 912,554 920,554" />
+     </g>
+     <g class="s20" />
+    </g>
+    <g id="n6">
+     <g class="s21">
+      <polyline points="504,571 512,570 520,570 528,570 536,569 544,570 552,569 560,570 568,570 576,571 584,570 592,571 600,570 608,570 616,570 624,569 632,570 640,569 648,569 656,569 664,569 672,570 680,570 688,570 696,570 704,570 712,570 720,570 728,570 736,571 744,570 752,570 760,569 768,569 776,569 784,569 792,569 800,568 808,568 816,568 824,567 832,569 840,569 848,569 856,568 864,568 872,568 880,567 888,569 896,569 904,569 912,569 920,569" />
+     </g>
+     <g class="s22" />
+    </g>
+    <g id="n7">
+     <g class="s23">
+      <polyline points="64,573 72,573 80,573 88,574 96,566 104,567 112,567 120,566 128,566 136,567 144,568 152,568 160,568 168,567 176,566 184,566 192,563 200,563 208,563 216,562 224,563 232,563 240,563 248,562 256,563 264,562 272,562 280,560 288,561 296,559 304,560 312,559 320,558 328,557 336,556 344,557 352,557 360,557 368,557 376,555 384,555 392,552 400,547 408,549 416,548 424,547 432,546 440,544 448,543 456,542 464,542 472,539 480,538 488,539 496,537 504,559 512,559 520,560 528,560 536,561 544,560 552,560 560,559 568,559 576,560 584,560 592,561 600,562 608,561 616,561 624,560 632,565 640,566 648,567 656,566 664,566 672,566 680,566 688,566 696,565 704,567 712,566 720,567 728,566 736,568 744,567 752,566 760,566 768,565 776,564 784,564 792,563 800,562 808,562 816,561 824,561 832,557 840,556 848,555 856,554 864,554 872,551 880,550 888,549 896,549 904,548 912,547 920,544" />
+     </g>
+     <g class="s24" />
+    </g>
+   </g>
+   <g class="s25">
+    <g class="s26">
+     <line x1="56" y1="581" x2="928" y2="581" />
+     <line x1="88" y1="581" x2="88" y2="587" />
+     <line x1="88" y1="581" x2="88" y2="587" />
+     <line x1="152" y1="581" x2="152" y2="587" />
+     <line x1="152" y1="581" x2="152" y2="587" />
+     <line x1="216" y1="581" x2="216" y2="587" />
+     <line x1="216" y1="581" x2="216" y2="587" />
+     <line x1="280" y1="581" x2="280" y2="587" />
+     <line x1="280" y1="581" x2="280" y2="587" />
+     <line x1="344" y1="581" x2="344" y2="587" />
+     <line x1="344" y1="581" x2="344" y2="587" />
+     <line x1="408" y1="581" x2="408" y2="587" />
+     <line x1="408" y1="581" x2="408" y2="587" />
+     <line x1="472" y1="581" x2="472" y2="587" />
+     <line x1="472" y1="581" x2="472" y2="587" />
+     <line x1="536" y1="581" x2="536" y2="587" />
+     <line x1="536" y1="581" x2="536" y2="587" />
+     <line x1="600" y1="581" x2="600" y2="587" />
+     <line x1="600" y1="581" x2="600" y2="587" />
+     <line x1="664" y1="581" x2="664" y2="587" />
+     <line x1="664" y1="581" x2="664" y2="587" />
+     <line x1="728" y1="581" x2="728" y2="587" />
+     <line x1="728" y1="581" x2="728" y2="587" />
+     <line x1="792" y1="581" x2="792" y2="587" />
+     <line x1="792" y1="581" x2="792" y2="587" />
+     <line x1="856" y1="581" x2="856" y2="587" />
+     <line x1="856" y1="581" x2="856" y2="587" />
+     <line x1="920" y1="581" x2="920" y2="587" />
+     <line x1="920" y1="581" x2="920" y2="587" />
+     <line x1="56" y1="581" x2="56" y2="584" />
+     <line x1="56" y1="581" x2="56" y2="584" />
+     <line x1="64" y1="581" x2="64" y2="584" />
+     <line x1="64" y1="581" x2="64" y2="584" />
+     <line x1="72" y1="581" x2="72" y2="584" />
+     <line x1="72" y1="581" x2="72" y2="584" />
+     <line x1="80" y1="581" x2="80" y2="584" />
+     <line x1="80" y1="581" x2="80" y2="584" />
+     <line x1="88" y1="581" x2="88" y2="584" />
+     <line x1="88" y1="581" x2="88" y2="584" />
+     <line x1="96" y1="581" x2="96" y2="584" />
+     <line x1="96" y1="581" x2="96" y2="584" />
+     <line x1="104" y1="581" x2="104" y2="584" />
+     <line x1="104" y1="581" x2="104" y2="584" />
+     <line x1="112" y1="581" x2="112" y2="584" />
+     <line x1="112" y1="581" x2="112" y2="584" />
+     <line x1="120" y1="581" x2="120" y2="584" />
+     <line x1="120" y1="581" x2="120" y2="584" />
+     <line x1="128" y1="581" x2="128" y2="584" />
+     <line x1="128" y1="581" x2="128" y2="584" />
+     <line x1="136" y1="581" x2="136" y2="584" />
+     <line x1="136" y1="581" x2="136" y2="584" />
+     <line x1="144" y1="581" x2="144" y2="584" />
+     <line x1="144" y1="581" x2="144" y2="584" />
+     <line x1="152" y1="581" x2="152" y2="584" />
+     <line x1="152" y1="581" x2="152" y2="584" />
+     <line x1="160" y1="581" x2="160" y2="584" />
+     <line x1="160" y1="581" x2="160" y2="584" />
+     <line x1="168" y1="581" x2="168" y2="584" />
+     <line x1="168" y1="581" x2="168" y2="584" />
+     <line x1="176" y1="581" x2="176" y2="584" />
+     <line x1="176" y1="581" x2="176" y2="584" />
+     <line x1="184" y1="581" x2="184" y2="584" />
+     <line x1="184" y1="581" x2="184" y2="584" />
+     <line x1="192" y1="581" x2="192" y2="584" />
+     <line x1="192" y1="581" x2="192" y2="584" />
+     <line x1="200" y1="581" x2="200" y2="584" />
+     <line x1="200" y1="581" x2="200" y2="584" />
+     <line x1="208" y1="581" x2="208" y2="584" />
+     <line x1="208" y1="581" x2="208" y2="584" />
+     <line x1="216" y1="581" x2="216" y2="584" />
+     <line x1="216" y1="581" x2="216" y2="584" />
+     <line x1="224" y1="581" x2="224" y2="584" />
+     <line x1="224" y1="581" x2="224" y2="584" />
+     <line x1="232" y1="581" x2="232" y2="584" />
+     <line x1="232" y1="581" x2="232" y2="584" />
+     <line x1="240" y1="581" x2="240" y2="584" />
+     <line x1="240" y1="581" x2="240" y2="584" />
+     <line x1="248" y1="581" x2="248" y2="584" />
+     <line x1="248" y1="581" x2="248" y2="584" />
+     <line x1="256" y1="581" x2="256" y2="584" />
+     <line x1="256" y1="581" x2="256" y2="584" />
+     <line x1="264" y1="581" x2="264" y2="584" />
+     <line x1="264" y1="581" x2="264" y2="584" />
+     <line x1="272" y1="581" x2="272" y2="584" />
+     <line x1="272" y1="581" x2="272" y2="584" />
+     <line x1="280" y1="581" x2="280" y2="584" />
+     <line x1="280" y1="581" x2="280" y2="584" />
+     <line x1="288" y1="581" x2="288" y2="584" />
+     <line x1="288" y1="581" x2="288" y2="584" />
+     <line x1="296" y1="581" x2="296" y2="584" />
+     <line x1="296" y1="581" x2="296" y2="584" />
+     <line x1="304" y1="581" x2="304" y2="584" />
+     <line x1="304" y1="581" x2="304" y2="584" />
+     <line x1="312" y1="581" x2="312" y2="584" />
+     <line x1="312" y1="581" x2="312" y2="584" />
+     <line x1="320" y1="581" x2="320" y2="584" />
+     <line x1="320" y1="581" x2="320" y2="584" />
+     <line x1="328" y1="581" x2="328" y2="584" />
+     <line x1="328" y1="581" x2="328" y2="584" />
+     <line x1="336" y1="581" x2="336" y2="584" />
+     <line x1="336" y1="581" x2="336" y2="584" />
+     <line x1="344" y1="581" x2="344" y2="584" />
+     <line x1="344" y1="581" x2="344" y2="584" />
+     <line x1="352" y1="581" x2="352" y2="584" />
+     <line x1="352" y1="581" x2="352" y2="584" />
+     <line x1="360" y1="581" x2="360" y2="584" />
+     <line x1="360" y1="581" x2="360" y2="584" />
+     <line x1="368" y1="581" x2="368" y2="584" />
+     <line x1="368" y1="581" x2="368" y2="584" />
+     <line x1="376" y1="581" x2="376" y2="584" />
+     <line x1="376" y1="581" x2="376" y2="584" />
+     <line x1="384" y1="581" x2="384" y2="584" />
+     <line x1="384" y1="581" x2="384" y2="584" />
+     <line x1="392" y1="581" x2="392" y2="584" />
+     <line x1="392" y1="581" x2="392" y2="584" />
+     <line x1="400" y1="581" x2="400" y2="584" />
+     <line x1="400" y1="581" x2="400" y2="584" />
+     <line x1="408" y1="581" x2="408" y2="584" />
+     <line x1="408" y1="581" x2="408" y2="584" />
+     <line x1="416" y1="581" x2="416" y2="584" />
+     <line x1="416" y1="581" x2="416" y2="584" />
+     <line x1="424" y1="581" x2="424" y2="584" />
+     <line x1="424" y1="581" x2="424" y2="584" />
+     <line x1="432" y1="581" x2="432" y2="584" />
+     <line x1="432" y1="581" x2="432" y2="584" />
+     <line x1="440" y1="581" x2="440" y2="584" />
+     <line x1="440" y1="581" x2="440" y2="584" />
+     <line x1="448" y1="581" x2="448" y2="584" />
+     <line x1="448" y1="581" x2="448" y2="584" />
+     <line x1="456" y1="581" x2="456" y2="584" />
+     <line x1="456" y1="581" x2="456" y2="584" />
+     <line x1="464" y1="581" x2="464" y2="584" />
+     <line x1="464" y1="581" x2="464" y2="584" />
+     <line x1="472" y1="581" x2="472" y2="584" />
+     <line x1="472" y1="581" x2="472" y2="584" />
+     <line x1="480" y1="581" x2="480" y2="584" />
+     <line x1="480" y1="581" x2="480" y2="584" />
+     <line x1="488" y1="581" x2="488" y2="584" />
+     <line x1="488" y1="581" x2="488" y2="584" />
+     <line x1="496" y1="581" x2="496" y2="584" />
+     <line x1="496" y1="581" x2="496" y2="584" />
+     <line x1="504" y1="581" x2="504" y2="584" />
+     <line x1="504" y1="581" x2="504" y2="584" />
+     <line x1="512" y1="581" x2="512" y2="584" />
+     <line x1="512" y1="581" x2="512" y2="584" />
+     <line x1="520" y1="581" x2="520" y2="584" />
+     <line x1="520" y1="581" x2="520" y2="584" />
+     <line x1="528" y1="581" x2="528" y2="584" />
+     <line x1="528" y1="581" x2="528" y2="584" />
+     <line x1="536" y1="581" x2="536" y2="584" />
+     <line x1="536" y1="581" x2="536" y2="584" />
+     <line x1="544" y1="581" x2="544" y2="584" />
+     <line x1="544" y1="581" x2="544" y2="584" />
+     <line x1="552" y1="581" x2="552" y2="584" />
+     <line x1="552" y1="581" x2="552" y2="584" />
+     <line x1="560" y1="581" x2="560" y2="584" />
+     <line x1="560" y1="581" x2="560" y2="584" />
+     <line x1="568" y1="581" x2="568" y2="584" />
+     <line x1="568" y1="581" x2="568" y2="584" />
+     <line x1="576" y1="581" x2="576" y2="584" />
+     <line x1="576" y1="581" x2="576" y2="584" />
+     <line x1="584" y1="581" x2="584" y2="584" />
+     <line x1="584" y1="581" x2="584" y2="584" />
+     <line x1="592" y1="581" x2="592" y2="584" />
+     <line x1="592" y1="581" x2="592" y2="584" />
+     <line x1="600" y1="581" x2="600" y2="584" />
+     <line x1="600" y1="581" x2="600" y2="584" />
+     <line x1="608" y1="581" x2="608" y2="584" />
+     <line x1="608" y1="581" x2="608" y2="584" />
+     <line x1="616" y1="581" x2="616" y2="584" />
+     <line x1="616" y1="581" x2="616" y2="584" />
+     <line x1="624" y1="581" x2="624" y2="584" />
+     <line x1="624" y1="581" x2="624" y2="584" />
+     <line x1="632" y1="581" x2="632" y2="584" />
+     <line x1="632" y1="581" x2="632" y2="584" />
+     <line x1="640" y1="581" x2="640" y2="584" />
+     <line x1="640" y1="581" x2="640" y2="584" />
+     <line x1="648" y1="581" x2="648" y2="584" />
+     <line x1="648" y1="581" x2="648" y2="584" />
+     <line x1="656" y1="581" x2="656" y2="584" />
+     <line x1="656" y1="581" x2="656" y2="584" />
+     <line x1="664" y1="581" x2="664" y2="584" />
+     <line x1="664" y1="581" x2="664" y2="584" />
+     <line x1="672" y1="581" x2="672" y2="584" />
+     <line x1="672" y1="581" x2="672" y2="584" />
+     <line x1="680" y1="581" x2="680" y2="584" />
+     <line x1="680" y1="581" x2="680" y2="584" />
+     <line x1="688" y1="581" x2="688" y2="584" />
+     <line x1="688" y1="581" x2="688" y2="584" />
+     <line x1="696" y1="581" x2="696" y2="584" />
+     <line x1="696" y1="581" x2="696" y2="584" />
+     <line x1="704" y1="581" x2="704" y2="584" />
+     <line x1="704" y1="581" x2="704" y2="584" />
+     <line x1="712" y1="581" x2="712" y2="584" />
+     <line x1="712" y1="581" x2="712" y2="584" />
+     <line x1="720" y1="581" x2="720" y2="584" />
+     <line x1="720" y1="581" x2="720" y2="584" />
+     <line x1="728" y1="581" x2="728" y2="584" />
+     <line x1="728" y1="581" x2="728" y2="584" />
+     <line x1="736" y1="581" x2="736" y2="584" />
+     <line x1="736" y1="581" x2="736" y2="584" />
+     <line x1="744" y1="581" x2="744" y2="584" />
+     <line x1="744" y1="581" x2="744" y2="584" />
+     <line x1="752" y1="581" x2="752" y2="584" />
+     <line x1="752" y1="581" x2="752" y2="584" />
+     <line x1="760" y1="581" x2="760" y2="584" />
+     <line x1="760" y1="581" x2="760" y2="584" />
+     <line x1="768" y1="581" x2="768" y2="584" />
+     <line x1="768" y1="581" x2="768" y2="584" />
+     <line x1="776" y1="581" x2="776" y2="584" />
+     <line x1="776" y1="581" x2="776" y2="584" />
+     <line x1="784" y1="581" x2="784" y2="584" />
+     <line x1="784" y1="581" x2="784" y2="584" />
+     <line x1="792" y1="581" x2="792" y2="584" />
+     <line x1="792" y1="581" x2="792" y2="584" />
+     <line x1="800" y1="581" x2="800" y2="584" />
+     <line x1="800" y1="581" x2="800" y2="584" />
+     <line x1="808" y1="581" x2="808" y2="584" />
+     <line x1="808" y1="581" x2="808" y2="584" />
+     <line x1="816" y1="581" x2="816" y2="584" />
+     <line x1="816" y1="581" x2="816" y2="584" />
+     <line x1="824" y1="581" x2="824" y2="584" />
+     <line x1="824" y1="581" x2="824" y2="584" />
+     <line x1="832" y1="581" x2="832" y2="584" />
+     <line x1="832" y1="581" x2="832" y2="584" />
+     <line x1="840" y1="581" x2="840" y2="584" />
+     <line x1="840" y1="581" x2="840" y2="584" />
+     <line x1="848" y1="581" x2="848" y2="584" />
+     <line x1="848" y1="581" x2="848" y2="584" />
+     <line x1="856" y1="581" x2="856" y2="584" />
+     <line x1="856" y1="581" x2="856" y2="584" />
+     <line x1="864" y1="581" x2="864" y2="584" />
+     <line x1="864" y1="581" x2="864" y2="584" />
+     <line x1="872" y1="581" x2="872" y2="584" />
+     <line x1="872" y1="581" x2="872" y2="584" />
+     <line x1="880" y1="581" x2="880" y2="584" />
+     <line x1="880" y1="581" x2="880" y2="584" />
+     <line x1="888" y1="581" x2="888" y2="584" />
+     <line x1="888" y1="581" x2="888" y2="584" />
+     <line x1="896" y1="581" x2="896" y2="584" />
+     <line x1="896" y1="581" x2="896" y2="584" />
+     <line x1="904" y1="581" x2="904" y2="584" />
+     <line x1="904" y1="581" x2="904" y2="584" />
+     <line x1="912" y1="581" x2="912" y2="584" />
+     <line x1="912" y1="581" x2="912" y2="584" />
+     <line x1="920" y1="581" x2="920" y2="584" />
+     <line x1="920" y1="581" x2="920" y2="584" />
+     <line x1="928" y1="581" x2="928" y2="584" />
+     <line x1="928" y1="581" x2="928" y2="584" />
+     <g class="s27">
+      <g class="s28">
+       <text x="88" y="618">00</text>
+       <text x="152" y="618">02</text>
+       <text x="216" y="618">04</text>
+       <text x="280" y="618">06</text>
+       <text x="344" y="618">08</text>
+       <text x="408" y="618">10</text>
+       <text x="472" y="618">12</text>
+       <text x="536" y="618">14</text>
+       <text x="600" y="618">16</text>
+       <text x="664" y="618">18</text>
+       <text x="728" y="618">20</text>
+       <text x="792" y="618">22</text>
+       <text x="856" y="618">24</text>
+       <text x="920" y="618">26</text>
+      </g>
+     </g>
+     <g class="s27">
+      <g class="s28" />
+     </g>
+    </g>
+    <g class="s29" />
+    <g class="s30">
+     <line x1="56" y1="581" x2="56" y2="96" />
+     <line x1="56" y1="581" x2="50" y2="581" />
+     <line x1="56" y1="581" x2="50" y2="581" />
+     <line x1="56" y1="520" x2="50" y2="520" />
+     <line x1="56" y1="520" x2="50" y2="520" />
+     <line x1="56" y1="460" x2="50" y2="460" />
+     <line x1="56" y1="460" x2="50" y2="460" />
+     <line x1="56" y1="399" x2="50" y2="399" />
+     <line x1="56" y1="399" x2="50" y2="399" />
+     <line x1="56" y1="338" x2="50" y2="338" />
+     <line x1="56" y1="338" x2="50" y2="338" />
+     <line x1="56" y1="278" x2="50" y2="278" />
+     <line x1="56" y1="278" x2="50" y2="278" />
+     <line x1="56" y1="217" x2="50" y2="217" />
+     <line x1="56" y1="217" x2="50" y2="217" />
+     <line x1="56" y1="157" x2="50" y2="157" />
+     <line x1="56" y1="157" x2="50" y2="157" />
+     <line x1="56" y1="96" x2="50" y2="96" />
+     <line x1="56" y1="96" x2="50" y2="96" />
+     <line x1="56" y1="569" x2="53" y2="569" />
+     <line x1="56" y1="569" x2="53" y2="569" />
+     <line x1="56" y1="557" x2="53" y2="557" />
+     <line x1="56" y1="557" x2="53" y2="557" />
+     <line x1="56" y1="545" x2="53" y2="545" />
+     <line x1="56" y1="545" x2="53" y2="545" />
+     <line x1="56" y1="532" x2="53" y2="532" />
+     <line x1="56" y1="532" x2="53" y2="532" />
+     <line x1="56" y1="508" x2="53" y2="508" />
+     <line x1="56" y1="508" x2="53" y2="508" />
+     <line x1="56" y1="496" x2="53" y2="496" />
+     <line x1="56" y1="496" x2="53" y2="496" />
+     <line x1="56" y1="484" x2="53" y2="484" />
+     <line x1="56" y1="484" x2="53" y2="484" />
+     <line x1="56" y1="472" x2="53" y2="472" />
+     <line x1="56" y1="472" x2="53" y2="472" />
+     <line x1="56" y1="448" x2="53" y2="448" />
+     <line x1="56" y1="448" x2="53" y2="448" />
+     <line x1="56" y1="436" x2="53" y2="436" />
+     <line x1="56" y1="436" x2="53" y2="436" />
+     <line x1="56" y1="423" x2="53" y2="423" />
+     <line x1="56" y1="423" x2="53" y2="423" />
+     <line x1="56" y1="411" x2="53" y2="411" />
+     <line x1="56" y1="411" x2="53" y2="411" />
+     <line x1="56" y1="387" x2="53" y2="387" />
+     <line x1="56" y1="387" x2="53" y2="387" />
+     <line x1="56" y1="375" x2="53" y2="375" />
+     <line x1="56" y1="375" x2="53" y2="375" />
+     <line x1="56" y1="363" x2="53" y2="363" />
+     <line x1="56" y1="363" x2="53" y2="363" />
+     <line x1="56" y1="351" x2="53" y2="351" />
+     <line x1="56" y1="351" x2="53" y2="351" />
+     <line x1="56" y1="326" x2="53" y2="326" />
+     <line x1="56" y1="326" x2="53" y2="326" />
+     <line x1="56" y1="314" x2="53" y2="314" />
+     <line x1="56" y1="314" x2="53" y2="314" />
+     <line x1="56" y1="302" x2="53" y2="302" />
+     <line x1="56" y1="302" x2="53" y2="302" />
+     <line x1="56" y1="290" x2="53" y2="290" />
+     <line x1="56" y1="290" x2="53" y2="290" />
+     <line x1="56" y1="266" x2="53" y2="266" />
+     <line x1="56" y1="266" x2="53" y2="266" />
+     <line x1="56" y1="254" x2="53" y2="254" />
+     <line x1="56" y1="254" x2="53" y2="254" />
+     <line x1="56" y1="242" x2="53" y2="242" />
+     <line x1="56" y1="242" x2="53" y2="242" />
+     <line x1="56" y1="229" x2="53" y2="229" />
+     <line x1="56" y1="229" x2="53" y2="229" />
+     <line x1="56" y1="205" x2="53" y2="205" />
+     <line x1="56" y1="205" x2="53" y2="205" />
+     <line x1="56" y1="193" x2="53" y2="193" />
+     <line x1="56" y1="193" x2="53" y2="193" />
+     <line x1="56" y1="181" x2="53" y2="181" />
+     <line x1="56" y1="181" x2="53" y2="181" />
+     <line x1="56" y1="169" x2="53" y2="169" />
+     <line x1="56" y1="169" x2="53" y2="169" />
+     <line x1="56" y1="144" x2="53" y2="144" />
+     <line x1="56" y1="144" x2="53" y2="144" />
+     <line x1="56" y1="132" x2="53" y2="132" />
+     <line x1="56" y1="132" x2="53" y2="132" />
+     <line x1="56" y1="120" x2="53" y2="120" />
+     <line x1="56" y1="120" x2="53" y2="120" />
+     <line x1="56" y1="108" x2="53" y2="108" />
+     <line x1="56" y1="108" x2="53" y2="108" />
+     <g class="s31">
+      <g class="s32">
+       <text x="40" y="591" transform="rotate(360 40,581)">0</text>
+       <text x="40" y="530" transform="rotate(360 40,520)">10</text>
+       <text x="40" y="470" transform="rotate(360 40,460)">20</text>
+       <text x="40" y="409" transform="rotate(360 40,399)">30</text>
+       <text x="40" y="348" transform="rotate(360 40,338)">40</text>
+       <text x="40" y="288" transform="rotate(360 40,278)">50</text>
+       <text x="40" y="227" transform="rotate(360 40,217)">60</text>
+       <text x="40" y="167" transform="rotate(360 40,157)">70</text>
+       <text x="40" y="106" transform="rotate(360 40,96)">80</text>
+      </g>
+     </g>
+     <g class="s31">
+      <g class="s32" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g class="s33">
+   <g onclick="ntfy('click', {'id':'c0p0b'});" onmousemove="if(pghk()) sfade(evt.target,0.6);" onmouseout="if(pghk()) sfade(evt.target);" onmousedown="if(pghk()){if(evt.button == 2){ sfade(evt.target) }}">
+    <rect x="56" y="581" width="872" height="49" />
+   </g>
+  </g>
+  <g class="s34">
+   <g class="s35">
+    <rect x="59" y="633" width="822" height="60" />
+   </g>
+   <g class="s9">
+    <polyline points="64,647 118,647" />
+   </g>
+   <g class="s10" />
+   <g class="s36">
+    <text x="127" y="657">USD</text>
+   </g>
+   <g class="s11">
+    <polyline points="281,647 335,647" />
+   </g>
+   <g class="s12" />
+   <g class="s37">
+    <text x="344" y="657">EUR</text>
+   </g>
+   <g class="s13">
+    <polyline points="498,647 552,647" />
+   </g>
+   <g class="s14" />
+   <g class="s38">
+    <text x="561" y="657">JPY</text>
+   </g>
+   <g class="s15">
+    <polyline points="715,647 769,647" />
+   </g>
+   <g class="s16" />
+   <g class="s39">
+    <text x="778" y="657">CAD</text>
+   </g>
+   <g class="s17">
+    <polyline points="64,674 118,674" />
+   </g>
+   <g class="s18" />
+   <g class="s40">
+    <text x="127" y="684">CNY</text>
+   </g>
+   <g class="s19">
+    <polyline points="281,674 335,674" />
+   </g>
+   <g class="s20" />
+   <g class="s41">
+    <text x="344" y="684">GBP</text>
+   </g>
+   <g class="s21">
+    <polyline points="498,674 552,674" />
+   </g>
+   <g class="s22" />
+   <g class="s42">
+    <text x="561" y="684">AUD</text>
+   </g>
+   <g class="s23">
+    <polyline points="715,674 769,674" />
+   </g>
+   <g class="s24" />
+   <g class="s43">
+    <text x="778" y="684">Other </text>
+   </g>
+  </g>
+  <g class="s44">
+   <g>
+    <rect x="56" y="96" width="100" height="50" pointer-events="all" />
+   </g>
+  </g>
+  <g class="s45">
+   <g>
+    <rect x="404" y="81" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s47">
+   <g>
+    <rect x="325" y="135" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s48">
+   <g>
+    <rect x="449" y="70" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s49">
+   <g>
+    <rect x="256" y="389" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s50">
+   <g>
+    <rect x="506" y="72" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s51">
+   <g>
+    <rect x="291" y="195" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s52">
+   <g>
+    <rect x="365" y="102" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g class="s53">
+   <g>
+    <rect x="677" y="479" width="8" height="35" />
+    <g class="s27" />
+    <g class="s46" />
+   </g>
+  </g>
+  <g />
+ </g>
+ <defs>
+  <clipPath id="c0">
+   <rect x="56" y="96" width="872" height="485" />
+  </clipPath>
+  <menu id="CustomMenu" xmlns="ns_custommenu">
+   <item action="CopySVG">&amp;Copy SVG</item>
+   <item action="SaveAs">&amp;Save SVG As...</item>
+   <item action="ViewSource">View Sourc&amp;e...</item>
+   <item action="About">About SVG Viewer...</item>
+  </menu>
+ </defs>
+ <style type="text/css">
+  <![CDATA[
+   svg { font-family:Tahoma; stroke:black; shape-rendering:auto; width:100%; height:100%;}
+   line, polyline { fill:none; stroke-linejoin:round; }
+   text { stroke:none; fill:black; fill-opacity:1; text-rendering:geometricPrecision; pointer-events:none; }
+   .selectedEvent { stroke-opacity: 0.6; stroke-dasharray: 0; }
+   .s0 { stroke:none; fill:#171717; }
+   .s1 { font-family:"Arial"; font-size:19px; font-weight:normal; font-style:italic; } .s1 text { fill:#C0C0C0; text-decoration:none; white-space:pre; }
+   .s2 { text-anchor:start; }
+   .s3 { stroke:#FFFFFF; stroke-width:1; font-family:"Arial"; font-size:21px; font-weight:normal; font-style:normal; } .s3 text { fill:#FFFFFF; text-decoration:none; }
+   .s4 { text-anchor:start; font-family:"Arial"; font-size:37px; font-weight:bold; font-style:normal; } .s4 text { fill:#FFFFFF; text-decoration:none; }
+   .s5 { text-anchor:start; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s5 text { fill:#FFFFFF; text-decoration:none; }
+   .s6 { text-anchor:middle; font-family:"Arial"; font-size:19px; font-weight:normal; font-style:normal; } .s6 text { fill:#FFFFFF; text-decoration:none; }
+   .s7 { stroke:#36494F; stroke-opacity:0.50; stroke-width:1; stroke-dasharray:1,2; }
+   .s8 { stroke:#FFFFFF; stroke-width:1; stroke-dasharray:none; }
+   .s9 { stroke:#FF9900; stroke-width:4; stroke-dasharray:none; }
+   .s10 { stroke:#FF9900; stroke-width:2; stroke-dasharray:none; fill:#FF9900; }
+   .s11 { stroke:#00CCFF; stroke-width:4; stroke-dasharray:none; }
+   .s12 { stroke:#00CCFF; stroke-width:2; stroke-dasharray:none; fill:#00CCFF; }
+   .s13 { stroke:#008000; stroke-width:4; stroke-dasharray:none; }
+   .s14 { stroke:#0000FF; stroke-width:2; stroke-dasharray:none; fill:#0000FF; }
+   .s15 { stroke:#800080; stroke-width:4; stroke-dasharray:none; }
+   .s16 { stroke:#00FFFF; stroke-width:2; stroke-dasharray:none; fill:#00FFFF; }
+   .s17 { stroke:#FF0000; stroke-width:3; stroke-dasharray:none; }
+   .s18 { stroke:#FFCC00; stroke-width:2; stroke-dasharray:none; fill:#FFCC00; }
+   .s19 { stroke:#3366FF; stroke-width:3; stroke-dasharray:none; }
+   .s20 { stroke:#FFFF00; stroke-width:2; stroke-dasharray:none; fill:#FFFF00; }
+   .s21 { stroke:#99CC00; stroke-width:3; stroke-dasharray:none; }
+   .s22 { stroke:#8B0000; stroke-width:2; stroke-dasharray:none; fill:#8B0000; }
+   .s23 { stroke:#C0C0C0; stroke-width:3; stroke-dasharray:none; }
+   .s24 { stroke:#00008B; stroke-width:2; stroke-dasharray:none; fill:#00008B; }
+   .s25 { stroke:#FFFFFF; font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s25 text { fill:#FFFFFF; text-decoration:none; }
+   .s26 { stroke-width:1; stroke-dasharray:none; }
+   .s27 { text-anchor:middle; }
+   .s28 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s28 text { fill:#FFFFFF; text-decoration:none; }
+   .s29 { stroke-width:1; stroke-dasharray:none; }
+   .s30 { stroke-width:1; stroke-dasharray:none; }
+   .s31 { text-anchor:end; }
+   .s32 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s32 text { fill:#FFFFFF; text-decoration:none; }
+   .s33 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; }
+   .s34 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s34 text { fill:#FFFFFF; text-decoration:none; }
+   .s35 { stroke:none; stroke-width:1; fill:none; }
+   .s36 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s36 text { fill:#FFFFFF; text-decoration:none; }
+   .s37 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s37 text { fill:#FFFFFF; text-decoration:none; }
+   .s38 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s38 text { fill:#FFFFFF; text-decoration:none; }
+   .s39 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s39 text { fill:#FFFFFF; text-decoration:none; }
+   .s40 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s40 text { fill:#FFFFFF; text-decoration:none; }
+   .s41 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s41 text { fill:#FFFFFF; text-decoration:none; }
+   .s42 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s42 text { fill:#FFFFFF; text-decoration:none; }
+   .s43 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s43 text { fill:#FFFFFF; text-decoration:none; }
+   .s44 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; fill-opacity:0; } .s44 text { fill:#FFFFFF; text-decoration:none; }
+   .s45 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s45 text { fill:#FFFFFF; text-decoration:none; }
+   .s46 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; cursor:pointer; }
+   .s47 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s47 text { fill:#FFFFFF; text-decoration:none; }
+   .s48 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s48 text { fill:#FFFFFF; text-decoration:none; }
+   .s49 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s49 text { fill:#FFFFFF; text-decoration:none; }
+   .s50 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s50 text { fill:#FFFFFF; text-decoration:none; }
+   .s51 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s51 text { fill:#FFFFFF; text-decoration:none; }
+   .s52 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s52 text { fill:#FFFFFF; text-decoration:none; }
+   .s53 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; fill:#171717; } .s53 text { fill:#FFFFFF; text-decoration:none; }
+  ]]>
+ </style>
+ <script type="text/ecmascript">
+  <![CDATA[
+   function loadCustomMenu(){ var menuDef = document.getElementById("CustomMenu"); if(parent && parent.chartLoaded) { parent.chartLoaded(); } if (menuDef && typeof parseXML === "function"){var newMenuRoot = parseXML(printNode(menuDef), contextMenu);contextMenu.replaceChild(newMenuRoot, contextMenu.firstChild);}}
+   function handleMouseDownChrome(evt){ if(evt.which && evt.which != 3){ if(evt.preventDefault) { evt.preventDefault()} else {evt.returnValue = false} }}
+   function toxy(e){return {x:e.clientX*(960/innerWidth),y:e.clientY*(720/innerHeight)};}
+   function getd(){return  {'w':innerWidth,'h':innerHeight};};
+   function lmtp(p,xl,yb,xr,yt){return {x:Math.max(Math.min(p.x,960-xr),xl),y:Math.max(Math.min(p.y,720-yt),yb)};}
+   function clmp(n,l,h){return Math.max(Math.min(n,h),l);};
+   function attr(e,k,v){if(v!=undefined){e.setAttribute(k,v);}else return e.getAttribute(k);}
+   function nattr(e,k){return Number(attr(e,k));}
+   function byid(s){return document.getElementById(s);}
+   function each(a,f){for(var i=0;i<a.length;++i)f((a instanceof Array)?a[i]:a.item(i),i);};
+   function fade(e,o){attr(e,'style',(o==undefined)?'':('fill-opacity:'+o));}
+   function sfade(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o));}
+   function mkpt(x,y){return {'x':x,'y':y};};
+   function ntfy(m, a){try{parent.onSvgNotify(m, a);}catch(e){}}
+   function pghk(){try{return parent.onSvgNotify!=null;}catch(e){return false;}}
+   function show(e,c){e.setAttribute('display',c?'inherit':'none');e.setAttribute('display',c?'inherit':'none');}
+   function tags(e,t){return e.getElementsByTagName(t);}
+   function trof(g){var a=g.hasAttribute('transform')?g.getAttribute('transform').slice(10,-1).split(' '):[0,0];return a.length==2?mkpt(Number(a[0]),Number(a[1])):mkpt(0,0);};
+   function trsl(g,x,y){g.setAttribute('transform','translate('+x+' '+y+')');};
+   function pfmt(c,a){return a.f(a.c(c,a),a);}
+   function sems(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o) + ';stroke-dasharray:0');}
+   var Format = function () {    var p,        n,        s;    function fnz(n) {        return n < 10 ? '0' + n : n;    };    function frequencyConvert(i, o, f) {        var dat = offd(Math.round(i), o);        var m = dat.getUTCMonth() + 1;        var quarter = Math.floor((m - 1) / 3) + 1;        return 'Q' + Math.round(quarter);    };    function map(a, f) {        var r = new Array(a.length),            i;        for (i = 0; i < a.length; ++i)            r[i] = f(a[i]);        return r;    };    function offd(i, o) {        var w = (i > 0 ? Math.floor(i / 5) : Math.ceil(i / 5)) * 7,            r = i % 5,            d = o.getUTCDay(),            e = d - 1,            l = 5 - d;        if (r < -e) r -= 2;        else if (r > l) r += 2;return new Date(o.valueOf()+(w+r)*86400000);};    function offd_calendarDate(i, o) {        var date = new Date(o.valueOf());        date.setDate(date.getDate() + i);        return date;    };function fdtp(u,f){ var y=u.getUTCFullYear(),m=u.getUTCMonth()+1,d=u.getUTCDate();        return map(f, function (p) {            switch (p) {                case "yyyy": return y;                case "yy": return fnz(y % 100);                case "MMMM": case "MMM": return n[p][m - 1];                case "MM": return fnz(m);                case "M": return m;                case "dddd": case "ddd": return n[p][u.getUTCDay()];                case "dd": return fnz(d);                case "d": return d;                default: return p;            }        }).join("");    };    function formatd(u, f) {        var y = u.getUTCFullYear(),            m = u.getUTCMonth() + 1,            d = u.getUTCDate();        switch (f) {            case "yyyy": return y;            case "yy": return fnz(y % 100);            case "MMMM": case "MMM": return n[f][m - 1];            case "MM": return fnz(m);            case "M": return m;            case "dddd": case "ddd": return n[f][u.getUTCDay()];            case "dd": return fnz(d);            case "d": return d;            default: return f;        }    };    function getfdate(i, o, f) {        return formatd(offd(Math.round(i), o), f);    };    function getlDate(i, o) {        var date1 = '';        if (n["dddd"]) { date1 += getfdate(i, o, "dddd") + ', '; }        if (n["MMMM"]) { date1 += getfdate(i, o, "MMMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    function getSDate(i, o) {        var date1 = '';        if (n["MMM"]) { date1 += getfdate(i, o, "MMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    return {        init: function (d, D, _n, _s) {            p = { 'd': d, 'D': D };            n = _n;            s = _s;        },date:function(i,o,f){           return fdtp(offd(Math.round(i),o),p[f||'d']);        },        calendardate: function (i, o, f) {            return fdtp(offd_calendarDate(Math.round(i), o), p[f || 'd']);        },dateOriginal: function (i, o) {            return offd(Math.round(i), o);        },        convert: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n["MMMM"]) { return getfdate(i, o, "MMMM") + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getlDate(i, o);            }        },        convertSpecial: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n[f]) { return getfdate(i, o, f) + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getSDate(i, o);            }        },        real: function (n) {            return n.toString().replace('.', s);        },        nice: function (a, b) {            var g = Math.log(Math.abs(a)),                d = Math.abs(a - b),                l = Math.ceil(g / Math.LN10),                r = Math.ceil(Math.log(d) / Math.LN10),                s = l - r + ((d < 1) ? 2 : 1),                m = Math.pow(10, s - Math.floor(g / Math.LN10) - 1);            return Math.round(a * m) / m;        }    };}();
+   var d0=[];
+   Format.init(['dd','/','MM','/','yyyy'],['dd',' ','MMMM',' ','yyyy'],{'ddd':['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],'dddd':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],'MMM':['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',''],'MMMM':['January','February','March','April','May','June','July','August','September','October','November','December','']},'.');
+   ntfy('load',{'url':document.URL,'errors':d0,'val_update':[]});
+  ]]>
+ </script>
+</svg><!-- <Chart><ImageInfo Version="1.27.0" GUID="b961b802ff2543d79f6140455ea657d0" DsId="ZKXF457" T1SubID="" Width="960" Height="720" Format="svg" ChartGroupUID="93ba1f30-792c-4d36-9cd2-87b38557525c" GroupName="05. Reserve currency" ChartName="Global foreign reserves by currency" ChartStyleName="" GroupNameEncoded="05.+Reserve+currency" ChartNameEncoded="Global+foreign+reserves+by+currency" ChartStyleNameEncoded="" ShortCode="" ChartOwner="FAADMIN" TemplateId="" TemplateName="" TemplateNameEncoded="" EditionId="" EditionGenerationDate="" RefreshDate="06/04/2026 17:44:02" ExportChartsIn="" ExportChartsTo=" " ExportChartAs=" " SpecifiedCellRow="0" SpecifiedCellCol="0" NoofColumns="1" NoofChartPerPage="1" SpaceBetweenCharts="0" Transparent="0" NoofRows="1" LeftMargin="0" RightMargin="0" TopMargin="0" FootMargin="0" Orientation="" FileNameTemplate="" ImageFileName="" ChartTitle="Global foreign reserves by currency" DoStretch="true" Pr=""/></Chart> -->

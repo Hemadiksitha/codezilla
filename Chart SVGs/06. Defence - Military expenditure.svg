@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 960 720" preserveAspectRatio="none" onload="loadCustomMenu();" onmousedown="handleMouseDownChrome(evt);">
+ <g transform="translate(0.5,0.5)">
+  <g />
+  <g class="s0">
+   <rect x="-1" y="-1" width="961" height="721" />
+  </g>
+  <g class="s1">
+   <g class="s2">
+    <text x="540" y="713">Source: LSEG Datastream / Fathom Consulting</text>
+   </g>
+  </g>
+  <g class="s3">
+   <g class="s4">
+    <text x="86" y="41">Military expenditure*</text>
+   </g>
+   <g class="s5">
+    <text x="86" y="79">USD, billions, constant 2023 prices, log scale</text>
+   </g>
+   <g class="s6">
+    <text x="86" y="88" />
+   </g>
+   <g class="s7">
+    <line x1="86" y1="567" x2="913" y2="567" />
+    <line x1="86" y1="487" x2="913" y2="487" />
+    <line x1="86" y1="441" x2="913" y2="441" />
+    <line x1="86" y1="408" x2="913" y2="408" />
+    <line x1="86" y1="382" x2="913" y2="382" />
+    <line x1="86" y1="302" x2="913" y2="302" />
+    <line x1="86" y1="222" x2="913" y2="222" />
+    <line x1="86" y1="176" x2="913" y2="176" />
+    <line x1="86" y1="143" x2="913" y2="143" />
+    <line x1="86" y1="117" x2="913" y2="117" />
+   </g>
+   <g style="clip-path:url(#c0);">
+    <g id="n0">
+     <g class="s8">
+      <polyline points="97,556 120,549 143,527 166,536 189,541 211,536 234,530 257,522 280,512 303,489 325,480 348,461 371,445 394,436 417,424 439,414 462,398 485,387 508,376 531,354 553,349 576,340 599,329 622,320 645,311 667,303 690,296 713,289 736,283 759,277 782,272 804,269 827,264 850,257 873,249" />
+     </g>
+     <g class="s9" />
+    </g>
+    <g id="n1">
+     <g class="s10">
+      <polyline points="143,467 166,483 189,489 211,537 234,544 257,534 280,594 303,581 325,547 348,538 371,526 394,521 417,516 439,501 462,489 485,480 508,469 531,463 553,461 576,453 599,437 622,431 645,423 667,414 690,406 713,431 736,435 759,430 782,427 804,425 827,395 850,372 873,335" />
+     </g>
+     <g class="s11" />
+    </g>
+    <g id="n2">
+     <g class="s12">
+      <polyline points="97,149 120,163 143,157 166,163 189,170 211,177 234,184 257,184 280,187 303,187 325,182 348,181 371,168 394,153 417,143 439,138 462,136 485,133 508,125 531,117 553,113 576,115 599,121 622,131 645,138 667,141 690,141 713,142 736,139 759,132 782,127 804,128 827,130 850,127 873,121" />
+     </g>
+     <g class="s13" />
+    </g>
+   </g>
+   <g class="s14">
+    <g class="s15">
+     <line x1="86" y1="608" x2="913" y2="608" />
+     <line x1="86" y1="608" x2="86" y2="614" />
+     <line x1="86" y1="608" x2="86" y2="614" />
+     <line x1="200" y1="608" x2="200" y2="614" />
+     <line x1="200" y1="608" x2="200" y2="614" />
+     <line x1="314" y1="608" x2="314" y2="614" />
+     <line x1="314" y1="608" x2="314" y2="614" />
+     <line x1="428" y1="608" x2="428" y2="614" />
+     <line x1="428" y1="608" x2="428" y2="614" />
+     <line x1="542" y1="608" x2="542" y2="614" />
+     <line x1="542" y1="608" x2="542" y2="614" />
+     <line x1="656" y1="608" x2="656" y2="614" />
+     <line x1="656" y1="608" x2="656" y2="614" />
+     <line x1="770" y1="608" x2="770" y2="614" />
+     <line x1="770" y1="608" x2="770" y2="614" />
+     <line x1="884" y1="608" x2="884" y2="614" />
+     <line x1="884" y1="608" x2="884" y2="614" />
+     <line x1="86" y1="608" x2="86" y2="611" />
+     <line x1="86" y1="608" x2="86" y2="611" />
+     <line x1="109" y1="608" x2="109" y2="611" />
+     <line x1="109" y1="608" x2="109" y2="611" />
+     <line x1="132" y1="608" x2="132" y2="611" />
+     <line x1="132" y1="608" x2="132" y2="611" />
+     <line x1="155" y1="608" x2="155" y2="611" />
+     <line x1="155" y1="608" x2="155" y2="611" />
+     <line x1="177" y1="608" x2="177" y2="611" />
+     <line x1="177" y1="608" x2="177" y2="611" />
+     <line x1="200" y1="608" x2="200" y2="611" />
+     <line x1="200" y1="608" x2="200" y2="611" />
+     <line x1="223" y1="608" x2="223" y2="611" />
+     <line x1="223" y1="608" x2="223" y2="611" />
+     <line x1="246" y1="608" x2="246" y2="611" />
+     <line x1="246" y1="608" x2="246" y2="611" />
+     <line x1="269" y1="608" x2="269" y2="611" />
+     <line x1="269" y1="608" x2="269" y2="611" />
+     <line x1="291" y1="608" x2="291" y2="611" />
+     <line x1="291" y1="608" x2="291" y2="611" />
+     <line x1="314" y1="608" x2="314" y2="611" />
+     <line x1="314" y1="608" x2="314" y2="611" />
+     <line x1="337" y1="608" x2="337" y2="611" />
+     <line x1="337" y1="608" x2="337" y2="611" />
+     <line x1="360" y1="608" x2="360" y2="611" />
+     <line x1="360" y1="608" x2="360" y2="611" />
+     <line x1="383" y1="608" x2="383" y2="611" />
+     <line x1="383" y1="608" x2="383" y2="611" />
+     <line x1="405" y1="608" x2="405" y2="611" />
+     <line x1="405" y1="608" x2="405" y2="611" />
+     <line x1="428" y1="608" x2="428" y2="611" />
+     <line x1="428" y1="608" x2="428" y2="611" />
+     <line x1="451" y1="608" x2="451" y2="611" />
+     <line x1="451" y1="608" x2="451" y2="611" />
+     <line x1="474" y1="608" x2="474" y2="611" />
+     <line x1="474" y1="608" x2="474" y2="611" />
+     <line x1="497" y1="608" x2="497" y2="611" />
+     <line x1="497" y1="608" x2="497" y2="611" />
+     <line x1="519" y1="608" x2="519" y2="611" />
+     <line x1="519" y1="608" x2="519" y2="611" />
+     <line x1="542" y1="608" x2="542" y2="611" />
+     <line x1="542" y1="608" x2="542" y2="611" />
+     <line x1="565" y1="608" x2="565" y2="611" />
+     <line x1="565" y1="608" x2="565" y2="611" />
+     <line x1="588" y1="608" x2="588" y2="611" />
+     <line x1="588" y1="608" x2="588" y2="611" />
+     <line x1="611" y1="608" x2="611" y2="611" />
+     <line x1="611" y1="608" x2="611" y2="611" />
+     <line x1="633" y1="608" x2="633" y2="611" />
+     <line x1="633" y1="608" x2="633" y2="611" />
+     <line x1="656" y1="608" x2="656" y2="611" />
+     <line x1="656" y1="608" x2="656" y2="611" />
+     <line x1="679" y1="608" x2="679" y2="611" />
+     <line x1="679" y1="608" x2="679" y2="611" />
+     <line x1="702" y1="608" x2="702" y2="611" />
+     <line x1="702" y1="608" x2="702" y2="611" />
+     <line x1="725" y1="608" x2="725" y2="611" />
+     <line x1="725" y1="608" x2="725" y2="611" />
+     <line x1="747" y1="608" x2="747" y2="611" />
+     <line x1="747" y1="608" x2="747" y2="611" />
+     <line x1="770" y1="608" x2="770" y2="611" />
+     <line x1="770" y1="608" x2="770" y2="611" />
+     <line x1="793" y1="608" x2="793" y2="611" />
+     <line x1="793" y1="608" x2="793" y2="611" />
+     <line x1="816" y1="608" x2="816" y2="611" />
+     <line x1="816" y1="608" x2="816" y2="611" />
+     <line x1="839" y1="608" x2="839" y2="611" />
+     <line x1="839" y1="608" x2="839" y2="611" />
+     <line x1="862" y1="608" x2="862" y2="611" />
+     <line x1="862" y1="608" x2="862" y2="611" />
+     <line x1="884" y1="608" x2="884" y2="611" />
+     <line x1="884" y1="608" x2="884" y2="611" />
+     <line x1="907" y1="608" x2="907" y2="611" />
+     <line x1="907" y1="608" x2="907" y2="611" />
+     <g class="s16">
+      <g class="s17">
+       <text x="86" y="645">1990</text>
+       <text x="200" y="645">1995</text>
+       <text x="314" y="645">2000</text>
+       <text x="428" y="645">2005</text>
+       <text x="542" y="645">2010</text>
+       <text x="656" y="645">2015</text>
+       <text x="770" y="645">2020</text>
+       <text x="884" y="645">2025</text>
+      </g>
+     </g>
+     <g class="s16">
+      <g class="s17" />
+     </g>
+    </g>
+    <g class="s18" />
+    <g class="s19">
+     <line x1="86" y1="608" x2="86" y2="96" />
+     <line x1="86" y1="567" x2="80" y2="567" />
+     <line x1="86" y1="567" x2="80" y2="567" />
+     <line x1="86" y1="487" x2="80" y2="487" />
+     <line x1="86" y1="487" x2="80" y2="487" />
+     <line x1="86" y1="441" x2="80" y2="441" />
+     <line x1="86" y1="441" x2="80" y2="441" />
+     <line x1="86" y1="408" x2="80" y2="408" />
+     <line x1="86" y1="408" x2="80" y2="408" />
+     <line x1="86" y1="382" x2="80" y2="382" />
+     <line x1="86" y1="382" x2="80" y2="382" />
+     <line x1="86" y1="302" x2="80" y2="302" />
+     <line x1="86" y1="302" x2="80" y2="302" />
+     <line x1="86" y1="222" x2="80" y2="222" />
+     <line x1="86" y1="222" x2="80" y2="222" />
+     <line x1="86" y1="176" x2="80" y2="176" />
+     <line x1="86" y1="176" x2="80" y2="176" />
+     <line x1="86" y1="143" x2="80" y2="143" />
+     <line x1="86" y1="143" x2="80" y2="143" />
+     <line x1="86" y1="117" x2="80" y2="117" />
+     <line x1="86" y1="117" x2="80" y2="117" />
+     <line x1="86" y1="608" x2="83" y2="608" />
+     <line x1="86" y1="608" x2="83" y2="608" />
+     <line x1="86" y1="593" x2="83" y2="593" />
+     <line x1="86" y1="593" x2="83" y2="593" />
+     <line x1="86" y1="579" x2="83" y2="579" />
+     <line x1="86" y1="579" x2="83" y2="579" />
+     <line x1="86" y1="546" x2="83" y2="546" />
+     <line x1="86" y1="546" x2="83" y2="546" />
+     <line x1="86" y1="528" x2="83" y2="528" />
+     <line x1="86" y1="528" x2="83" y2="528" />
+     <line x1="86" y1="513" x2="83" y2="513" />
+     <line x1="86" y1="513" x2="83" y2="513" />
+     <line x1="86" y1="499" x2="83" y2="499" />
+     <line x1="86" y1="499" x2="83" y2="499" />
+     <line x1="86" y1="476" x2="83" y2="476" />
+     <line x1="86" y1="476" x2="83" y2="476" />
+     <line x1="86" y1="466" x2="83" y2="466" />
+     <line x1="86" y1="466" x2="83" y2="466" />
+     <line x1="86" y1="457" x2="83" y2="457" />
+     <line x1="86" y1="457" x2="83" y2="457" />
+     <line x1="86" y1="449" x2="83" y2="449" />
+     <line x1="86" y1="449" x2="83" y2="449" />
+     <line x1="86" y1="433" x2="83" y2="433" />
+     <line x1="86" y1="433" x2="83" y2="433" />
+     <line x1="86" y1="426" x2="83" y2="426" />
+     <line x1="86" y1="426" x2="83" y2="426" />
+     <line x1="86" y1="420" x2="83" y2="420" />
+     <line x1="86" y1="420" x2="83" y2="420" />
+     <line x1="86" y1="413" x2="83" y2="413" />
+     <line x1="86" y1="413" x2="83" y2="413" />
+     <line x1="86" y1="402" x2="83" y2="402" />
+     <line x1="86" y1="402" x2="83" y2="402" />
+     <line x1="86" y1="397" x2="83" y2="397" />
+     <line x1="86" y1="397" x2="83" y2="397" />
+     <line x1="86" y1="391" x2="83" y2="391" />
+     <line x1="86" y1="391" x2="83" y2="391" />
+     <line x1="86" y1="387" x2="83" y2="387" />
+     <line x1="86" y1="387" x2="83" y2="387" />
+     <line x1="86" y1="361" x2="83" y2="361" />
+     <line x1="86" y1="361" x2="83" y2="361" />
+     <line x1="86" y1="343" x2="83" y2="343" />
+     <line x1="86" y1="343" x2="83" y2="343" />
+     <line x1="86" y1="328" x2="83" y2="328" />
+     <line x1="86" y1="328" x2="83" y2="328" />
+     <line x1="86" y1="314" x2="83" y2="314" />
+     <line x1="86" y1="314" x2="83" y2="314" />
+     <line x1="86" y1="281" x2="83" y2="281" />
+     <line x1="86" y1="281" x2="83" y2="281" />
+     <line x1="86" y1="263" x2="83" y2="263" />
+     <line x1="86" y1="263" x2="83" y2="263" />
+     <line x1="86" y1="248" x2="83" y2="248" />
+     <line x1="86" y1="248" x2="83" y2="248" />
+     <line x1="86" y1="234" x2="83" y2="234" />
+     <line x1="86" y1="234" x2="83" y2="234" />
+     <line x1="86" y1="211" x2="83" y2="211" />
+     <line x1="86" y1="211" x2="83" y2="211" />
+     <line x1="86" y1="201" x2="83" y2="201" />
+     <line x1="86" y1="201" x2="83" y2="201" />
+     <line x1="86" y1="192" x2="83" y2="192" />
+     <line x1="86" y1="192" x2="83" y2="192" />
+     <line x1="86" y1="184" x2="83" y2="184" />
+     <line x1="86" y1="184" x2="83" y2="184" />
+     <line x1="86" y1="168" x2="83" y2="168" />
+     <line x1="86" y1="168" x2="83" y2="168" />
+     <line x1="86" y1="161" x2="83" y2="161" />
+     <line x1="86" y1="161" x2="83" y2="161" />
+     <line x1="86" y1="155" x2="83" y2="155" />
+     <line x1="86" y1="155" x2="83" y2="155" />
+     <line x1="86" y1="149" x2="83" y2="149" />
+     <line x1="86" y1="149" x2="83" y2="149" />
+     <line x1="86" y1="137" x2="83" y2="137" />
+     <line x1="86" y1="137" x2="83" y2="137" />
+     <line x1="86" y1="132" x2="83" y2="132" />
+     <line x1="86" y1="132" x2="83" y2="132" />
+     <line x1="86" y1="127" x2="83" y2="127" />
+     <line x1="86" y1="127" x2="83" y2="127" />
+     <line x1="86" y1="122" x2="83" y2="122" />
+     <line x1="86" y1="122" x2="83" y2="122" />
+     <line x1="86" y1="96" x2="83" y2="96" />
+     <line x1="86" y1="96" x2="83" y2="96" />
+     <g class="s20">
+      <g class="s21">
+       <text x="70" y="577" transform="rotate(360 70,567)">20</text>
+       <text x="70" y="497" transform="rotate(360 70,487)">40</text>
+       <text x="70" y="451" transform="rotate(360 70,441)">60</text>
+       <text x="70" y="418" transform="rotate(360 70,408)">80</text>
+       <text x="70" y="392" transform="rotate(360 70,382)">100</text>
+       <text x="70" y="312" transform="rotate(360 70,302)">200</text>
+       <text x="70" y="232" transform="rotate(360 70,222)">400</text>
+       <text x="70" y="186" transform="rotate(360 70,176)">600</text>
+       <text x="70" y="153" transform="rotate(360 70,143)">800</text>
+       <text x="70" y="127" transform="rotate(360 70,117)">1000</text>
+      </g>
+     </g>
+     <g class="s20">
+      <g class="s21" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g class="s22">
+   <g onclick="ntfy('click', {'id':'c0p0b'});" onmousemove="if(pghk()) sfade(evt.target,0.6);" onmouseout="if(pghk()) sfade(evt.target);" onmousedown="if(pghk()){if(evt.button == 2){ sfade(evt.target) }}">
+    <rect x="86" y="608" width="827" height="49" />
+   </g>
+  </g>
+  <g class="s23">
+   <g class="s24">
+    <rect x="89" y="660" width="466" height="33" />
+   </g>
+   <g class="s8">
+    <polyline points="94,674 148,674" />
+   </g>
+   <g class="s9" />
+   <g class="s25">
+    <text x="157" y="684">China</text>
+   </g>
+   <g class="s10">
+    <polyline points="254,674 308,674" />
+   </g>
+   <g class="s11" />
+   <g class="s26">
+    <text x="317" y="684">Russia</text>
+   </g>
+   <g class="s12">
+    <polyline points="424,674 478,674" />
+   </g>
+   <g class="s13" />
+   <g class="s27">
+    <text x="487" y="684">US</text>
+   </g>
+  </g>
+  <g class="s28">
+   <g>
+    <rect x="1" y="688" width="253" height="29" />
+    <g class="s16">
+     <text x="128" y="710">*Top 3 countries as of 2024</text>
+    </g>
+    <g class="s29" />
+   </g>
+  </g>
+  <g />
+ </g>
+ <defs>
+  <clipPath id="c0">
+   <rect x="86" y="96" width="827" height="512" />
+  </clipPath>
+  <menu id="CustomMenu" xmlns="ns_custommenu">
+   <item action="CopySVG">&amp;Copy SVG</item>
+   <item action="SaveAs">&amp;Save SVG As...</item>
+   <item action="ViewSource">View Sourc&amp;e...</item>
+   <item action="About">About SVG Viewer...</item>
+  </menu>
+ </defs>
+ <style type="text/css">
+  <![CDATA[
+   svg { font-family:Tahoma; stroke:black; shape-rendering:auto; width:100%; height:100%;}
+   line, polyline { fill:none; stroke-linejoin:round; }
+   text { stroke:none; fill:black; fill-opacity:1; text-rendering:geometricPrecision; pointer-events:none; }
+   .selectedEvent { stroke-opacity: 0.6; stroke-dasharray: 0; }
+   .s0 { stroke:none; fill:#171717; }
+   .s1 { font-family:"Arial"; font-size:19px; font-weight:normal; font-style:italic; } .s1 text { fill:#C0C0C0; text-decoration:none; white-space:pre; }
+   .s2 { text-anchor:start; }
+   .s3 { stroke:#FFFFFF; stroke-width:1; font-family:"Arial"; font-size:21px; font-weight:normal; font-style:normal; } .s3 text { fill:#FFFFFF; text-decoration:none; }
+   .s4 { text-anchor:start; font-family:"Arial"; font-size:37px; font-weight:bold; font-style:normal; } .s4 text { fill:#FFFFFF; text-decoration:none; }
+   .s5 { text-anchor:start; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s5 text { fill:#FFFFFF; text-decoration:none; }
+   .s6 { text-anchor:middle; font-family:"Arial"; font-size:19px; font-weight:normal; font-style:normal; } .s6 text { fill:#FFFFFF; text-decoration:none; }
+   .s7 { stroke:#36494F; stroke-opacity:0.50; stroke-width:1; stroke-dasharray:1,2; }
+   .s8 { stroke:#FF9900; stroke-width:4; stroke-dasharray:none; }
+   .s9 { stroke:#000080; stroke-width:2; stroke-dasharray:none; fill:#000080; }
+   .s10 { stroke:#00CCFF; stroke-width:4; stroke-dasharray:none; }
+   .s11 { stroke:#FF0000; stroke-width:2; stroke-dasharray:none; fill:#FF0000; }
+   .s12 { stroke:#008000; stroke-width:4; stroke-dasharray:none; }
+   .s13 { stroke:#0000FF; stroke-width:2; stroke-dasharray:none; fill:#0000FF; }
+   .s14 { stroke:#FFFFFF; font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s14 text { fill:#FFFFFF; text-decoration:none; }
+   .s15 { stroke-width:1; stroke-dasharray:none; }
+   .s16 { text-anchor:middle; }
+   .s17 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s17 text { fill:#FFFFFF; text-decoration:none; }
+   .s18 { stroke-width:1; stroke-dasharray:none; }
+   .s19 { stroke-width:1; stroke-dasharray:none; }
+   .s20 { text-anchor:end; }
+   .s21 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s21 text { fill:#FFFFFF; text-decoration:none; }
+   .s22 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; }
+   .s23 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s23 text { fill:#FFFFFF; text-decoration:none; }
+   .s24 { stroke:none; stroke-width:1; fill:none; }
+   .s25 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s25 text { fill:#FFFFFF; text-decoration:none; }
+   .s26 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s26 text { fill:#FFFFFF; text-decoration:none; }
+   .s27 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s27 text { fill:#FFFFFF; text-decoration:none; }
+   .s28 { stroke:#FFFFFF; stroke-width:0; text-anchor:middle; font-family:"Arial"; font-size:19px; font-weight:normal; font-style:normal; fill:#171717; } .s28 text { fill:#FFFFFF; text-decoration:none; }
+   .s29 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; cursor:pointer; }
+  ]]>
+ </style>
+ <script type="text/ecmascript">
+  <![CDATA[
+   function loadCustomMenu(){ var menuDef = document.getElementById("CustomMenu"); if(parent && parent.chartLoaded) { parent.chartLoaded(); } if (menuDef && typeof parseXML === "function"){var newMenuRoot = parseXML(printNode(menuDef), contextMenu);contextMenu.replaceChild(newMenuRoot, contextMenu.firstChild);}}
+   function handleMouseDownChrome(evt){ if(evt.which && evt.which != 3){ if(evt.preventDefault) { evt.preventDefault()} else {evt.returnValue = false} }}
+   function toxy(e){return {x:e.clientX*(960/innerWidth),y:e.clientY*(720/innerHeight)};}
+   function getd(){return  {'w':innerWidth,'h':innerHeight};};
+   function lmtp(p,xl,yb,xr,yt){return {x:Math.max(Math.min(p.x,960-xr),xl),y:Math.max(Math.min(p.y,720-yt),yb)};}
+   function clmp(n,l,h){return Math.max(Math.min(n,h),l);};
+   function attr(e,k,v){if(v!=undefined){e.setAttribute(k,v);}else return e.getAttribute(k);}
+   function nattr(e,k){return Number(attr(e,k));}
+   function byid(s){return document.getElementById(s);}
+   function each(a,f){for(var i=0;i<a.length;++i)f((a instanceof Array)?a[i]:a.item(i),i);};
+   function fade(e,o){attr(e,'style',(o==undefined)?'':('fill-opacity:'+o));}
+   function sfade(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o));}
+   function mkpt(x,y){return {'x':x,'y':y};};
+   function ntfy(m, a){try{parent.onSvgNotify(m, a);}catch(e){}}
+   function pghk(){try{return parent.onSvgNotify!=null;}catch(e){return false;}}
+   function show(e,c){e.setAttribute('display',c?'inherit':'none');e.setAttribute('display',c?'inherit':'none');}
+   function tags(e,t){return e.getElementsByTagName(t);}
+   function trof(g){var a=g.hasAttribute('transform')?g.getAttribute('transform').slice(10,-1).split(' '):[0,0];return a.length==2?mkpt(Number(a[0]),Number(a[1])):mkpt(0,0);};
+   function trsl(g,x,y){g.setAttribute('transform','translate('+x+' '+y+')');};
+   function pfmt(c,a){return a.f(a.c(c,a),a);}
+   function sems(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o) + ';stroke-dasharray:0');}
+   var Format = function () {    var p,        n,        s;    function fnz(n) {        return n < 10 ? '0' + n : n;    };    function frequencyConvert(i, o, f) {        var dat = offd(Math.round(i), o);        var m = dat.getUTCMonth() + 1;        var quarter = Math.floor((m - 1) / 3) + 1;        return 'Q' + Math.round(quarter);    };    function map(a, f) {        var r = new Array(a.length),            i;        for (i = 0; i < a.length; ++i)            r[i] = f(a[i]);        return r;    };    function offd(i, o) {        var w = (i > 0 ? Math.floor(i / 5) : Math.ceil(i / 5)) * 7,            r = i % 5,            d = o.getUTCDay(),            e = d - 1,            l = 5 - d;        if (r < -e) r -= 2;        else if (r > l) r += 2;return new Date(o.valueOf()+(w+r)*86400000);};    function offd_calendarDate(i, o) {        var date = new Date(o.valueOf());        date.setDate(date.getDate() + i);        return date;    };function fdtp(u,f){ var y=u.getUTCFullYear(),m=u.getUTCMonth()+1,d=u.getUTCDate();        return map(f, function (p) {            switch (p) {                case "yyyy": return y;                case "yy": return fnz(y % 100);                case "MMMM": case "MMM": return n[p][m - 1];                case "MM": return fnz(m);                case "M": return m;                case "dddd": case "ddd": return n[p][u.getUTCDay()];                case "dd": return fnz(d);                case "d": return d;                default: return p;            }        }).join("");    };    function formatd(u, f) {        var y = u.getUTCFullYear(),            m = u.getUTCMonth() + 1,            d = u.getUTCDate();        switch (f) {            case "yyyy": return y;            case "yy": return fnz(y % 100);            case "MMMM": case "MMM": return n[f][m - 1];            case "MM": return fnz(m);            case "M": return m;            case "dddd": case "ddd": return n[f][u.getUTCDay()];            case "dd": return fnz(d);            case "d": return d;            default: return f;        }    };    function getfdate(i, o, f) {        return formatd(offd(Math.round(i), o), f);    };    function getlDate(i, o) {        var date1 = '';        if (n["dddd"]) { date1 += getfdate(i, o, "dddd") + ', '; }        if (n["MMMM"]) { date1 += getfdate(i, o, "MMMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    function getSDate(i, o) {        var date1 = '';        if (n["MMM"]) { date1 += getfdate(i, o, "MMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    return {        init: function (d, D, _n, _s) {            p = { 'd': d, 'D': D };            n = _n;            s = _s;        },date:function(i,o,f){           return fdtp(offd(Math.round(i),o),p[f||'d']);        },        calendardate: function (i, o, f) {            return fdtp(offd_calendarDate(Math.round(i), o), p[f || 'd']);        },dateOriginal: function (i, o) {            return offd(Math.round(i), o);        },        convert: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n["MMMM"]) { return getfdate(i, o, "MMMM") + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getlDate(i, o);            }        },        convertSpecial: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n[f]) { return getfdate(i, o, f) + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getSDate(i, o);            }        },        real: function (n) {            return n.toString().replace('.', s);        },        nice: function (a, b) {            var g = Math.log(Math.abs(a)),                d = Math.abs(a - b),                l = Math.ceil(g / Math.LN10),                r = Math.ceil(Math.log(d) / Math.LN10),                s = l - r + ((d < 1) ? 2 : 1),                m = Math.pow(10, s - Math.floor(g / Math.LN10) - 1);            return Math.round(a * m) / m;        }    };}();
+   var d0=[];
+   Format.init(['dd','/','MM','/','yyyy'],['dd',' ','MMMM',' ','yyyy'],{'ddd':['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],'dddd':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],'MMM':['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',''],'MMMM':['January','February','March','April','May','June','July','August','September','October','November','December','']},'.');
+   ntfy('load',{'url':document.URL,'errors':d0,'val_update':[]});
+  ]]>
+ </script>
+</svg><!-- <Chart><ImageInfo Version="1.27.0" GUID="0b1ffd9480134770a6bf49f6138c08f6" DsId="ZKXF457" T1SubID="" Width="960" Height="720" Format="svg" ChartGroupUID="5721df33-1010-4881-8935-94f4172f6612" GroupName="04. Defence" ChartName="Military expenditure*" ChartStyleName="" GroupNameEncoded="04.+Defence" ChartNameEncoded="Military+expenditure*" ChartStyleNameEncoded="" ShortCode="" ChartOwner="FAADMIN" TemplateId="" TemplateName="" TemplateNameEncoded="" EditionId="" EditionGenerationDate="" RefreshDate="06/04/2026 17:43:18" ExportChartsIn="" ExportChartsTo=" " ExportChartAs=" " SpecifiedCellRow="0" SpecifiedCellCol="0" NoofColumns="1" NoofChartPerPage="1" SpaceBetweenCharts="0" Transparent="0" NoofRows="1" LeftMargin="0" RightMargin="0" TopMargin="0" FootMargin="0" Orientation="" FileNameTemplate="" ImageFileName="" ChartTitle="Military expenditure*" DoStretch="true" Pr=""/></Chart> -->

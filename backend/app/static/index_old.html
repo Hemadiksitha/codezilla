@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOVA-C | Narrative Output from Visual Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        body { background: #0a0a0a; color: #e5e5e5; }
+        .glass { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); backdrop-filter: blur(10px); }
+        .glow { box-shadow: 0 0 20px rgba(59,130,246,0.15); }
+        .card-hover:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-2px); transition: all 0.3s; }
+        .pulse-dot { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%,100% { opacity:1; } 50% { opacity:0.5; } }
+        .fade-in { animation: fadeIn 0.5s ease-in; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .confidence-ring { border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #1a1a1a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        .trend-rising { color: #22c55e; }
+        .trend-falling { color: #ef4444; }
+        .trend-flat { color: #f59e0b; }
+        .trend-spike { color: #06b6d4; }
+        .trend-dip { color: #f97316; }
+        .badge { display: inline-flex; align-items: center; padding: 2px 8px; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; }
+        textarea:focus { outline: none; border-color: rgba(59,130,246,0.5); }
+        .tab-active { border-bottom: 2px solid #3b82f6; color: #3b82f6; }
+        .series-card { border-left: 3px solid; }
+        .badge-trend { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; letter-spacing: 0.03em; }
+        .badge-rising { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-falling { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-sideways, .badge-flat { background: rgba(234,179,8,0.15); color: #eab308; }
+        .badge-r2 { background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.12); }
+        .badge-accel { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-decel { background: rgba(6,182,212,0.15); color: #06b6d4; }
+        .badge-consistent { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-vol { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; }
+        .badge-vol-low { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .badge-vol-moderate { background: rgba(234,179,8,0.15); color: #eab308; }
+        .badge-vol-high { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-momentum { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 700; }
+        .badge-momentum-reversing { background: rgba(239,68,68,0.15); color: #ef4444; }
+        .badge-momentum-decelerating { background: rgba(6,182,212,0.15); color: #06b6d4; }
+        .badge-momentum-accelerating { background: rgba(234,179,8,0.15); color: #eab308; }
+        .badge-momentum-steady { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .corr-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        .corr-row:last-child { border-bottom: none; }
+        .sparkline-svg { display: inline-block; vertical-align: middle; margin-left: 6px; }
+    </style>
+</head>
+<body class="min-h-screen">
+
+<!-- Header -->
+<header class="border-b border-white/10 px-6 py-3 flex items-center justify-between sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur">
+    <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-sm">N</div>
+        <h1 class="text-lg font-semibold">NOVA-C</h1>
+        <span class="text-xs text-gray-500 hidden sm:inline">Narrative Output from Visual Analytics — Charts</span>
+    </div>
+    <div class="flex items-center gap-3">
+        <span id="chartCount" class="text-xs text-gray-500">0 charts</span>
+        <button onclick="loadDemo()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-medium rounded-lg transition">
+            ⚡ Demo Mode
+        </button>
+    </div>
+</header>
+
+<div class="flex h-[calc(100vh-49px)]">
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="w-64 border-r border-white/10 overflow-y-auto flex-shrink-0">
+        <div class="p-4">
+            <!-- Upload Zone -->
+            <div id="dropzone" class="border-2 border-dashed border-white/20 rounded-xl p-4 text-center hover:border-blue-500/50 transition cursor-pointer mb-4"
+                 ondrop="handleDrop(event)" ondragover="event.preventDefault(); this.classList.add('border-blue-500')" ondragleave="this.classList.remove('border-blue-500')">
+                <input type="file" id="fileInput" accept=".svg" multiple class="hidden" onchange="handleFiles(this.files)">
+                <div onclick="document.getElementById('fileInput').click()">
+                    <svg class="w-8 h-8 mx-auto mb-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+                    </svg>
+                    <p class="text-xs text-gray-400">Drop SVG charts here</p>
+                    <p class="text-[10px] text-gray-600 mt-1">or click to browse</p>
+                </div>
+            </div>
+
+            <!-- Chart List -->
+            <div id="chartList" class="space-y-2"></div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main id="mainContent" class="flex-1 overflow-y-auto">
+        <!-- Welcome State -->
+        <div id="welcome" class="flex items-center justify-center h-full">
+            <div class="text-center max-w-md">
+                <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-semibold mb-2">Welcome to NOVA-C</h2>
+                <p class="text-sm text-gray-400 mb-6">Upload SVG financial charts to automatically extract trends, detect anomalies, and generate analyst-style commentary.</p>
+                <button onclick="loadDemo()" class="px-6 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-sm font-medium rounded-xl transition shadow-lg shadow-blue-500/20">
+                    ⚡ Load 7 Demo Charts
+                </button>
+            </div>
+        </div>
+
+        <!-- Chart Analysis View -->
+        <div id="analysisView" class="hidden p-6 space-y-6 fade-in">
+            <!-- Chart Header -->
+            <div class="flex items-start justify-between">
+                <div>
+                    <h2 id="chartTitle" class="text-2xl font-bold gradient-text"></h2>
+                    <p id="chartSubtitle" class="text-sm text-gray-400 mt-1"></p>
+                    <div class="flex items-center gap-3 mt-2">
+                        <span id="chartType" class="badge bg-blue-500/20 text-blue-400"></span>
+                        <span id="chartRefresh" class="text-xs text-gray-500"></span>
+                    </div>
+                </div>
+                <div id="confidenceDisplay" class="text-center">
+                    <div class="confidence-ring w-14 h-14 border-4 border-green-500">
+                        <span id="confidenceVal" class="text-sm font-bold text-green-400"></span>
+                    </div>
+                    <p class="text-[10px] text-gray-500 mt-1">Confidence</p>
+                </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="flex gap-6 border-b border-white/10 text-sm">
+                <button onclick="switchTab('chart')" class="pb-2 tab-active" data-tab="chart">📊 Chart</button>
+                <button onclick="switchTab('series')" class="pb-2 text-gray-500 hover:text-gray-300" data-tab="series">SERIES</button>
+                <button onclick="switchTab('multiseries')" class="pb-2 text-gray-500 hover:text-gray-300" data-tab="multiseries">MULTI-SERIES</button>
+                <button onclick="switchTab('narrative')" class="pb-2 text-gray-500 hover:text-gray-300" data-tab="narrative">📝 Narrative</button>
+                <button onclick="switchTab('raw')" class="pb-2 text-gray-500 hover:text-gray-300" data-tab="raw">{ } JSON</button>
+            </div>
+
+            <!-- Tab Content: Chart -->
+            <div id="tab-chart" class="tab-content">
+                <div class="glass rounded-xl p-4">
+                    <canvas id="mainChart" height="350"></canvas>
+                </div>
+            </div>
+
+            <!-- Tab Content: Series Analysis -->
+            <div id="tab-series" class="tab-content hidden">
+                <div id="seriesCards" class="space-y-4"></div>
+            </div>
+
+            <!-- Tab Content: Multi-Series Correlations -->
+            <div id="tab-multiseries" class="tab-content hidden">
+                <div class="glass rounded-xl p-5">
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-gray-400 mb-4">Pairwise Correlations</h3>
+                    <div id="pairwiseTable" class="space-y-1"></div>
+                    <div id="noCorrelations" class="hidden text-xs text-gray-500 py-4 text-center">Not enough series for correlations</div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Narrative -->
+            <div id="tab-narrative" class="tab-content hidden">
+                <!-- Action Bar -->
+                <div class="flex items-center justify-center gap-3 mb-5">
+                    <div class="relative">
+                        <button onclick="toggleRegenMenu()" class="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition flex items-center gap-2">
+                            Regenerate <span class="text-[10px]">▾</span>
+                        </button>
+                        <div id="regenMenu" class="hidden absolute top-full mt-1 left-0 w-40 bg-[#1a1a2e] border border-white/10 rounded-lg shadow-xl z-20 overflow-hidden">
+                            <button onclick="regenerateWithTone('neutral')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Neutral</button>
+                            <button onclick="regenerateWithTone('bullish')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Bullish</button>
+                            <button onclick="regenerateWithTone('bearish')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Bearish</button>
+                            <button onclick="regenerateWithTone('cautious')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Cautious</button>
+                        </div>
+                    </div>
+                    <button onclick="copyNarrative()" class="px-5 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-sm font-medium rounded-lg transition">
+                        Copy
+                    </button>
+                    <div class="relative">
+                        <button onclick="toggleExportMenu()" class="px-5 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-sm font-medium rounded-lg transition flex items-center gap-2">
+                            Export <span class="text-[10px]">▾</span>
+                        </button>
+                        <div id="exportMenu" class="hidden absolute top-full mt-1 right-0 w-40 bg-[#1a1a2e] border border-white/10 rounded-lg shadow-xl z-20 overflow-hidden">
+                            <button onclick="exportAs('json')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Export JSON</button>
+                            <button onclick="exportAs('csv')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Export CSV</button>
+                            <button onclick="exportAs('txt')" class="w-full text-left px-4 py-2 text-xs hover:bg-white/10 transition">Export TXT</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative Text -->
+                <div class="glass rounded-xl p-6">
+                    <div id="narrativeText" class="text-sm text-gray-300 leading-relaxed whitespace-pre-wrap"></div>
+                </div>
+            </div>
+
+            <!-- Tab Content: Raw JSON -->
+            <div id="tab-raw" class="tab-content hidden">
+                <div class="glass rounded-xl p-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-xs text-gray-500">Structured Insight JSON</span>
+                        <button onclick="copyJSON()" class="text-xs text-blue-400 hover:text-blue-300">📋 Copy</button>
+                    </div>
+                    <pre id="rawJSON" class="text-xs text-gray-300 overflow-auto max-h-[500px] whitespace-pre-wrap"></pre>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Loading Overlay -->
+<div id="loading" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+    <div class="text-center">
+        <div class="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-3"></div>
+        <p id="loadingText" class="text-sm text-gray-300">Processing charts...</p>
+    </div>
+</div>
+
+<script>
+// ─── State ───────────────────────────────────────────────────────────────────
+const API = '';
+let charts = {};
+let activeChartId = null;
+let chartInstance = null;
+
+// ─── API Helpers ─────────────────────────────────────────────────────────────
+async function apiGet(path) {
+    const r = await fetch(API + path);
+    if (!r.ok) throw new Error(`API ${r.status}`);
+    return r.json();
+}
+
+async function apiPost(path, body) {
+    const r = await fetch(API + path, {
+        method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify(body)
+    });
+    if (!r.ok) throw new Error(`API ${r.status}`);
+    return r.json();
+}
+
+// ─── Analytics Helpers ───────────────────────────────────────────────────────
+
+function linearRegression(values) {
+    const n = values.length;
+    if (n < 2) return { slope: 0, r2: 0, intercept: 0 };
+    let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+    for (let i = 0; i < n; i++) {
+        sumX += i; sumY += values[i];
+        sumXY += i * values[i]; sumX2 += i * i; sumY2 += values[i] * values[i];
+    }
+    const denom = n * sumX2 - sumX * sumX;
+    if (denom === 0) return { slope: 0, r2: 0, intercept: 0 };
+    const slope = (n * sumXY - sumX * sumY) / denom;
+    const intercept = (sumY - slope * sumX) / n;
+    const ssRes = values.reduce((s, y, i) => s + (y - (intercept + slope * i)) ** 2, 0);
+    const mean = sumY / n;
+    const ssTot = values.reduce((s, y) => s + (y - mean) ** 2, 0);
+    const r2 = ssTot === 0 ? 0 : 1 - ssRes / ssTot;
+    return { slope, r2: Math.max(0, r2), intercept };
+}
+
+function findPeaksAndTroughs(values, labels, order = 3) {
+    const peaks = [], troughs = [];
+    for (let i = order; i < values.length - order; i++) {
+        let isPeak = true, isTrough = true;
+        for (let j = 1; j <= order; j++) {
+            if (values[i] <= values[i - j] || values[i] <= values[i + j]) isPeak = false;
+            if (values[i] >= values[i - j] || values[i] >= values[i + j]) isTrough = false;
+        }
+        if (isPeak) peaks.push({ label: labels[i], value: values[i] });
+        if (isTrough) troughs.push({ label: labels[i], value: values[i] });
+    }
+    // Sort peaks descending, troughs ascending
+    peaks.sort((a, b) => b.value - a.value);
+    troughs.sort((a, b) => a.value - b.value);
+    return { peaks: peaks.slice(0, 5), troughs: troughs.slice(0, 5) };
+}
+
+function classifyVolatility(values) {
+    const mean = values.reduce((a, b) => a + b, 0) / values.length;
+    if (mean === 0) return 'LOW';
+    const variance = values.reduce((s, v) => s + (v - mean) ** 2, 0) / values.length;
+    const cv = Math.sqrt(variance) / Math.abs(mean) * 100;
+    if (cv < 10) return 'LOW';
+    if (cv < 25) return 'MODERATE';
+    return 'HIGH';
+}
+
+function classifyMomentum(values) {
+    if (values.length < 6) return 'STEADY';
+    const mid = Math.floor(values.length / 2);
+    const first = values.slice(0, mid);
+    const second = values.slice(mid);
+    const reg1 = linearRegression(first);
+    const reg2 = linearRegression(second);
+    const slopeChange = reg2.slope - reg1.slope;
+    const range = Math.max(...values) - Math.min(...values);
+    const threshold = range * 0.01;
+    // Check if direction reversed
+    if ((reg1.slope > threshold && reg2.slope < -threshold) || (reg1.slope < -threshold && reg2.slope > threshold))
+        return 'REVERSING';
+    if (Math.abs(reg2.slope) > Math.abs(reg1.slope) * 1.3) return 'ACCELERATING';
+    if (Math.abs(reg2.slope) < Math.abs(reg1.slope) * 0.7) return 'DECELERATING';
+    return 'STEADY';
+}
+
+function getRecentTrend(values, labels) {
+    const recentCount = Math.max(5, Math.floor(values.length * 0.2));
+    const recentVals = values.slice(-recentCount);
+    const recentLabels = labels.slice(-recentCount);
+    const reg = linearRegression(recentVals);
+    const range = Math.max(...recentVals) - Math.min(...recentVals);
+    const threshold = range * 0.02;
+    let direction;
+    if (Math.abs(reg.slope) < threshold) direction = 'SIDEWAYS';
+    else if (reg.slope > 0) direction = 'RISING';
+    else direction = 'FALLING';
+    // Acceleration
+    const fullReg = linearRegression(values);
+    let accel;
+    if (Math.abs(reg.slope) > Math.abs(fullReg.slope) * 1.3) accel = 'ACCELERATING';
+    else if (Math.abs(reg.slope) < Math.abs(fullReg.slope) * 0.7) accel = 'DECELERATING';
+    else accel = 'CONSISTENT';
+    return { direction, accel, startLabel: recentLabels[0], endLabel: recentLabels[recentLabels.length - 1] };
+}
+
+function getOverallTrend(values) {
+    const reg = linearRegression(values);
+    const range = Math.max(...values) - Math.min(...values);
+    const threshold = range * 0.02;
+    if (Math.abs(reg.slope) < threshold) return 'SIDEWAYS';
+    return reg.slope > 0 ? 'RISING' : 'FALLING';
+}
+
+function r2Label(r2) {
+    if (r2 >= 0.7) return 'HIGH';
+    if (r2 >= 0.3) return 'MODERATE';
+    return 'LOW';
+}
+
+function generateSparklineSVG(values, color, width = 60, height = 18) {
+    if (values.length < 2) return '';
+    const min = Math.min(...values), max = Math.max(...values);
+    const range = max - min || 1;
+    const step = width / (values.length - 1);
+    const points = values.map((v, i) => `${(i * step).toFixed(1)},${(height - ((v - min) / range) * height).toFixed(1)}`).join(' ');
+    return `<svg class="sparkline-svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><polyline fill="none" stroke="${color || '#6b7280'}" stroke-width="1.5" points="${points}"/></svg>`;
+}
+
+function computeSeriesAnalytics(series) {
+    const values = series.data_points.map(p => p.value);
+    const labels = series.data_points.map(p => p.x_label);
+    if (values.length < 3) return null;
+    const reg = linearRegression(values);
+    const { peaks, troughs } = findPeaksAndTroughs(values, labels);
+    const volatility = classifyVolatility(values);
+    const momentum = classifyMomentum(values);
+    const recent = getRecentTrend(values, labels);
+    const overall = getOverallTrend(values);
+    // Estimate slope per year (assume ~equal spacing)
+    const yearsSpan = parseFloat(labels[labels.length - 1]) - parseFloat(labels[0]);
+    const slopePerYear = yearsSpan > 0 ? (reg.slope * values.length / yearsSpan) : reg.slope;
+    return {
+        overallTrend: overall,
+        r2: reg.r2,
+        r2Label: r2Label(reg.r2),
+        slope: reg.slope,
+        slopePerYear: slopePerYear,
+        volatility,
+        momentum,
+        recent,
+        peaks,
+        troughs,
+        latestValue: values[values.length - 1],
+        range: { min: Math.min(...values), max: Math.max(...values) },
+        sparkline: generateSparklineSVG(values, series.color),
+    };
+}
+
+// ─── Series Card Rendering ───────────────────────────────────────────────────
+
+function renderSeriesCards(insight) {
+    const container = document.getElementById('seriesCards');
+    container.innerHTML = insight.series.map(s => {
+        const a = computeSeriesAnalytics(s);
+        if (!a) return '';
+        const color = s.color || '#3b82f6';
+        const trendIcon = a.overallTrend === 'RISING' ? '↑' : a.overallTrend === 'FALLING' ? '↓' : '→';
+        const trendClass = a.overallTrend === 'RISING' ? 'badge-rising' : a.overallTrend === 'FALLING' ? 'badge-falling' : 'badge-sideways';
+        const recentIcon = a.recent.direction === 'RISING' ? '↑' : a.recent.direction === 'FALLING' ? '↓' : '→';
+        const recentClass = a.recent.direction === 'RISING' ? 'badge-rising' : a.recent.direction === 'FALLING' ? 'badge-falling' : 'badge-sideways';
+        const accelClass = a.recent.accel === 'ACCELERATING' ? 'badge-accel' : a.recent.accel === 'DECELERATING' ? 'badge-decel' : 'badge-consistent';
+        const volClass = a.volatility === 'LOW' ? 'badge-vol-low' : a.volatility === 'MODERATE' ? 'badge-vol-moderate' : 'badge-vol-high';
+        const momClass = `badge-momentum-${a.momentum.toLowerCase()}`;
+        return `
+        <div class="series-card glass rounded-xl p-5 fade-in" style="border-left-color: ${color}">
+            <!-- Header -->
+            <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full flex-shrink-0" style="background:${color}"></span>
+                    <span class="text-lg font-bold">${s.name}</span>
+                    ${a.sparkline}
+                </div>
+                <span class="text-2xl font-bold tabular-nums">${a.latestValue.toFixed(2)}</span>
+            </div>
+
+            <!-- Overall Trend Row -->
+            <div class="flex items-center gap-2 flex-wrap mb-2">
+                <span class="badge-trend ${trendClass}">${trendIcon} ${a.overallTrend}</span>
+                <span class="badge-trend badge-r2">${a.r2Label} (R² ${a.r2.toFixed(2)})</span>
+                <span class="text-xs text-gray-400">slope ${a.slopePerYear >= 0 ? '+' : ''}${a.slopePerYear.toFixed(3)}/yr</span>
+            </div>
+
+            <!-- Recent Trend Row -->
+            <div class="flex items-center gap-2 flex-wrap mb-4">
+                <span class="text-[10px] uppercase tracking-wider text-gray-500 font-semibold">Recent</span>
+                <span class="badge-trend ${recentClass}">${recentIcon} ${a.recent.direction}</span>
+                <span class="badge-trend ${accelClass}">${a.recent.accel}</span>
+                <span class="text-xs text-gray-500">${a.recent.startLabel}-${a.recent.endLabel}</span>
+            </div>
+
+            <!-- Range / Volatility / Momentum -->
+            <div class="grid grid-cols-3 gap-4 mb-4 text-xs">
+                <div>
+                    <div class="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Range</div>
+                    <div class="font-semibold">${a.range.min.toFixed(1)} – ${a.range.max.toFixed(1)}</div>
+                </div>
+                <div>
+                    <div class="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Volatility</div>
+                    <span class="badge-vol ${volClass}">${a.volatility}</span>
+                </div>
+                <div>
+                    <div class="text-[10px] uppercase tracking-wider text-gray-500 mb-1">Momentum</div>
+                    <span class="badge-momentum ${momClass}">${a.momentum}</span>
+                </div>
+            </div>
+
+            <!-- Peaks & Troughs -->
+            <div class="grid grid-cols-2 gap-4 text-xs">
+                <div>
+                    <div class="text-green-400 font-semibold mb-1">▲ PEAKS (${a.peaks.length})</div>
+                    ${a.peaks.map(p => `<div class="text-gray-300"><span class="text-gray-500">${p.label}:</span> <span class="font-semibold">${p.value.toFixed(2)}</span></div>`).join('')}
+                    ${a.peaks.length === 0 ? '<div class="text-gray-600">None detected</div>' : ''}
+                </div>
+                <div>
+                    <div class="text-red-400 font-semibold mb-1">▼ TROUGHS (${a.troughs.length})</div>
+                    ${a.troughs.map(t => `<div class="text-gray-300"><span class="text-gray-500">${t.label}:</span> <span class="font-semibold">${t.value.toFixed(2)}</span></div>`).join('')}
+                    ${a.troughs.length === 0 ? '<div class="text-gray-600">None detected</div>' : ''}
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+// ─── Multi-Series Correlations Rendering ─────────────────────────────────────
+
+function renderPairwiseCorrelations(insight) {
+    const table = document.getElementById('pairwiseTable');
+    const noData = document.getElementById('noCorrelations');
+    const corrs = insight.correlations || [];
+    if (corrs.length === 0) {
+        table.innerHTML = '';
+        noData.classList.remove('hidden');
+        return;
+    }
+    noData.classList.add('hidden');
+    table.innerHTML = corrs.map(c => {
+        const val = c.pearson_r;
+        const absVal = Math.abs(val);
+        let color;
+        if (absVal > 0.5 && val < 0) color = 'text-orange-400';
+        else if (absVal > 0.3 && val < 0) color = 'text-red-400';
+        else if (absVal > 0.5 && val > 0) color = 'text-cyan-400';
+        else color = 'text-gray-400';
+        return `
+        <div class="corr-row">
+            <span class="text-sm text-gray-300">${c.series_a} × ${c.series_b}</span>
+            <span class="text-sm font-bold tabular-nums ${color}">${val.toFixed(3)}</span>
+        </div>`;
+    }).join('');
+}
+
+// ─── Demo Mode ───────────────────────────────────────────────────────────────
+async function loadDemo() {
+    showLoading('Loading 7 demo charts with AI analysis...');
+    try {
+        const data = await apiGet('/api/demo');
+        for (const c of data.charts) {
+            if (!c.error) {
+                const full = await apiGet(`/api/charts/${c.chart_id}`);
+                charts[c.chart_id] = full;
+            }
+        }
+        renderChartList();
+        if (data.charts.length > 0 && !data.charts[0].error) {
+            selectChart(data.charts[0].chart_id);
+        }
+    } catch(e) {
+        alert('Failed to load demo: ' + e.message);
+    }
+    hideLoading();
+}
+
+// ─── File Upload ─────────────────────────────────────────────────────────────
+function handleDrop(e) {
+    e.preventDefault();
+    e.target.closest('#dropzone').classList.remove('border-blue-500');
+    handleFiles(e.dataTransfer.files);
+}
+
+async function handleFiles(files) {
+    showLoading(`Processing ${files.length} chart(s)...`);
+    for (const file of files) {
+        if (!file.name.endsWith('.svg')) continue;
+        try {
+            const form = new FormData();
+            form.append('file', file);
+            const r = await fetch(API + '/api/upload', {method:'POST', body:form});
+            if (!r.ok) throw new Error(`Upload failed: ${r.status}`);
+            const data = await r.json();
+            const chartId = data.insight.chart_id;
+            charts[chartId] = data;
+            renderChartList();
+            selectChart(chartId);
+        } catch(e) {
+            console.error('Upload error:', e);
+        }
+    }
+    hideLoading();
+}
+
+// ─── Sidebar Chart List ──────────────────────────────────────────────────────
+function renderChartList() {
+    const list = document.getElementById('chartList');
+    const count = Object.keys(charts).length;
+    document.getElementById('chartCount').textContent = `${count} chart${count!==1?'s':''}`;
+
+    list.innerHTML = Object.entries(charts).map(([id, data]) => {
+        const meta = data.insight.metadata;
+        const conf = data.insight.overall_confidence;
+        const active = id === activeChartId;
+        const typeIcon = {line:'📈', area:'📊', bar_horizontal:'📊', log_line:'📈', dual_tone:'📉'}[meta.chart_type] || '📈';
+        return `
+            <div onclick="selectChart('${id}')"
+                 class="glass rounded-lg p-3 cursor-pointer card-hover transition ${active?'glow border-blue-500/30':''}">
+                <div class="flex items-start gap-2">
+                    <span class="text-lg">${typeIcon}</span>
+                    <div class="min-w-0">
+                        <p class="text-xs font-medium truncate">${meta.title}</p>
+                        <p class="text-[10px] text-gray-500">${meta.chart_type} · ${data.insight.series.length} series</p>
+                        <div class="flex items-center gap-1 mt-1">
+                            <div class="w-16 h-1 bg-white/10 rounded-full overflow-hidden">
+                                <div class="h-full rounded-full ${conf>0.8?'bg-green-500':conf>0.5?'bg-yellow-500':'bg-red-500'}" style="width:${conf*100}%"></div>
+                            </div>
+                            <span class="text-[9px] text-gray-500">${(conf*100).toFixed(0)}%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+    }).join('');
+}
+
+// ─── Select & Display Chart ──────────────────────────────────────────────────
+function selectChart(id) {
+    activeChartId = id;
+    const data = charts[id];
+    if (!data) return;
+
+    document.getElementById('welcome').classList.add('hidden');
+    document.getElementById('analysisView').classList.remove('hidden');
+    document.getElementById('analysisView').classList.add('fade-in');
+
+    const meta = data.insight.metadata;
+    const insight = data.insight;
+    const narrative = data.narrative;
+
+    // Header
+    document.getElementById('chartTitle').textContent = meta.title;
+    document.getElementById('chartSubtitle').textContent = meta.subtitle;
+    document.getElementById('chartType').textContent = meta.chart_type.replace('_',' ');
+    document.getElementById('chartRefresh').textContent = meta.refresh_date ? `Refreshed: ${meta.refresh_date}` : '';
+
+    // Confidence
+    const conf = insight.overall_confidence;
+    document.getElementById('confidenceVal').textContent = (conf*100).toFixed(0)+'%';
+    const ring = document.getElementById('confidenceDisplay').querySelector('.confidence-ring');
+    ring.className = `confidence-ring w-14 h-14 border-4 ${conf>0.8?'border-green-500':conf>0.5?'border-yellow-500':'border-red-500'}`;
+    document.getElementById('confidenceVal').className = `text-sm font-bold ${conf>0.8?'text-green-400':conf>0.5?'text-yellow-400':'text-red-400'}`;
+
+    // Render chart
+    renderChart(insight);
+
+    // Render series cards
+    renderSeriesCards(insight);
+
+    // Render pairwise correlations
+    renderPairwiseCorrelations(insight);
+
+    // Render narrative
+    const narrativeText = [narrative.summary, narrative.detailed, ...(narrative.key_takeaways || []).map(t => `• ${t}`)].filter(Boolean).join('\n\n');
+    document.getElementById('narrativeText').textContent = narrativeText;
+
+    // Raw JSON
+    document.getElementById('rawJSON').textContent = JSON.stringify(insight, null, 2);
+
+    // Reset to chart tab
+    switchTab('chart');
+    renderChartList();
+}
+
+// ─── Chart Rendering ─────────────────────────────────────────────────────────
+function renderChart(insight) {
+    if (chartInstance) chartInstance.destroy();
+    const ctx = document.getElementById('mainChart').getContext('2d');
+
+    if (insight.metadata.chart_type === 'bar_horizontal') {
+        renderBarChart(ctx, insight);
+        return;
+    }
+
+    const datasets = insight.series.map(s => {
+        const labels = s.data_points.map(p => p.x_label);
+        const values = s.data_points.map(p => p.value);
+        return {
+            label: s.name,
+            data: values,
+            borderColor: s.color || '#3b82f6',
+            backgroundColor: insight.metadata.chart_type === 'area' ? (s.color || '#3b82f6') + '33' : 'transparent',
+            fill: insight.metadata.chart_type === 'area',
+            borderWidth: 2,
+            pointRadius: values.length > 80 ? 0 : 2,
+            pointHoverRadius: 4,
+            tension: 0.3,
+        };
+    });
+
+    const labels = insight.series[0]?.data_points.map(p => p.x_label) || [];
+
+    chartInstance = new Chart(ctx, {
+        type: 'line',
+        data: { labels, datasets },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            plugins: {
+                legend: { labels: { color: '#999', font: { size: 11 } } },
+                tooltip: { backgroundColor: '#1a1a1a', borderColor: '#333', borderWidth: 1 },
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#666', maxTicksLimit: 12, font: { size: 10 } },
+                    grid: { color: 'rgba(255,255,255,0.05)' },
+                },
+                y: {
+                    ticks: { color: '#666', font: { size: 10 } },
+                    grid: { color: 'rgba(255,255,255,0.05)' },
+                    title: { display: true, text: insight.metadata.subtitle, color: '#666', font: { size: 11 } },
+                },
+            },
+        },
+    });
+}
+
+function renderBarChart(ctx, insight) {
+    const series = insight.series[0];
+    if (!series) return;
+    const labels = series.data_points.map(p => p.x_label);
+    const values = series.data_points.map(p => p.value);
+
+    const colors = values.map((v, i) => {
+        const hue = 200 + (i * 5);
+        return `hsla(${hue}, 70%, 55%, 0.8)`;
+    });
+
+    chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels,
+            datasets: [{
+                label: series.name,
+                data: values,
+                backgroundColor: colors,
+                borderWidth: 0,
+                borderRadius: 3,
+            }],
+        },
+        options: {
+            indexAxis: 'y',
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { display: false } },
+            scales: {
+                x: { ticks: { color: '#666' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                y: { ticks: { color: '#999', font: { size: 9 } }, grid: { display: false } },
+            },
+        },
+    });
+}
+
+// ─── Narrative & Actions ─────────────────────────────────────────────────────
+
+async function regenerateWithTone(tone) {
+    closeMenus();
+    if (!activeChartId) return;
+    showLoading('Regenerating narrative...');
+    try {
+        const narrative = await apiPost('/api/narrative', { chart_id: activeChartId, tone });
+        charts[activeChartId].narrative = narrative;
+        const narrativeText = [narrative.summary, narrative.detailed, ...(narrative.key_takeaways || []).map(t => `• ${t}`)].filter(Boolean).join('\n\n');
+        document.getElementById('narrativeText').textContent = narrativeText;
+    } catch(e) {
+        alert('Failed to regenerate: ' + e.message);
+    }
+    hideLoading();
+}
+
+function copyNarrative() {
+    const text = document.getElementById('narrativeText').textContent;
+    navigator.clipboard.writeText(text);
+}
+
+function exportAs(format) {
+    closeMenus();
+    if (!activeChartId) return;
+    const data = charts[activeChartId];
+    let content, filename, mime;
+    if (format === 'json') {
+        content = JSON.stringify(data, null, 2);
+        filename = `nova-c-${activeChartId}.json`;
+        mime = 'application/json';
+    } else if (format === 'csv') {
+        const insight = data.insight;
+        const headers = ['Series', 'Label', 'Value'];
+        const rows = insight.series.flatMap(s => s.data_points.map(p => `${s.name},${p.x_label},${p.value}`));
+        content = [headers.join(','), ...rows].join('\n');
+        filename = `nova-c-${activeChartId}.csv`;
+        mime = 'text/csv';
+    } else {
+        const narrative = data.narrative;
+        content = [narrative.summary, '', narrative.detailed, '', ...(narrative.key_takeaways || []).map(t => `• ${t}`)].join('\n');
+        filename = `nova-c-${activeChartId}.txt`;
+        mime = 'text/plain';
+    }
+    const blob = new Blob([content], { type: mime });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename; a.click();
+    URL.revokeObjectURL(url);
+}
+
+function toggleRegenMenu() {
+    document.getElementById('exportMenu').classList.add('hidden');
+    document.getElementById('regenMenu').classList.toggle('hidden');
+}
+
+function toggleExportMenu() {
+    document.getElementById('regenMenu').classList.add('hidden');
+    document.getElementById('exportMenu').classList.toggle('hidden');
+}
+
+function closeMenus() {
+    document.getElementById('regenMenu').classList.add('hidden');
+    document.getElementById('exportMenu').classList.add('hidden');
+}
+
+// Close menus on outside click
+document.addEventListener('click', e => {
+    if (!e.target.closest('#regenMenu') && !e.target.closest('button')) {
+        document.getElementById('regenMenu')?.classList.add('hidden');
+    }
+    if (!e.target.closest('#exportMenu') && !e.target.closest('button')) {
+        document.getElementById('exportMenu')?.classList.add('hidden');
+    }
+});
+
+// ─── Tabs ────────────────────────────────────────────────────────────────────
+function switchTab(name) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
+    document.querySelectorAll('[data-tab]').forEach(el => {
+        el.classList.remove('tab-active');
+        el.classList.add('text-gray-500');
+    });
+    document.getElementById('tab-' + name).classList.remove('hidden');
+    const btn = document.querySelector(`[data-tab="${name}"]`);
+    if (btn) { btn.classList.add('tab-active'); btn.classList.remove('text-gray-500'); }
+}
+
+// ─── Helpers ─────────────────────────────────────────────────────────────────
+function showLoading(text) {
+    document.getElementById('loadingText').textContent = text;
+    document.getElementById('loading').classList.remove('hidden');
+}
+function hideLoading() { document.getElementById('loading').classList.add('hidden'); }
+function copyJSON() {
+    navigator.clipboard.writeText(document.getElementById('rawJSON').textContent);
+}
+</script>
+</body>
+</html>
+
