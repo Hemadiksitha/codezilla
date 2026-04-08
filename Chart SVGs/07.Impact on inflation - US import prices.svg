@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" viewBox="0 0 960 720" preserveAspectRatio="none" onload="loadCustomMenu();" onmousedown="handleMouseDownChrome(evt);">
+ <g transform="translate(0.5,0.5)">
+  <g />
+  <g class="s0">
+   <rect x="-1" y="-1" width="961" height="721" />
+  </g>
+  <g class="s1">
+   <g class="s2">
+    <text x="540" y="713">Source: LSEG Datastream / Fathom Consulting</text>
+   </g>
+  </g>
+  <g class="s3">
+   <g class="s4">
+    <text x="65" y="41">US import prices</text>
+   </g>
+   <g class="s5">
+    <text x="65" y="79">Twelve-month percentage changes</text>
+   </g>
+   <g class="s6">
+    <text x="65" y="88" />
+   </g>
+   <g class="s7">
+    <line x1="65" y1="588" x2="928" y2="588" />
+    <line x1="65" y1="490" x2="928" y2="490" />
+    <line x1="65" y1="391" x2="928" y2="391" />
+    <line x1="65" y1="293" x2="928" y2="293" />
+    <line x1="65" y1="194" x2="928" y2="194" />
+    <line x1="65" y1="96" x2="928" y2="96" />
+   </g>
+   <g class="s8">
+    <line x1="65" y1="391" x2="928" y2="391" />
+   </g>
+   <g style="clip-path:url(#c0);">
+    <g id="n0">
+     <g class="s9">
+      <polyline points="66,376 68,369 70,380 71,391" />
+     </g>
+     <g class="s10">
+      <polyline points="71,391 72,396 74,406 76,399 78,391" />
+     </g>
+     <g class="s9">
+      <polyline points="78,391 78,391 80,355 82,325 84,300 86,309 88,318 90,344 92,367 94,364 96,364 98,361 100,363 101,366 104,391" />
+     </g>
+     <g class="s10">
+      <polyline points="104,391 104,394 106,424 108,443 110,433 111,433 114,422 116,402 117,403 119,398 121,391" />
+     </g>
+     <g class="s9">
+      <polyline points="121,391 121,391 123,377 125,365 127,364 129,364 131,365 133,376 135,390 137,388 139,389 141,383 143,375 145,376 147,389 147,391" />
+     </g>
+     <g class="s10">
+      <polyline points="147,391 149,400 151,405 153,406 155,409 157,408 159,401 161,400 163,395 165,399 167,397 169,391" />
+     </g>
+     <g class="s9">
+      <polyline points="169,391 169,391 171,378 173,363 175,358 177,363 179,360 181,349 183,340 185,337 187,334 189,330 191,327 193,327 195,339 197,352 199,359 201,355 203,366 205,370 207,365 209,367 211,376 213,375 215,376 217,391 217,391" />
+     </g>
+     <g class="s10">
+      <polyline points="217,391 219,398 221,396 223,392 223,391" />
+     </g>
+     <g class="s9">
+      <polyline points="223,391 225,382 227,372 229,376 231,377 233,382 235,390 235,391" />
+     </g>
+     <g class="s10">
+      <polyline points="235,391 236,407 238,427 240,421 242,410 244,412 246,414 248,424 250,428 252,431 254,442 256,452 258,452 260,450 262,440 264,442 266,448 268,453 270,456 272,454 274,454 276,455 278,454 280,439 282,431 284,419 286,407 288,398 290,394 290,391" />
+     </g>
+     <g class="s9">
+      <polyline points="290,391 292,375 294,362 296,353 298,352 300,339 302,322 304,321 306,300 308,301 310,326 312,331 314,314 316,324 318,333 320,332 322,338 324,346 326,360 328,364 330,390 330,391" />
+     </g>
+     <g class="s10">
+      <polyline points="330,391 332,407 334,399 336,399 338,417 340,432 342,435 344,447 346,464 348,478 350,481 352,479 354,473 355,447 357,427 359,428 361,427 363,408 365,404 367,396 367,391" />
+     </g>
+     <g class="s9">
+      <polyline points="367,391 369,373 371,367 373,351 375,335 377,317 379,325 381,374 383,382 385,370 387,369 389,372 391,384 393,383 395,369 397,368 399,370 401,382 403,381 405,346 407,323 409,335 411,336 413,321 415,311 417,294 419,303 421,326 423,336 425,331 427,317 429,309 431,334 433,319 435,310 437,311 439,294 441,311 443,328 445,313 447,306 449,323 451,347 453,334 455,307 457,318 459,323 461,333 463,376 464,391" />
+     </g>
+     <g class="s10">
+      <polyline points="464,391 465,402 466,391" />
+     </g>
+     <g class="s9">
+      <polyline points="466,391 467,378 469,367 471,391 473,380 474,364 476,371 478,380 480,369 482,364 484,372 486,344 488,302 490,273 492,287 494,257 496,259 498,242 500,226 502,204 504,182 506,181 508,213 510,262 512,344 513,391" />
+     </g>
+     <g class="s10">
+      <polyline points="513,391 514,449 516,491 518,515 520,517 522,538 524,553 526,562 528,564 530,580 532,542 534,509 536,447 537,391" />
+     </g>
+     <g class="s9">
+      <polyline points="537,391 538,358 540,306 542,279 544,280 546,281 548,281 550,308 552,349 554,343 556,354 558,356 560,353 562,351 564,339 566,336 568,317 570,290 572,274 574,264 576,258 578,256 580,265 582,266 584,282 586,292 588,307 590,323 592,341 594,357 595,383 596,391" />
+     </g>
+     <g class="s10">
+      <polyline points="596,391 597,399 600,416 601,424 603,409 605,398 607,391" />
+     </g>
+     <g class="s9">
+      <polyline points="607,391 607,391 607,391" />
+     </g>
+     <g class="s10">
+      <polyline points="607,391 609,405 611,411 613,406 616,398 617,412 619,418 621,410 623,391" />
+     </g>
+     <g class="s9">
+      <polyline points="623,391 623,391 625,383 627,391 627,391" />
+     </g>
+     <g class="s10">
+      <polyline points="627,391 629,398 631,408 633,409 635,403 637,404 639,402 641,396 643,395 644,391" />
+     </g>
+     <g class="s9">
+      <polyline points="644,391 645,387 647,379 649,383 650,391" />
+     </g>
+     <g class="s10">
+      <polyline points="650,391 651,394 653,405 655,412 657,422 659,447 661,479 663,492 665,498 667,494 669,487 671,489 673,495 675,503 677,506 679,497 681,485 683,473 685,456 687,457 689,451 691,443 693,443 695,437 697,428 699,413 701,402 703,394 704,391" />
+     </g>
+     <g class="s9">
+      <polyline points="704,391 705,389 707,373 709,354 711,345 713,351 715,356 716,368 719,378 720,380 722,372 725,365 726,368 728,357 730,360 732,358 734,359 736,359 738,357 740,347 742,345 744,344 746,354 748,361 750,358 752,384 753,391" />
+     </g>
+     <g class="s10">
+      <polyline points="753,391 754,400 756,406 758,398 760,391" />
+     </g>
+     <g class="s9">
+      <polyline points="760,391 760,391 760,391" />
+     </g>
+     <g class="s10">
+      <polyline points="760,391 762,394 764,401 766,411 768,411 770,412 772,412 774,421 776,403 778,391" />
+     </g>
+     <g class="s9">
+      <polyline points="778,391 778,387 780,387 780,391" />
+     </g>
+     <g class="s10">
+      <polyline points="780,391 782,404 784,433 786,458 788,454 790,431 792,419 794,405 796,404 798,401 800,402 802,395 803,391" />
+     </g>
+     <g class="s9">
+      <polyline points="803,391 804,381 806,362 808,322 810,284 812,277 814,280 816,291 818,303 820,300 822,283 824,276 826,290 828,286 830,279 831,263 834,268 835,277 837,287 840,305 841,316 844,332 845,350 847,365 849,360 851,383 852,391" />
+     </g>
+     <g class="s10">
+      <polyline points="852,391 853,403 855,438 857,440 859,448 861,452 863,439 865,421 867,406 869,409 871,407 873,415 875,405 877,401 878,391" />
+     </g>
+     <g class="s9">
+      <polyline points="878,391 879,387 881,382 883,379 885,376 887,375 889,384 891,391" />
+     </g>
+     <g class="s10">
+      <polyline points="891,391 891,392 891,391" />
+     </g>
+     <g class="s9">
+      <polyline points="891,391 893,384 895,378 897,370 899,375 901,375 903,384 905,391 905,391" />
+     </g>
+     <g class="s10">
+      <polyline points="905,391 907,395 909,397 911,396 913,394 915,392" />
+     </g>
+     <g class="s10">
+      <polyline points="919,392 921,391" />
+     </g>
+     <g class="s9">
+      <polyline points="921,391 921,391 923,389 925,378" />
+     </g>
+     <g class="s11" />
+    </g>
+    <g id="n1">
+     <g class="s12">
+      <polyline points="66,400 68,391" />
+     </g>
+     <g class="s13">
+      <polyline points="68,391 68,388 70,389 72,388 73,391" />
+     </g>
+     <g class="s12">
+      <polyline points="73,391 74,395 75,391" />
+     </g>
+     <g class="s13">
+      <polyline points="75,391 76,386 78,380 80,374 82,367 84,366 86,365 88,362 90,362 92,362 94,364 96,369 98,367 100,372 101,376 104,381 106,387 108,386 110,387 111,390 114,384 116,385 117,390 119,390 121,390 123,379 125,370 127,366 129,364 131,364 133,370 135,384 137,391 137,391" />
+     </g>
+     <g class="s12">
+      <polyline points="137,391 139,394 141,391" />
+     </g>
+     <g class="s13">
+      <polyline points="141,391 141,391 143,381 145,376 147,382 149,384 151,387 153,390 155,390 157,388 159,378 161,375 163,374 165,373 167,373 169,375 171,371 173,368 175,362 177,360 179,358 181,355 183,354 185,354 187,349 189,347 191,344 193,340 195,343 197,345 199,352 201,356 203,366 205,367 207,368 209,374 211,378 213,385 215,391 215,391" />
+     </g>
+     <g class="s12">
+      <polyline points="215,391 217,401 219,404 221,411 223,412 225,407 227,407 229,410 231,409 233,410 235,411 236,412 238,416 240,415 242,409 244,408 246,409 248,414 250,414 252,414 254,419 256,421 258,425 260,424 262,422 264,423 266,427 268,430 270,431 272,432 274,429 276,427 278,424 280,418 282,414 284,415 286,414 288,410 290,408 292,405 294,400 296,396 298,396 300,393 302,391" />
+     </g>
+     <g class="s13">
+      <polyline points="302,391 302,391 302,391" />
+     </g>
+     <g class="s12">
+      <polyline points="302,391 304,392 305,391" />
+     </g>
+     <g class="s13">
+      <polyline points="305,391 306,389 308,382 310,379 312,383 314,381 316,376 318,376 320,381 322,382 324,387 326,379 328,370 330,381 332,391 332,391" />
+     </g>
+     <g class="s12">
+      <polyline points="332,391 334,397 336,398 338,401 340,415 342,419 344,418 346,423 348,424 350,436 352,445 354,441 355,433 357,423 359,421 361,418 363,408 365,404 367,401 369,396 371,395 372,391" />
+     </g>
+     <g class="s13">
+      <polyline points="372,391 373,388 375,384 377,377 379,368 381,383 383,384 385,380 387,380 389,384 391,382 393,383 395,380 397,379 399,374 401,373 403,381 405,368 407,364 409,367 411,367 413,361 415,363 417,363 419,356 421,355 423,361 425,364 427,363 429,362 431,366 433,369 435,371 437,373 439,365 441,354 443,364 445,368 447,368 449,376 451,382 453,385 455,376 457,370 459,368 461,364 463,372 465,388 467,377 469,372 471,376 473,370 474,364 476,362 478,363 480,364 482,363 484,368 486,370 488,358 490,361 492,362 494,353 496,347 498,338 500,328 502,326 504,320 506,314 508,319 510,328 512,343 514,368 516,382 517,391" />
+     </g>
+     <g class="s12">
+      <polyline points="517,391 518,398 520,411 522,429 524,444 526,449 528,456 530,463 532,456 534,444 536,432 538,409 540,393 540,391" />
+     </g>
+     <g class="s13">
+      <polyline points="540,391 542,380 544,371 546,364 548,357 550,356 552,361 554,361 556,363 558,363 560,365 562,364 564,365 566,362 568,356 570,350 572,346 574,345 576,341 578,338 580,337 582,338 584,345 586,356 588,358 590,367 592,375 594,377 595,385 597,390 598,391" />
+     </g>
+     <g class="s12">
+      <polyline points="598,391 600,392 601,397 603,400 605,400 607,393 609,391" />
+     </g>
+     <g class="s13">
+      <polyline points="609,391 609,391 611,391 613,390 616,389 616,391" />
+     </g>
+     <g class="s12">
+      <polyline points="616,391 617,393 619,393 621,396 623,397 625,399 627,400 629,402 631,404 633,403 635,402 637,399 639,397 641,391" />
+     </g>
+     <g class="s13">
+      <polyline points="641,391 641,391 641,391" />
+     </g>
+     <g class="s12">
+      <polyline points="641,391 643,395 645,392 647,391" />
+     </g>
+     <g class="s13">
+      <polyline points="647,391 647,391 649,385 651,384 653,385 655,387 657,391 657,391" />
+     </g>
+     <g class="s12">
+      <polyline points="657,391 659,392 661,403 663,408 665,417 667,418 669,418 671,417 673,420 675,422 677,423 679,425 681,425 683,428 685,423 687,422 689,418 691,414 693,410 695,412 697,405 699,400 701,398 703,395 705,392 706,391" />
+     </g>
+     <g class="s13">
+      <polyline points="706,391 707,389 709,387 711,383 713,381 715,378 716,382 719,378 720,384 722,383 725,380 726,379 728,377 730,378 732,373 734,372 736,373 738,375 740,374 742,378 744,378 746,383 748,385 750,384 752,385 754,382 756,391" />
+     </g>
+     <g class="s12">
+      <polyline points="756,391 756,394 758,396 760,396 762,401 764,404 766,405 768,405 770,403 772,404 774,406 776,406 778,406 780,399 782,399 784,401 786,402 788,399 790,392 791,391" />
+     </g>
+     <g class="s13">
+      <polyline points="791,391 792,390 794,381 796,375 798,375 800,376 802,373 804,365 806,362 808,351 810,338 812,328 814,324 816,325 818,333 820,338 822,330 824,323 826,323 828,317 830,314 831,311 834,314 835,326 837,339 840,346 841,349 844,354 845,362 847,371 849,366 851,378 853,389 853,391" />
+     </g>
+     <g class="s12">
+      <polyline points="853,391 855,406 857,412 859,413 861,411 863,405 865,404 867,403 869,403 871,399 873,407 875,404 877,401 879,393 880,391" />
+     </g>
+     <g class="s13">
+      <polyline points="880,391 881,386 883,387 885,381 887,380 889,378 891,374 893,369 895,371 897,369 899,375 901,373 903,376 905,380 907,379 909,384 911,384 913,385 915,388" />
+     </g>
+     <g class="s13">
+      <polyline points="919,384 921,382 923,375 925,364" />
+     </g>
+     <g class="s14" />
+    </g>
+   </g>
+   <g class="s15">
+    <g class="s16">
+     <line x1="65" y1="608" x2="928" y2="608" />
+     <line x1="65" y1="608" x2="65" y2="614" />
+     <line x1="65" y1="608" x2="65" y2="614" />
+     <line x1="184" y1="608" x2="184" y2="614" />
+     <line x1="184" y1="608" x2="184" y2="614" />
+     <line x1="303" y1="608" x2="303" y2="614" />
+     <line x1="303" y1="608" x2="303" y2="614" />
+     <line x1="422" y1="608" x2="422" y2="614" />
+     <line x1="422" y1="608" x2="422" y2="614" />
+     <line x1="541" y1="608" x2="541" y2="614" />
+     <line x1="541" y1="608" x2="541" y2="614" />
+     <line x1="660" y1="608" x2="660" y2="614" />
+     <line x1="660" y1="608" x2="660" y2="614" />
+     <line x1="779" y1="608" x2="779" y2="614" />
+     <line x1="779" y1="608" x2="779" y2="614" />
+     <line x1="898" y1="608" x2="898" y2="614" />
+     <line x1="898" y1="608" x2="898" y2="614" />
+     <line x1="65" y1="608" x2="65" y2="611" />
+     <line x1="65" y1="608" x2="65" y2="611" />
+     <line x1="89" y1="608" x2="89" y2="611" />
+     <line x1="89" y1="608" x2="89" y2="611" />
+     <line x1="113" y1="608" x2="113" y2="611" />
+     <line x1="113" y1="608" x2="113" y2="611" />
+     <line x1="137" y1="608" x2="137" y2="611" />
+     <line x1="137" y1="608" x2="137" y2="611" />
+     <line x1="160" y1="608" x2="160" y2="611" />
+     <line x1="160" y1="608" x2="160" y2="611" />
+     <line x1="184" y1="608" x2="184" y2="611" />
+     <line x1="184" y1="608" x2="184" y2="611" />
+     <line x1="208" y1="608" x2="208" y2="611" />
+     <line x1="208" y1="608" x2="208" y2="611" />
+     <line x1="232" y1="608" x2="232" y2="611" />
+     <line x1="232" y1="608" x2="232" y2="611" />
+     <line x1="256" y1="608" x2="256" y2="611" />
+     <line x1="256" y1="608" x2="256" y2="611" />
+     <line x1="279" y1="608" x2="279" y2="611" />
+     <line x1="279" y1="608" x2="279" y2="611" />
+     <line x1="303" y1="608" x2="303" y2="611" />
+     <line x1="303" y1="608" x2="303" y2="611" />
+     <line x1="327" y1="608" x2="327" y2="611" />
+     <line x1="327" y1="608" x2="327" y2="611" />
+     <line x1="351" y1="608" x2="351" y2="611" />
+     <line x1="351" y1="608" x2="351" y2="611" />
+     <line x1="374" y1="608" x2="374" y2="611" />
+     <line x1="374" y1="608" x2="374" y2="611" />
+     <line x1="398" y1="608" x2="398" y2="611" />
+     <line x1="398" y1="608" x2="398" y2="611" />
+     <line x1="422" y1="608" x2="422" y2="611" />
+     <line x1="422" y1="608" x2="422" y2="611" />
+     <line x1="446" y1="608" x2="446" y2="611" />
+     <line x1="446" y1="608" x2="446" y2="611" />
+     <line x1="470" y1="608" x2="470" y2="611" />
+     <line x1="470" y1="608" x2="470" y2="611" />
+     <line x1="493" y1="608" x2="493" y2="611" />
+     <line x1="493" y1="608" x2="493" y2="611" />
+     <line x1="517" y1="608" x2="517" y2="611" />
+     <line x1="517" y1="608" x2="517" y2="611" />
+     <line x1="541" y1="608" x2="541" y2="611" />
+     <line x1="541" y1="608" x2="541" y2="611" />
+     <line x1="565" y1="608" x2="565" y2="611" />
+     <line x1="565" y1="608" x2="565" y2="611" />
+     <line x1="589" y1="608" x2="589" y2="611" />
+     <line x1="589" y1="608" x2="589" y2="611" />
+     <line x1="613" y1="608" x2="613" y2="611" />
+     <line x1="613" y1="608" x2="613" y2="611" />
+     <line x1="636" y1="608" x2="636" y2="611" />
+     <line x1="636" y1="608" x2="636" y2="611" />
+     <line x1="660" y1="608" x2="660" y2="611" />
+     <line x1="660" y1="608" x2="660" y2="611" />
+     <line x1="684" y1="608" x2="684" y2="611" />
+     <line x1="684" y1="608" x2="684" y2="611" />
+     <line x1="708" y1="608" x2="708" y2="611" />
+     <line x1="708" y1="608" x2="708" y2="611" />
+     <line x1="731" y1="608" x2="731" y2="611" />
+     <line x1="731" y1="608" x2="731" y2="611" />
+     <line x1="755" y1="608" x2="755" y2="611" />
+     <line x1="755" y1="608" x2="755" y2="611" />
+     <line x1="779" y1="608" x2="779" y2="611" />
+     <line x1="779" y1="608" x2="779" y2="611" />
+     <line x1="803" y1="608" x2="803" y2="611" />
+     <line x1="803" y1="608" x2="803" y2="611" />
+     <line x1="827" y1="608" x2="827" y2="611" />
+     <line x1="827" y1="608" x2="827" y2="611" />
+     <line x1="851" y1="608" x2="851" y2="611" />
+     <line x1="851" y1="608" x2="851" y2="611" />
+     <line x1="874" y1="608" x2="874" y2="611" />
+     <line x1="874" y1="608" x2="874" y2="611" />
+     <line x1="898" y1="608" x2="898" y2="611" />
+     <line x1="898" y1="608" x2="898" y2="611" />
+     <line x1="922" y1="608" x2="922" y2="611" />
+     <line x1="922" y1="608" x2="922" y2="611" />
+     <g class="s17">
+      <g class="s18">
+       <text x="65" y="645">1990</text>
+       <text x="184" y="645">1995</text>
+       <text x="303" y="645">2000</text>
+       <text x="422" y="645">2005</text>
+       <text x="541" y="645">2010</text>
+       <text x="660" y="645">2015</text>
+       <text x="779" y="645">2020</text>
+       <text x="898" y="645">2025</text>
+      </g>
+     </g>
+     <g class="s17">
+      <g class="s18" />
+     </g>
+    </g>
+    <g class="s19" />
+    <g class="s20">
+     <line x1="65" y1="608" x2="65" y2="96" />
+     <line x1="65" y1="588" x2="59" y2="588" />
+     <line x1="65" y1="588" x2="59" y2="588" />
+     <line x1="65" y1="490" x2="59" y2="490" />
+     <line x1="65" y1="490" x2="59" y2="490" />
+     <line x1="65" y1="391" x2="59" y2="391" />
+     <line x1="65" y1="391" x2="59" y2="391" />
+     <line x1="65" y1="293" x2="59" y2="293" />
+     <line x1="65" y1="293" x2="59" y2="293" />
+     <line x1="65" y1="194" x2="59" y2="194" />
+     <line x1="65" y1="194" x2="59" y2="194" />
+     <line x1="65" y1="96" x2="59" y2="96" />
+     <line x1="65" y1="96" x2="59" y2="96" />
+     <line x1="65" y1="569" x2="62" y2="569" />
+     <line x1="65" y1="569" x2="62" y2="569" />
+     <line x1="65" y1="549" x2="62" y2="549" />
+     <line x1="65" y1="549" x2="62" y2="549" />
+     <line x1="65" y1="529" x2="62" y2="529" />
+     <line x1="65" y1="529" x2="62" y2="529" />
+     <line x1="65" y1="510" x2="62" y2="510" />
+     <line x1="65" y1="510" x2="62" y2="510" />
+     <line x1="65" y1="470" x2="62" y2="470" />
+     <line x1="65" y1="470" x2="62" y2="470" />
+     <line x1="65" y1="451" x2="62" y2="451" />
+     <line x1="65" y1="451" x2="62" y2="451" />
+     <line x1="65" y1="431" x2="62" y2="431" />
+     <line x1="65" y1="431" x2="62" y2="431" />
+     <line x1="65" y1="411" x2="62" y2="411" />
+     <line x1="65" y1="411" x2="62" y2="411" />
+     <line x1="65" y1="372" x2="62" y2="372" />
+     <line x1="65" y1="372" x2="62" y2="372" />
+     <line x1="65" y1="352" x2="62" y2="352" />
+     <line x1="65" y1="352" x2="62" y2="352" />
+     <line x1="65" y1="332" x2="62" y2="332" />
+     <line x1="65" y1="332" x2="62" y2="332" />
+     <line x1="65" y1="313" x2="62" y2="313" />
+     <line x1="65" y1="313" x2="62" y2="313" />
+     <line x1="65" y1="273" x2="62" y2="273" />
+     <line x1="65" y1="273" x2="62" y2="273" />
+     <line x1="65" y1="254" x2="62" y2="254" />
+     <line x1="65" y1="254" x2="62" y2="254" />
+     <line x1="65" y1="234" x2="62" y2="234" />
+     <line x1="65" y1="234" x2="62" y2="234" />
+     <line x1="65" y1="214" x2="62" y2="214" />
+     <line x1="65" y1="214" x2="62" y2="214" />
+     <line x1="65" y1="175" x2="62" y2="175" />
+     <line x1="65" y1="175" x2="62" y2="175" />
+     <line x1="65" y1="155" x2="62" y2="155" />
+     <line x1="65" y1="155" x2="62" y2="155" />
+     <line x1="65" y1="135" x2="62" y2="135" />
+     <line x1="65" y1="135" x2="62" y2="135" />
+     <line x1="65" y1="116" x2="62" y2="116" />
+     <line x1="65" y1="116" x2="62" y2="116" />
+     <g class="s21">
+      <g class="s22">
+       <g class="s23">
+        <text x="49" y="598" transform="rotate(360 49,588)">-20</text>
+       </g>
+       <g class="s23">
+        <text x="49" y="500" transform="rotate(360 49,490)">-10</text>
+       </g>
+       <text x="49" y="401" transform="rotate(360 49,391)">0</text>
+       <text x="49" y="303" transform="rotate(360 49,293)">10</text>
+       <text x="49" y="204" transform="rotate(360 49,194)">20</text>
+       <text x="49" y="106" transform="rotate(360 49,96)">30</text>
+      </g>
+     </g>
+     <g class="s21">
+      <g class="s22" />
+     </g>
+    </g>
+   </g>
+  </g>
+  <g class="s24">
+   <g onclick="ntfy('click', {'id':'c0p0b'});" onmousemove="if(pghk()) sfade(evt.target,0.6);" onmouseout="if(pghk()) sfade(evt.target);" onmousedown="if(pghk()){if(evt.button == 2){ sfade(evt.target) }}">
+    <rect x="65" y="608" width="863" height="49" />
+   </g>
+  </g>
+  <g class="s25">
+   <g class="s26">
+    <rect x="68" y="660" width="589" height="33" />
+   </g>
+   <g class="s9">
+    <polyline points="73,674 127,674" />
+   </g>
+   <g class="s11" />
+   <g class="s27">
+    <text x="136" y="684">All commodities</text>
+   </g>
+   <g class="s13">
+    <polyline points="338,674 392,674" />
+   </g>
+   <g class="s14" />
+   <g class="s28">
+    <text x="401" y="684">Excluding petroleum</text>
+   </g>
+  </g>
+  <g />
+ </g>
+ <defs>
+  <clipPath id="c0">
+   <rect x="65" y="96" width="863" height="512" />
+  </clipPath>
+  <menu id="CustomMenu" xmlns="ns_custommenu">
+   <item action="CopySVG">&amp;Copy SVG</item>
+   <item action="SaveAs">&amp;Save SVG As...</item>
+   <item action="ViewSource">View Sourc&amp;e...</item>
+   <item action="About">About SVG Viewer...</item>
+  </menu>
+ </defs>
+ <style type="text/css">
+  <![CDATA[
+   svg { font-family:Tahoma; stroke:black; shape-rendering:auto; width:100%; height:100%;}
+   line, polyline { fill:none; stroke-linejoin:round; }
+   text { stroke:none; fill:black; fill-opacity:1; text-rendering:geometricPrecision; pointer-events:none; }
+   .selectedEvent { stroke-opacity: 0.6; stroke-dasharray: 0; }
+   .s0 { stroke:none; fill:#171717; }
+   .s1 { font-family:"Arial"; font-size:19px; font-weight:normal; font-style:italic; } .s1 text { fill:#C0C0C0; text-decoration:none; white-space:pre; }
+   .s2 { text-anchor:start; }
+   .s3 { stroke:#FFFFFF; stroke-width:1; font-family:"Arial"; font-size:21px; font-weight:normal; font-style:normal; } .s3 text { fill:#FFFFFF; text-decoration:none; }
+   .s4 { text-anchor:start; font-family:"Arial"; font-size:37px; font-weight:bold; font-style:normal; } .s4 text { fill:#FFFFFF; text-decoration:none; }
+   .s5 { text-anchor:start; font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s5 text { fill:#FFFFFF; text-decoration:none; }
+   .s6 { text-anchor:middle; font-family:"Arial"; font-size:19px; font-weight:normal; font-style:normal; } .s6 text { fill:#FFFFFF; text-decoration:none; }
+   .s7 { stroke:#36494F; stroke-opacity:0.50; stroke-width:1; stroke-dasharray:1,2; }
+   .s8 { stroke:#FFFFFF; stroke-width:1; stroke-dasharray:none; }
+   .s9 { stroke:#FF9900; stroke-width:4; stroke-dasharray:none; }
+   .s10 { stroke:#FF9900; stroke-width:4; stroke-dasharray:none; }
+   .s11 { stroke:#000080; stroke-width:2; stroke-dasharray:none; fill:#000080; }
+   .s12 { stroke:#00CCFF; stroke-width:4; stroke-dasharray:none; }
+   .s13 { stroke:#00CCFF; stroke-width:4; stroke-dasharray:none; }
+   .s14 { stroke:#FF0000; stroke-width:2; stroke-dasharray:none; fill:#FF0000; }
+   .s15 { stroke:#FFFFFF; font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s15 text { fill:#FFFFFF; text-decoration:none; }
+   .s16 { stroke-width:1; stroke-dasharray:none; }
+   .s17 { text-anchor:middle; }
+   .s18 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s18 text { fill:#FFFFFF; text-decoration:none; }
+   .s19 { stroke-width:1; stroke-dasharray:none; }
+   .s20 { stroke-width:1; stroke-dasharray:none; }
+   .s21 { text-anchor:end; }
+   .s22 { font-family:"Arial"; font-size:27px; font-weight:normal; font-style:normal; } .s22 text { fill:#FFFFFF; text-decoration:none; }
+   .s23 {  } .s23 text { fill:#FFFFFF; }
+   .s24 { stroke:#FFFF8B; stroke-opacity:0; stroke-width:4; stroke-dasharray:12,12; fill:none; pointer-events:all; }
+   .s25 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s25 text { fill:#FFFFFF; text-decoration:none; }
+   .s26 { stroke:none; stroke-width:1; fill:none; }
+   .s27 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s27 text { fill:#FFFFFF; text-decoration:none; }
+   .s28 { font-family:"Arial"; font-size:24px; font-weight:normal; font-style:normal; } .s28 text { fill:#FFFFFF; text-decoration:none; }
+  ]]>
+ </style>
+ <script type="text/ecmascript">
+  <![CDATA[
+   function loadCustomMenu(){ var menuDef = document.getElementById("CustomMenu"); if(parent && parent.chartLoaded) { parent.chartLoaded(); } if (menuDef && typeof parseXML === "function"){var newMenuRoot = parseXML(printNode(menuDef), contextMenu);contextMenu.replaceChild(newMenuRoot, contextMenu.firstChild);}}
+   function handleMouseDownChrome(evt){ if(evt.which && evt.which != 3){ if(evt.preventDefault) { evt.preventDefault()} else {evt.returnValue = false} }}
+   function toxy(e){return {x:e.clientX*(960/innerWidth),y:e.clientY*(720/innerHeight)};}
+   function getd(){return  {'w':innerWidth,'h':innerHeight};};
+   function lmtp(p,xl,yb,xr,yt){return {x:Math.max(Math.min(p.x,960-xr),xl),y:Math.max(Math.min(p.y,720-yt),yb)};}
+   function clmp(n,l,h){return Math.max(Math.min(n,h),l);};
+   function attr(e,k,v){if(v!=undefined){e.setAttribute(k,v);}else return e.getAttribute(k);}
+   function nattr(e,k){return Number(attr(e,k));}
+   function byid(s){return document.getElementById(s);}
+   function each(a,f){for(var i=0;i<a.length;++i)f((a instanceof Array)?a[i]:a.item(i),i);};
+   function fade(e,o){attr(e,'style',(o==undefined)?'':('fill-opacity:'+o));}
+   function sfade(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o));}
+   function mkpt(x,y){return {'x':x,'y':y};};
+   function ntfy(m, a){try{parent.onSvgNotify(m, a);}catch(e){}}
+   function pghk(){try{return parent.onSvgNotify!=null;}catch(e){return false;}}
+   function show(e,c){e.setAttribute('display',c?'inherit':'none');e.setAttribute('display',c?'inherit':'none');}
+   function tags(e,t){return e.getElementsByTagName(t);}
+   function trof(g){var a=g.hasAttribute('transform')?g.getAttribute('transform').slice(10,-1).split(' '):[0,0];return a.length==2?mkpt(Number(a[0]),Number(a[1])):mkpt(0,0);};
+   function trsl(g,x,y){g.setAttribute('transform','translate('+x+' '+y+')');};
+   function pfmt(c,a){return a.f(a.c(c,a),a);}
+   function sems(e,o){attr(e,'style',(o==undefined)?'':('stroke-opacity:'+o) + ';stroke-dasharray:0');}
+   var Format = function () {    var p,        n,        s;    function fnz(n) {        return n < 10 ? '0' + n : n;    };    function frequencyConvert(i, o, f) {        var dat = offd(Math.round(i), o);        var m = dat.getUTCMonth() + 1;        var quarter = Math.floor((m - 1) / 3) + 1;        return 'Q' + Math.round(quarter);    };    function map(a, f) {        var r = new Array(a.length),            i;        for (i = 0; i < a.length; ++i)            r[i] = f(a[i]);        return r;    };    function offd(i, o) {        var w = (i > 0 ? Math.floor(i / 5) : Math.ceil(i / 5)) * 7,            r = i % 5,            d = o.getUTCDay(),            e = d - 1,            l = 5 - d;        if (r < -e) r -= 2;        else if (r > l) r += 2;return new Date(o.valueOf()+(w+r)*86400000);};    function offd_calendarDate(i, o) {        var date = new Date(o.valueOf());        date.setDate(date.getDate() + i);        return date;    };function fdtp(u,f){ var y=u.getUTCFullYear(),m=u.getUTCMonth()+1,d=u.getUTCDate();        return map(f, function (p) {            switch (p) {                case "yyyy": return y;                case "yy": return fnz(y % 100);                case "MMMM": case "MMM": return n[p][m - 1];                case "MM": return fnz(m);                case "M": return m;                case "dddd": case "ddd": return n[p][u.getUTCDay()];                case "dd": return fnz(d);                case "d": return d;                default: return p;            }        }).join("");    };    function formatd(u, f) {        var y = u.getUTCFullYear(),            m = u.getUTCMonth() + 1,            d = u.getUTCDate();        switch (f) {            case "yyyy": return y;            case "yy": return fnz(y % 100);            case "MMMM": case "MMM": return n[f][m - 1];            case "MM": return fnz(m);            case "M": return m;            case "dddd": case "ddd": return n[f][u.getUTCDay()];            case "dd": return fnz(d);            case "d": return d;            default: return f;        }    };    function getfdate(i, o, f) {        return formatd(offd(Math.round(i), o), f);    };    function getlDate(i, o) {        var date1 = '';        if (n["dddd"]) { date1 += getfdate(i, o, "dddd") + ', '; }        if (n["MMMM"]) { date1 += getfdate(i, o, "MMMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    function getSDate(i, o) {        var date1 = '';        if (n["MMM"]) { date1 += getfdate(i, o, "MMM") + ' '; }        date1 += getfdate(i, o, "d") + ', ';        date1 += getfdate(i, o, "yyyy");        return date1;    };    return {        init: function (d, D, _n, _s) {            p = { 'd': d, 'D': D };            n = _n;            s = _s;        },date:function(i,o,f){           return fdtp(offd(Math.round(i),o),p[f||'d']);        },        calendardate: function (i, o, f) {            return fdtp(offd_calendarDate(Math.round(i), o), p[f || 'd']);        },dateOriginal: function (i, o) {            return offd(Math.round(i), o);        },        convert: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n["MMMM"]) { return getfdate(i, o, "MMMM") + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getlDate(i, o);            }        },        convertSpecial: function (i, o, f, fr) {            switch (fr) {                case "Y": return getfdate(i, o, "yyyy");                case "M": if (n[f]) { return getfdate(i, o, f) + ' ' + getfdate(i, o, "yyyy") } else return getfdate(i, o, "yyyy");                case "Q": return frequencyConvert(i, o, f) + ' ' + getfdate(i, o, "yyyy");                default: return getSDate(i, o);            }        },        real: function (n) {            return n.toString().replace('.', s);        },        nice: function (a, b) {            var g = Math.log(Math.abs(a)),                d = Math.abs(a - b),                l = Math.ceil(g / Math.LN10),                r = Math.ceil(Math.log(d) / Math.LN10),                s = l - r + ((d < 1) ? 2 : 1),                m = Math.pow(10, s - Math.floor(g / Math.LN10) - 1);            return Math.round(a * m) / m;        }    };}();
+   var d0=[];
+   Format.init(['dd','/','MM','/','yyyy'],['dd',' ','MMMM',' ','yyyy'],{'ddd':['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],'dddd':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],'MMM':['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec',''],'MMMM':['January','February','March','April','May','June','July','August','September','October','November','December','']},'.');
+   ntfy('load',{'url':document.URL,'errors':d0,'val_update':[]});
+  ]]>
+ </script>
+</svg><!-- <Chart><ImageInfo Version="1.27.0" GUID="d09f1e3c98854914be4c961717aa027a" DsId="ZKXF457" T1SubID="" Width="960" Height="720" Format="svg" ChartGroupUID="f780af69-7727-41cb-badd-8015d46d483f" GroupName="Impact on inflation" ChartName="US import prices" ChartStyleName="" GroupNameEncoded="Impact+on+inflation" ChartNameEncoded="US+import+prices" ChartStyleNameEncoded="" ShortCode="" ChartOwner="FAADMIN" TemplateId="" TemplateName="" TemplateNameEncoded="" EditionId="" EditionGenerationDate="" RefreshDate="06/04/2026 17:42:39" ExportChartsIn="" ExportChartsTo=" " ExportChartAs=" " SpecifiedCellRow="0" SpecifiedCellCol="0" NoofColumns="1" NoofChartPerPage="1" SpaceBetweenCharts="0" Transparent="0" NoofRows="1" LeftMargin="0" RightMargin="0" TopMargin="0" FootMargin="0" Orientation="" FileNameTemplate="" ImageFileName="" ChartTitle="US import prices" DoStretch="true" Pr=""/></Chart> -->
