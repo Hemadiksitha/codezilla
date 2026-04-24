@@ -374,6 +374,84 @@ async def get_chart_svg(chart_id: str, user: dict = Depends(require_auth)):
     return Response(content=svg_store[chart_id], media_type="image/svg+xml")
 
 
+@app.post("/api/predict")
+async def predict_series(request: dict, user: dict = Depends(require_auth)):
+    """
+    Train an ML/DL model on a chart series and return future predictions.
+
+    Request body:
+      chart_id      - ID of the chart in the store
+      series_name   - name of the series to forecast, or "all" for every series
+      model         - one of: linear, ridge, lasso, svr, rf, gb, mlp, lstm
+      hyperparams   - dict of model-specific and common hyperparameters
+    """
+    from .services.predictor import predict as run_predict
+
+    chart_id = request.get("chart_id", "")
+    series_name = request.get("series_name", "")
+    model_name = str(request.get("model", "rf"))
+    hyperparams = request.get("hyperparams", {})
+
+    if chart_id not in chart_store:
+        raise HTTPException(404, f"Chart {chart_id} not found")
+
+    insight = chart_store[chart_id].insight
+
+    # Determine which series to run
+    if series_name == "all":
+        target_series = insight.series
+    else:
+        matched = next(
+            (s for s in insight.series if s.name == series_name),
+            insight.series[0] if insight.series else None,
+        )
+        target_series = [matched] if matched else []
+
+    if not target_series:
+        raise HTTPException(400, "No series data available for prediction")
+
+    results = []
+    for series in target_series:
+        values = [dp.value for dp in series.data_points]
+        labels = [dp.x_label for dp in series.data_points]
+
+        logger.info(f"Predicting series '{series.name}': {len(values)} data points, model={model_name}")
+
+        if len(values) < 10:
+            err = f"Need at least 10 data points (found {len(values)})"
+            logger.warning(f"Series '{series.name}': {err}")
+            results.append({
+                "series_name": series.name,
+                "series_color": series.color or "#3b82f6",
+                "error": err,
+            })
+            continue
+
+        try:
+            if hyperparams.get("auto_tune"):
+                from .services.predictor import tune_and_predict as run_tune
+                hp_clean = {k: v for k, v in hyperparams.items() if k != "auto_tune"}
+                result = await asyncio.to_thread(run_tune, values, labels, model_name, hp_clean)
+            else:
+                result = await asyncio.to_thread(run_predict, values, labels, model_name, hyperparams)
+            result["series_name"] = series.name
+            result["series_color"] = series.color or "#3b82f6"
+            result["model"] = model_name
+            logger.info(f"Prediction OK for '{series.name}': {len(result['future_predictions'])} steps")
+            results.append(result)
+        except ValueError as e:
+            logger.warning(f"Prediction ValueError for '{series.name}': {e}")
+            results.append({"series_name": series.name, "error": str(e)})
+        except Exception as e:
+            logger.exception(f"Prediction failed for {series.name}: {e}")
+            results.append({"series_name": series.name, "error": str(e)})
+
+    if not results:
+        raise HTTPException(400, "All series failed to predict")
+
+    return {"results": results, "model": model_name}
+
+
 @app.post("/api/range-analysis")
 async def range_analysis(request: RangeAnalysisRequest, user: dict = Depends(require_auth)):
     """Return news summary for a selected time range via LLM + news search."""

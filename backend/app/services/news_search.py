@@ -33,7 +33,7 @@ async def search_news(query: str, max_results: int = 5) -> list[NewsResult]:
     """
     results = []
     try:
-        async with httpx.AsyncClient(timeout=15.0, follow_redirects=True) as client:
+        async with httpx.AsyncClient(timeout=15.0, follow_redirects=True, verify=False) as client:
             resp = await client.post(
                 SEARCH_URL,
                 data={"q": query, "b": ""},

@@ -13,5 +13,20 @@
     "user_id": "4b8c77c4",
     "email": "the@gmail.com",
     "password_hash": "$2b$12$AkU4SkFoXcyr0Vr1OXJcDuJ2xKuViVjcDij6FI.u414hzIuh4Rvba"
+  },
+  "debug@test.com": {
+    "user_id": "bfe88018",
+    "email": "debug@test.com",
+    "password_hash": "$2b$12$8UApwQrAgW4aNKagW/8r2u01wc7iod0XxSJostRSwTFqK1Jze0Hnm"
+  },
+  "codez@gmail.com": {
+    "user_id": "52e25b81",
+    "email": "codez@gmail.com",
+    "password_hash": "$2b$12$xAsMMLRENVD7LvbZPYMa6O85eGc9pZmdgH2vUUjuxcGht1WlowU1C"
+  },
+  "hema@gmail.com": {
+    "user_id": "a7884445",
+    "email": "hema@gmail.com",
+    "password_hash": "$2b$12$igrkJHMwbQY3E1ixIOIFX.z7mc/E4Ej8Y/rs90P0NZ6cT5kDeTKzu"
   }
 }

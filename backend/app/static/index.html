@@ -3,26 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chart Insight Analyst</title>
+    <title>Nova</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ─── Theme Variables ─── */
+        :root {
+            --bg-body: #0b0e17;
+            --bg-surface: #0d1019;
+            --bg-elevated: #0f1117;
+            --bg-glass: rgba(255,255,255,0.03);
+            --bg-glass-border: rgba(255,255,255,0.08);
+            --bg-input: rgba(255,255,255,0.05);
+            --bg-input-border: rgba(255,255,255,0.1);
+            --bg-hover: rgba(255,255,255,0.1);
+            --bg-btn: rgba(255,255,255,0.05);
+            --bg-btn-border: rgba(255,255,255,0.1);
+            --text-primary: #e5e5e5;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --text-heading: #ffffff;
+            --border-subtle: rgba(255,255,255,0.06);
+            --border-medium: rgba(255,255,255,0.1);
+            --scrollbar-thumb: #333;
+            --tooltip-bg: rgba(10,12,20,0.97);
+            --tooltip-border: rgba(255,255,255,0.15);
+            --tooltip-text: #d1d5db;
+            --json-bg: #0a0d14;
+            --json-caret: #e5e5e5;
+            --shadow-panel: 0 -4px 32px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04);
+            --bottom-panel-bg: rgba(13,16,25,0.92);
+            --chat-user-bg: rgba(59,130,246,0.12);
+            --chat-user-border: rgba(59,130,246,0.2);
+            --chat-bot-bg: rgba(255,255,255,0.04);
+            --chat-bot-border: rgba(255,255,255,0.08);
+            --badge-meta-bg: rgba(255,255,255,0.06);
+            --badge-meta-color: #94a3b8;
+            --badge-meta-border: rgba(255,255,255,0.1);
+            --option-bg: #0b0e17;
+            --option-color: #e5e5e5;
+            --range-popup-bg: rgba(13,16,25,0.97);
+            --resize-handle: rgba(255,255,255,0.15);
+            --corr-border: rgba(255,255,255,0.04);
+            --series-card-bg: transparent;
+        }
+
+        [data-theme="light"] {
+            --bg-body: #f3f4f6;
+            --bg-surface: #e5e7eb;
+            --bg-elevated: #ffffff;
+            --bg-glass: rgba(0,0,0,0.03);
+            --bg-glass-border: rgba(0,0,0,0.1);
+            --bg-input: rgba(0,0,0,0.04);
+            --bg-input-border: rgba(0,0,0,0.15);
+            --bg-hover: rgba(0,0,0,0.06);
+            --bg-btn: rgba(0,0,0,0.04);
+            --bg-btn-border: rgba(0,0,0,0.12);
+            --text-primary: #1f2937;
+            --text-secondary: #4b5563;
+            --text-muted: #6b7280;
+            --text-heading: #111827;
+            --border-subtle: rgba(0,0,0,0.06);
+            --border-medium: rgba(0,0,0,0.12);
+            --scrollbar-thumb: #c4c4c4;
+            --tooltip-bg: rgba(255,255,255,0.97);
+            --tooltip-border: rgba(0,0,0,0.12);
+            --tooltip-text: #374151;
+            --json-bg: #f9fafb;
+            --json-caret: #1f2937;
+            --shadow-panel: 0 -4px 32px rgba(0,0,0,0.1), 0 0 0 1px rgba(0,0,0,0.06);
+            --bottom-panel-bg: rgba(255,255,255,0.92);
+            --chat-user-bg: rgba(59,130,246,0.1);
+            --chat-user-border: rgba(59,130,246,0.2);
+            --chat-bot-bg: rgba(0,0,0,0.03);
+            --chat-bot-border: rgba(0,0,0,0.08);
+            --badge-meta-bg: rgba(0,0,0,0.05);
+            --badge-meta-color: #4b5563;
+            --badge-meta-border: rgba(0,0,0,0.12);
+            --option-bg: #ffffff;
+            --option-color: #1f2937;
+            --range-popup-bg: rgba(255,255,255,0.97);
+            --resize-handle: rgba(0,0,0,0.15);
+            --corr-border: rgba(0,0,0,0.06);
+            --series-card-bg: rgba(0,0,0,0.02);
+        }
+
         * { font-family: 'Inter', sans-serif; }
-        body { background: #0b0e17; color: #e5e5e5; margin: 0; overflow: hidden; }
-        .glass { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); }
+        body { background: var(--bg-body); color: var(--text-primary); margin: 0; overflow: hidden; transition: background 0.3s, color 0.3s; }
+        .glass { background: var(--bg-glass); border: 1px solid var(--bg-glass-border); }
         .fade-in { animation: fadeIn 0.4s ease-in; }
         @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
         .tab-active { border-bottom: 2px solid #3b82f6; color: #3b82f6; }
         .badge-sm { display: inline-flex; align-items: center; padding: 1px 8px; border-radius: 4px; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; }
         .badge-rising { background: rgba(34,197,94,0.15); color: #22c55e; }
         .badge-falling { background: rgba(239,68,68,0.15); color: #ef4444; }
         .badge-sideways, .badge-flat { background: rgba(234,179,8,0.15); color: #eab308; }
-        .badge-r2 { background: rgba(255,255,255,0.06); color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); }
+        .badge-r2 { background: var(--badge-meta-bg); color: var(--badge-meta-color); border: 1px solid var(--badge-meta-border); }
         .badge-accel { background: rgba(239,68,68,0.15); color: #ef4444; }
         .badge-decel { background: rgba(6,182,212,0.15); color: #06b6d4; }
         .badge-consistent { background: rgba(34,197,94,0.15); color: #22c55e; }
@@ -39,134 +120,160 @@
         .badge-ma { background: rgba(99,102,241,0.12); color: #818cf8; border: 1px solid rgba(99,102,241,0.2); }
         .badge-macd-bull { background: rgba(34,197,94,0.15); color: #22c55e; }
         .badge-macd-bear { background: rgba(239,68,68,0.15); color: #ef4444; }
-        .badge-boll { background: rgba(255,255,255,0.06); color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); }
+        .badge-boll { background: var(--badge-meta-bg); color: var(--badge-meta-color); border: 1px solid var(--badge-meta-border); }
         .badge-boll-out { background: rgba(239,68,68,0.15); color: #ef4444; }
-        .tech-section { margin-top: 8px; padding: 8px 10px; border: 1px solid rgba(255,255,255,0.06); border-radius: 6px; background: rgba(255,255,255,0.015); }
+        .tech-section { margin-top: 8px; padding: 8px 10px; border: 1px solid var(--border-subtle); border-radius: 6px; background: var(--series-card-bg); }
         .tech-header { font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #06b6d4; margin-bottom: 8px; }
         .rsi-bar { height: 6px; border-radius: 3px; background: linear-gradient(to right, #22c55e 0%, #4ade80 15%, #a3e635 30%, #eab308 50%, #f97316 70%, #ef4444 85%, #dc2626 100%); position: relative; }
         .rsi-marker { position: absolute; top: -3px; width: 3px; height: 12px; background: #fff; border-radius: 2px; transform: translateX(-50%); box-shadow: 0 0 4px rgba(255,255,255,0.5); }
-        .rsi-labels { display: flex; justify-content: space-between; font-size: 8px; color: #6b7280; margin-top: 2px; }
+        .rsi-labels { display: flex; justify-content: space-between; font-size: 8px; color: var(--text-muted); margin-top: 2px; }
         .macd-hist-bar { display: inline-block; width: 4px; margin-right: 1px; border-radius: 1px; vertical-align: bottom; }
         /* Term descriptor tooltips */
         [data-term] { position: relative; cursor: help; }
-        [data-term]:hover::after { content: attr(data-term); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: rgba(10,12,20,0.97); color: #d1d5db; border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px 10px; font-size: 10px; font-weight: 400; letter-spacing: 0; line-height: 1.5; white-space: normal; width: max-content; max-width: 240px; z-index: 200; box-shadow: 0 6px 20px rgba(0,0,0,0.5); pointer-events: none; }
-        [data-term]:hover::before { content: ''; position: absolute; bottom: calc(100% + 2px); left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: rgba(10,12,20,0.97); z-index: 201; pointer-events: none; }
-        .badge-meta { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; background: rgba(255,255,255,0.06); color: #94a3b8; border: 1px solid rgba(255,255,255,0.1); }
-        .corr-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+        [data-term]:hover::after { content: attr(data-term); position: absolute; bottom: calc(100% + 6px); left: 50%; transform: translateX(-50%); background: var(--tooltip-bg); color: var(--tooltip-text); border: 1px solid var(--tooltip-border); border-radius: 6px; padding: 6px 10px; font-size: 10px; font-weight: 400; letter-spacing: 0; line-height: 1.5; white-space: normal; width: max-content; max-width: 240px; z-index: 200; box-shadow: 0 6px 20px rgba(0,0,0,0.3); pointer-events: none; }
+        [data-term]:hover::before { content: ''; position: absolute; bottom: calc(100% + 2px); left: 50%; transform: translateX(-50%); border: 5px solid transparent; border-top-color: var(--tooltip-bg); z-index: 201; pointer-events: none; }
+        .badge-meta { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 4px; font-size: 0.65rem; font-weight: 600; background: var(--badge-meta-bg); color: var(--badge-meta-color); border: 1px solid var(--badge-meta-border); }
+        .corr-row { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--corr-border); }
         .corr-row:last-child { border-bottom: none; }
         .sparkline-svg { display: inline-block; vertical-align: middle; margin-left: 6px; }
         .pipeline-dot { width: 8px; height: 8px; border-radius: 50%; }
-        .pipeline-line { width: 28px; height: 1px; background: rgba(255,255,255,0.2); }
+        .pipeline-line { width: 28px; height: 1px; background: var(--border-medium); }
         .series-card { border-left: 3px solid; }
         .chat-msg { max-width: 85%; }
-        .chat-msg-user { margin-left: auto; background: rgba(59,130,246,0.15); border: 1px solid rgba(59,130,246,0.25); }
-        .chat-msg-bot { margin-right: auto; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+        .chat-msg-user { margin-left: auto; background: var(--chat-user-bg); border: 1px solid var(--chat-user-border); border-radius: 12px 12px 4px 12px; }
+        .chat-msg-bot { margin-right: auto; background: var(--chat-bot-bg); border: 1px solid var(--chat-bot-border); border-radius: 12px 12px 12px 4px; }
         .chat-formatted { line-height: 1.7; }
         .chat-formatted p { margin: 0 0 6px 0; }
         .chat-formatted p:last-child { margin-bottom: 0; }
         .chat-formatted ul { margin: 4px 0 6px 0; padding-left: 16px; list-style: none; }
-        .chat-formatted ul li { position: relative; padding-left: 12px; margin-bottom: 4px; color: #d1d5db; }
+        .chat-formatted ul li { position: relative; padding-left: 12px; margin-bottom: 4px; color: var(--text-secondary); }
         .chat-formatted ul li::before { content: '•'; position: absolute; left: 0; color: #3b82f6; font-weight: 700; }
-        .chat-formatted strong { color: #f1f5f9; font-weight: 600; }
+        .chat-formatted strong { color: var(--text-heading); font-weight: 600; }
         .chat-formatted a.chat-link { color: #60a5fa; text-decoration: underline; text-underline-offset: 2px; }
         .chat-formatted a.chat-link:hover { color: #93bbfd; }
-        .overlay-checkbox { appearance: none; width: 14px; height: 14px; border: 1px solid #555; border-radius: 3px; background: transparent; cursor: pointer; position: relative; }
+        .overlay-checkbox { appearance: none; width: 14px; height: 14px; border: 1px solid var(--text-muted); border-radius: 3px; background: transparent; cursor: pointer; position: relative; }
         .overlay-checkbox:checked { background: #3b82f6; border-color: #3b82f6; }
         .overlay-checkbox:checked::after { content: '\2713'; position: absolute; top: -2px; left: 1px; font-size: 11px; color: white; }
         /* Tooltip for SVG data points */
-        #svgTooltip { position: absolute; pointer-events: none; z-index: 100; background: rgba(15,17,25,0.95); border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; padding: 10px 14px; font-size: 11px; color: #e5e5e5; min-width: 180px; max-width: 280px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); backdrop-filter: blur(8px); display: none; transition: opacity 0.15s; }
+        #svgTooltip { position: absolute; pointer-events: none; z-index: 100; background: var(--tooltip-bg); border: 1px solid var(--tooltip-border); border-radius: 8px; padding: 10px 14px; font-size: 11px; color: var(--text-primary); min-width: 180px; max-width: 280px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); backdrop-filter: blur(8px); display: none; transition: opacity 0.15s; }
         #svgTooltip .tt-series { font-weight: 700; font-size: 12px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px; }
         #svgTooltip .tt-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
         #svgTooltip .tt-row { display: flex; justify-content: space-between; padding: 2px 0; }
-        #svgTooltip .tt-label { color: #9ca3af; }
+        #svgTooltip .tt-label { color: var(--text-muted); }
         #svgTooltip .tt-value { font-weight: 600; font-variant-numeric: tabular-nums; }
-        #svgTooltip .tt-divider { border-top: 1px solid rgba(255,255,255,0.08); margin: 5px 0; }
+        #svgTooltip .tt-divider { border-top: 1px solid var(--border-subtle); margin: 5px 0; }
         .hover-point { cursor: crosshair; opacity: 0; transition: opacity 0.15s; }
         .hover-point:hover { opacity: 1; }
         .json-tab-pulse { animation: jsonPulse 0.6s ease-out; }
         @keyframes jsonPulse { 0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.5); } 100% { box-shadow: 0 0 0 0 transparent; } }
         #rawJSON.json-highlight { border-color: rgba(59,130,246,0.6) !important; }
-        .json-locator { position:absolute; bottom:6px; right:10px; font-size:9px; color:#3b82f6; background:rgba(15,17,25,0.9); padding:1px 8px; border-radius:4px; border:1px solid rgba(59,130,246,0.3); pointer-events:none; z-index:10; display:none; }
+        .json-locator { position:absolute; bottom:6px; right:10px; font-size:9px; color:#3b82f6; background:var(--tooltip-bg); padding:1px 8px; border-radius:4px; border:1px solid rgba(59,130,246,0.3); pointer-events:none; z-index:10; display:none; }
         .json-editor-wrap { position:relative; }
         .json-editor-wrap textarea, .json-editor-wrap .json-highlight-layer { font-family: 'Courier New', monospace; font-size: 10px; line-height: 16px; padding: 8px; margin:0; border:none; white-space: pre; overflow-wrap: normal; word-wrap: normal; }
         .json-highlight-layer { position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden; border-radius:4px; z-index:0; color:transparent; }
         .json-highlight-layer .jhl-line { display:block; height:16px; width:100%; }
         .json-highlight-layer .jhl-line.jhl-active { background: rgba(59,130,246,0.15); border-left: 2px solid #3b82f6; }
         .json-highlight-layer .jhl-line.jhl-changed { background: rgba(34,197,94,0.18); border-left: 2px solid #22c55e; }
-        #rawJSON { position:relative; z-index:1; background:transparent !important; caret-color: #e5e5e5; }
-        .comp-tooltip { position:absolute; pointer-events:none; z-index:100; background:rgba(15,17,25,0.95); border:1px solid rgba(255,255,255,0.15); border-radius:8px; padding:8px 12px; font-size:10px; color:#e5e5e5; min-width:140px; max-width:240px; box-shadow:0 8px 24px rgba(0,0,0,0.5); display:none; }
+        #rawJSON { position:relative; z-index:1; background:transparent !important; caret-color: var(--json-caret); }
+        .comp-tooltip { position:absolute; pointer-events:none; z-index:100; background:var(--tooltip-bg); border:1px solid var(--tooltip-border); border-radius:8px; padding:8px 12px; font-size:10px; color:var(--text-primary); min-width:140px; max-width:240px; box-shadow:0 8px 24px rgba(0,0,0,0.3); display:none; }
         .nar-section { margin-bottom: 10px; }
         .nar-section:last-child { margin-bottom: 0; }
         .nar-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #3b82f6; margin-bottom: 4px; }
-        .nar-summary { color: #e5e5e5; font-weight: 500; line-height: 1.6; }
+        .nar-summary { color: var(--text-primary); font-weight: 500; line-height: 1.6; }
         .nar-bullets { list-style: none; padding: 0; margin: 0; }
-        .nar-bullets li { position: relative; padding-left: 14px; margin-bottom: 5px; color: #d1d5db; line-height: 1.55; }
+        .nar-bullets li { position: relative; padding-left: 14px; margin-bottom: 5px; color: var(--text-secondary); line-height: 1.55; }
         .nar-bullets li::before { content: '\2022'; position: absolute; left: 0; color: #3b82f6; font-weight: 700; }
         .resize-handle { position: absolute; top: -4px; left: 0; right: 0; height: 8px; cursor: ns-resize; z-index: 50; display: flex; align-items: center; justify-content: center; }
-        .resize-handle::after { content: ''; width: 40px; height: 3px; border-radius: 2px; background: rgba(255,255,255,0.15); transition: background 0.2s; }
+        .resize-handle::after { content: ''; width: 40px; height: 3px; border-radius: 2px; background: var(--resize-handle); transition: background 0.2s; }
         .resize-handle:hover::after, .resize-handle.active::after { background: #3b82f6; }
         .v-resize-handle { width: 8px; cursor: ew-resize; flex-shrink: 0; display: flex; align-items: center; justify-content: center; z-index: 10; position: relative; }
-        .v-resize-handle::after { content: ''; width: 3px; height: 40px; border-radius: 2px; background: rgba(255,255,255,0.15); transition: background 0.2s; }
+        .v-resize-handle::after { content: ''; width: 3px; height: 40px; border-radius: 2px; background: var(--resize-handle); transition: background 0.2s; }
         .v-resize-handle:hover::after, .v-resize-handle.active::after { background: #3b82f6; }
-        .voice-btn { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #9ca3af; cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
-        .voice-btn:hover { background: rgba(255,255,255,0.1); color: #e5e5e5; }
+        .voice-btn { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--bg-btn-border); background: var(--bg-btn); color: var(--text-muted); cursor: pointer; transition: all 0.2s; flex-shrink: 0; }
+        .voice-btn:hover { background: var(--bg-hover); color: var(--text-primary); }
         .voice-btn.recording { background: rgba(239,68,68,0.2); border-color: rgba(239,68,68,0.4); color: #ef4444; animation: pulse-rec 1s ease-in-out infinite; }
         .voice-btn.speaking { background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.4); color: #3b82f6; }
         @keyframes pulse-rec { 0%,100% { box-shadow: 0 0 0 0 rgba(239,68,68,0.4); } 50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); } }
         /* Range selection on chart */
         .range-select-rect { fill: rgba(59,130,246,0.15); stroke: rgba(59,130,246,0.5); stroke-width: 1; stroke-dasharray: 4,3; pointer-events: none; }
         .range-select-handle { fill: rgba(59,130,246,0.8); stroke: #fff; stroke-width: 1; pointer-events: none; }
-        #rangeAnalysisPopup { position: absolute; z-index: 60; background: rgba(13,16,25,0.97); border: 1px solid rgba(59,130,246,0.3); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.6); backdrop-filter: blur(12px); max-width: 340px; min-width: 240px; max-height: 50vh; overflow: hidden; display: none; font-size: 0.68rem; }
-        .rap-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); background: rgba(59,130,246,0.05); }
-        .rap-header h4 { font-size: 0.72rem; font-weight: 700; color: #e5e5e5; margin: 0; display: flex; align-items: center; gap: 6px; }
+        #rangeAnalysisPopup { position: absolute; z-index: 60; background: var(--range-popup-bg); border: 1px solid rgba(59,130,246,0.3); border-radius: 10px; box-shadow: 0 8px 28px rgba(0,0,0,0.4); backdrop-filter: blur(12px); max-width: 340px; min-width: 240px; max-height: 50vh; overflow: hidden; display: none; font-size: 0.68rem; }
+        .rap-header { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-bottom: 1px solid var(--border-subtle); background: rgba(59,130,246,0.05); }
+        .rap-header h4 { font-size: 0.72rem; font-weight: 700; color: var(--text-primary); margin: 0; display: flex; align-items: center; gap: 6px; }
         .rap-badge { font-size: 0.6rem; background: rgba(59,130,246,0.15); color: #60a5fa; padding: 1px 7px; border-radius: 4px; font-weight: 600; }
-        .rap-close { background: none; border: none; color: #6b7280; font-size: 16px; cursor: pointer; padding: 0 4px; line-height: 1; }
+        .rap-close { background: none; border: none; color: var(--text-muted); font-size: 16px; cursor: pointer; padding: 0 4px; line-height: 1; }
         .rap-close:hover { color: #ef4444; }
         .rap-body { padding: 10px 12px; overflow-y: auto; max-height: calc(50vh - 40px); }
-        .rap-body h3 { font-size: 0.7rem; font-weight: 700; color: #d1d5db; margin: 8px 0 4px; }
+        .rap-body h3 { font-size: 0.7rem; font-weight: 700; color: var(--text-secondary); margin: 8px 0 4px; }
         .rap-body h3:first-child { margin-top: 0; }
         .rap-body table { width: 100%; border-collapse: collapse; margin-bottom: 6px; }
-        .rap-body th { text-align: left; font-size: 0.58rem; color: #6b7280; font-weight: 600; padding: 3px 4px; border-bottom: 1px solid rgba(255,255,255,0.06); text-transform: uppercase; letter-spacing: 0.04em; }
-        .rap-body td { padding: 3px 4px; font-size: 0.64rem; color: #d1d5db; border-bottom: 1px solid rgba(255,255,255,0.03); }
+        .rap-body th { text-align: left; font-size: 0.58rem; color: var(--text-muted); font-weight: 600; padding: 3px 4px; border-bottom: 1px solid var(--border-subtle); text-transform: uppercase; letter-spacing: 0.04em; }
+        .rap-body td { padding: 3px 4px; font-size: 0.64rem; color: var(--text-secondary); border-bottom: 1px solid var(--border-subtle); }
         .rap-body ul { padding: 0 0 0 12px; margin: 4px 0; }
-        .rap-body li { font-size: 0.62rem; color: #9ca3af; margin-bottom: 3px; line-height: 1.5; }
+        .rap-body li { font-size: 0.62rem; color: var(--text-secondary); margin-bottom: 3px; line-height: 1.5; }
         .rap-event { margin-top: 8px; padding: 8px 10px; border-radius: 6px; background: rgba(234,179,8,0.06); border: 1px solid rgba(234,179,8,0.15); }
         .rap-event-label { font-size: 0.58rem; font-weight: 700; color: #eab308; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
-        .rap-event-text { font-size: 0.62rem; color: #d1d5db; line-height: 1.6; }
+        .rap-event-text { font-size: 0.62rem; color: var(--text-secondary); line-height: 1.6; }
         .range-hint { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); font-size: 9px; color: rgba(255,255,255,0.25); pointer-events: none; z-index: 15; transition: opacity 0.3s; }
 
         @keyframes spin { to { transform: rotate(360deg); } }
+        select option { background: var(--option-bg) !important; color: var(--option-color) !important; }
+
+        /* ─── Light-mode overrides for Tailwind utility classes ─── */
+        [data-theme="light"] .text-white { color: var(--text-heading) !important; }
+        [data-theme="light"] .text-gray-200 { color: #1f2937 !important; }
+        [data-theme="light"] .text-gray-300 { color: #374151 !important; }
+        [data-theme="light"] .text-gray-400 { color: #4b5563 !important; }
+        [data-theme="light"] .text-gray-500 { color: #6b7280 !important; }
+        [data-theme="light"] .hover\:text-white:hover { color: var(--text-heading) !important; }
+        [data-theme="light"] .hover\:text-gray-300:hover { color: #1f2937 !important; }
+        [data-theme="light"] .placeholder-gray-500::placeholder { color: #9ca3af !important; }
+        [data-theme="light"] .bg-white\/5 { background: rgba(0,0,0,0.04) !important; }
+        [data-theme="light"] .bg-white\/10 { background: rgba(0,0,0,0.06) !important; }
+        [data-theme="light"] .hover\:bg-white\/5:hover { background: rgba(0,0,0,0.04) !important; }
+        [data-theme="light"] .hover\:bg-white\/10:hover { background: rgba(0,0,0,0.06) !important; }
+        [data-theme="light"] .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
+        [data-theme="light"] .border-white\/10 { border-color: rgba(0,0,0,0.12) !important; }
+        [data-theme="light"] .border-white\/15 { border-color: rgba(0,0,0,0.12) !important; }
+        [data-theme="light"] .range-hint { color: rgba(0,0,0,0.3); }
+        [data-theme="light"] .loading-overlay { background: rgba(255,255,255,0.8) !important; }
     </style>
 </head>
 <body>
 
 <!-- TOP HEADER BAR -->
-<header class="flex items-center justify-between px-4 py-2 border-b border-white/10 bg-[#0b0e17] z-50" style="height:42px;">
+<header class="flex items-center justify-between px-4 py-2 z-50" style="height:42px; background:var(--bg-body); border-bottom:1px solid var(--border-medium);">
     <div class="flex items-center gap-3">
-        <div class="w-7 h-7 rounded-md bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m6 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m4-10v10"/></svg>
+        <div class="w-7 h-7 rounded-md bg-gradient-to-br from-blue-500/20 to-purple-600/20 flex items-center justify-center">
+            <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
         </div>
-        <span class="text-sm font-semibold">Chart Insight Analyst</span>
+        <span class="text-sm font-semibold">Nova</span>
     </div>
     <div class="flex items-center gap-3">
-        <select id="chartSelector" onchange="selectChart(this.value)" class="bg-transparent border border-white/10 rounded px-2 py-1 text-xs text-gray-400 max-w-[220px]">
+        <select id="chartSelector" onchange="selectChart(this.value)" class="bg-transparent rounded px-2 py-1 text-xs max-w-[220px]" style="border:1px solid var(--border-medium); color:var(--text-muted);">
             <option value="">Select a chart...</option>
         </select>
-        <button onclick="triggerUpload()" class="px-3 py-1 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-xs rounded transition">New Chart</button>
+        <button onclick="triggerUpload()" class="px-3 py-1 text-xs rounded transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);">New Chart</button>
         <input type="file" id="fileInput" accept=".svg" multiple class="hidden" onchange="handleFiles(this.files)">
-        <span id="userEmail" class="text-xs text-gray-400 hidden"></span>
-        <button id="logoutBtn" onclick="logout()" class="hidden px-2 py-1 bg-white/5 border border-white/10 hover:bg-red-600/20 text-gray-400 hover:text-red-400 text-xs rounded transition">Logout</button>
+        <button id="themeToggle" onclick="toggleTheme()" class="w-8 h-8 rounded-lg flex items-center justify-center transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-muted);" title="Toggle light/dark mode">
+            <svg id="themeIconSun" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg id="themeIconMoon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <span id="userEmail" class="text-xs hidden" style="color:var(--text-muted);"></span>
+        <button id="logoutBtn" onclick="logout()" class="hidden px-2 py-1 hover:bg-red-600/20 hover:text-red-400 text-xs rounded transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-muted);">Logout</button>
     </div>
 </header>
 
 <!-- AUTH SCREEN -->
-<div id="authScreen" class="fixed inset-0 bg-[#0b0e17] z-[60] flex items-center justify-center">
+<div id="authScreen" class="fixed inset-0 z-[60] flex items-center justify-center" style="background:var(--bg-body);">
     <div class="w-full max-w-sm mx-4">
         <div class="text-center mb-8">
             <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4">
                 <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6m6 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0h6m4-10v10"/></svg>
             </div>
-            <h1 class="text-xl font-bold">Chart Insight Analyst</h1>
+            <h1 class="text-xl font-bold">Nova</h1>
             <p class="text-xs text-gray-500 mt-1">Sign in to analyze your charts</p>
         </div>
         <div class="glass rounded-xl p-5">
@@ -179,12 +286,12 @@
                 <div>
                     <label class="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">Email</label>
                     <input id="authEmail" type="email" placeholder="you@example.com"
-                           class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500/50 transition" />
+                           class="w-full rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500/50 transition" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary);" />
                 </div>
                 <div>
-                    <label class="text-[10px] text-gray-500 uppercase tracking-wider block mb-1">Password</label>
+                    <label class="text-[10px] uppercase tracking-wider block mb-1" style="color:var(--text-muted);">Password</label>
                     <input id="authPassword" type="password" placeholder="••••••••"
-                           class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500/50 transition"
+                           class="w-full rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-blue-500/50 transition" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary);"
                            onkeydown="if(event.key==='Enter') submitAuth()" />
                 </div>
                 <button onclick="submitAuth()" id="authSubmitBtn"
@@ -204,15 +311,15 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
             </svg>
         </div>
-        <h2 class="text-xl font-semibold mb-2">Chart Insight Analyst</h2>
-        <p class="text-sm text-gray-400 mb-6">Upload SVG financial charts to automatically extract trends, detect anomalies, and generate analyst-style commentary.</p>
+        <h2 class="text-xl font-semibold mb-2">Nova</h2>
+        <p class="text-sm mb-6" style="color:var(--text-muted);">Upload SVG financial charts to automatically extract trends, detect anomalies, and generate analyst-style commentary.</p>
         <div class="flex gap-3 justify-center">
-            <button onclick="triggerUpload()" class="px-5 py-2 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-sm rounded-lg transition">Upload SVG</button>
+            <button onclick="triggerUpload()" class="px-5 py-2 text-sm rounded-lg transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);">Upload SVG</button>
         </div>
-        <div id="dropzone" class="mt-6 border-2 border-dashed border-white/15 rounded-xl p-6 hover:border-blue-500/50 transition cursor-pointer"
+        <div id="dropzone" class="mt-6 border-2 border-dashed rounded-xl p-6 hover:border-blue-500/50 transition cursor-pointer" style="border-color:var(--border-medium);"
              ondrop="handleDrop(event)" ondragover="event.preventDefault(); this.classList.add('border-blue-500')" ondragleave="this.classList.remove('border-blue-500')"
              onclick="triggerUpload()">
-            <p class="text-xs text-gray-500">or drag and drop SVG files here</p>
+            <p class="text-xs" style="color:var(--text-muted);">or drag and drop SVG files here</p>
         </div>
     </div>
 </div>
@@ -220,36 +327,37 @@
 <!-- MAIN ANALYSIS VIEW -->
 <div id="analysisView" class="hidden" style="height:calc(100vh - 42px); display:none;">
     <!-- Sub-header with chart metadata -->
-    <div class="flex items-center justify-between px-4 py-2 border-b border-white/10 bg-[#0d1019]" style="height:36px;">
+    <div class="flex items-center justify-between px-4 py-2" style="height:36px; border-bottom:1px solid var(--border-medium); background:var(--bg-surface);">
         <div class="flex items-center gap-3">
-            <span id="chartTitle" class="text-sm font-semibold text-white"></span>
+            <span id="chartTitle" class="text-sm font-semibold" style="color:var(--text-heading);"></span>
             <span id="metaPeriod" class="badge-meta hidden" data-term="Time period: The date range covered by the data in this chart"></span>
             <span id="metaUnit" class="badge-meta hidden" data-term="Unit of measurement: The scale used for values (e.g. Per cent, Billions, Index)"></span>
             <span id="metaType" class="badge-meta hidden" data-term="Chart type: How the data is visualized (line, area, bar, log-scale, dual-tone)"></span>
             <span id="metaSeries" class="badge-meta hidden"></span>
         </div>
-        <span id="metaSource" class="text-[10px] text-gray-500"></span>
+        <span id="metaSource" class="text-[10px]" style="color:var(--text-muted);"></span>
     </div>
 
     <!-- Main split: Chart left + Panel right -->
     <div class="flex" id="mainSplit" style="height:calc(100% - 36px);">
         <!-- LEFT: Chart area -->
-        <div class="flex-1 flex flex-col min-w-0" style="border-right: 1px solid rgba(255,255,255,0.08);">
+        <div class="flex-1 flex flex-col min-w-0" style="border-right: 1px solid var(--border-medium);">
             <!-- Chart overlay controls (hidden checkboxes, clean bar) -->
-            <div class="flex items-center gap-4 px-4 py-1 text-[10px] text-gray-500 border-b border-white/5" style="height:24px;">
+            <div class="flex items-center gap-4 px-4 py-1 text-[10px]" style="height:24px; color:var(--text-muted); border-bottom:1px solid var(--border-subtle);">
                 <input type="checkbox" id="ovOverlays" class="overlay-checkbox" checked onchange="updateOverlays()" style="display:none">
                 <input type="checkbox" id="ovPeaks" class="overlay-checkbox" onchange="updateOverlays()" style="display:none">
                 <input type="checkbox" id="ovTroughs" class="overlay-checkbox" onchange="updateOverlays()" style="display:none">
                 <input type="checkbox" id="ovTrendlines" class="overlay-checkbox" onchange="updateOverlays()" style="display:none">
                 <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wider">Chart View</span>
-                <button id="resetRangeBtn" onclick="resetToFullRange()" style="display:none; margin-left:auto; padding:2px 10px; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); border-radius:4px; color:#60a5fa; font-size:10px; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.35)'" onmouseout="this.style.background='rgba(59,130,246,0.2)'">↻ Full Time Range</button>
+                <button id="predictBtn" onclick="openPredictModal()" style="margin-left:auto; padding:2px 12px; background:#2563eb; border:1px solid #1d4ed8; border-radius:4px; color:#fff; font-size:10px; font-weight:700; letter-spacing:0.06em; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">PREDICT</button>
+                <button id="resetRangeBtn" onclick="resetToFullRange()" style="display:none; padding:2px 10px; background:rgba(59,130,246,0.2); border:1px solid rgba(59,130,246,0.4); border-radius:4px; color:#60a5fa; font-size:10px; cursor:pointer; transition:all 0.2s;" onmouseover="this.style.background='rgba(59,130,246,0.35)'" onmouseout="this.style.background='rgba(59,130,246,0.2)'">&#x21BB; Full Time Range</button>
             </div>
             <!-- Chart display: original SVG -->
-            <div class="flex-1 p-0 relative" id="chartArea" style="background: #0f1117; border-radius: 6px; margin: 4px; overflow: hidden;">
+            <div class="flex-1 p-0 relative" id="chartArea" style="background: var(--bg-elevated); border-radius: 6px; margin: 4px; overflow: hidden;">
                 <div id="zoomControls" style="position:absolute;top:8px;right:8px;z-index:20;display:none;" class="flex flex-col gap-1">
-                    <button onclick="zoomChart(1.25)" class="w-7 h-7 rounded bg-white/10 hover:bg-white/20 text-white text-sm font-bold flex items-center justify-center transition" title="Zoom In">+</button>
-                    <button onclick="zoomChart(0.8)" class="w-7 h-7 rounded bg-white/10 hover:bg-white/20 text-white text-sm font-bold flex items-center justify-center transition" title="Zoom Out">&minus;</button>
-                    <button onclick="zoomReset()" class="w-7 h-7 rounded bg-white/10 hover:bg-white/20 text-white text-[9px] font-bold flex items-center justify-center transition" title="Reset Zoom">1:1</button>
+                    <button onclick="zoomChart(1.25)" class="w-7 h-7 rounded text-sm font-bold flex items-center justify-center transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);" title="Zoom In">+</button>
+                    <button onclick="zoomChart(0.8)" class="w-7 h-7 rounded text-sm font-bold flex items-center justify-center transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);" title="Zoom Out">&minus;</button>
+                    <button onclick="zoomReset()" class="w-7 h-7 rounded text-[9px] font-bold flex items-center justify-center transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);" title="Reset Zoom">1:1</button>
                 </div>
                 <div id="svgWrapper" style="width:100%;height:100%;overflow:hidden;">
                     <img id="svgDisplay" src="" alt="Chart" style="width:100%; height:100%; object-fit:contain; display:none;">
@@ -268,6 +376,7 @@
                 <div class="range-hint" id="rangeHint">Click &amp; drag on chart to select a range for analysis</div>
             </div>
 
+
         </div>
 
         <!-- Vertical resize handle between chart and right panel -->
@@ -275,7 +384,7 @@
 
         <!-- RIGHT: Tabbed panel -->
         <div id="rightPanel" class="flex flex-col flex-shrink-0" style="width:42%; overflow:hidden;">
-            <div class="flex gap-4 px-4 border-b border-white/10 text-xs" style="height:32px; align-items:end;">
+            <div class="flex gap-4 px-4 text-xs" style="height:32px; align-items:end; border-bottom:1px solid var(--border-medium);">
                 <button onclick="switchRightTab('series')" class="pb-1 tab-active font-semibold" data-rtab="series" data-term="Individual analysis of each data series — trend, volatility, momentum, RSI, and key turning points">SERIES</button>
                 <button onclick="switchRightTab('multiseries')" class="pb-1 text-gray-500 hover:text-gray-300 font-semibold" data-rtab="multiseries" data-term="Cross-series analysis — Pearson correlation measures how strongly two series move together (+1) or inversely (-1)">CORRELATIONS</button>
                 <button onclick="switchRightTab('news')" class="pb-1 text-gray-500 hover:text-gray-300 font-semibold" data-rtab="news" data-term="Related news articles discovered via web search matching the chart topic and time period">NEWS</button>
@@ -331,7 +440,7 @@
                     </div>
                     <div class="json-editor-wrap" style="position:relative;">
                         <div id="jsonHighlightLayer" class="json-highlight-layer"></div>
-                        <textarea id="rawJSON" class="w-full text-[10px] text-gray-300 border border-white/10 rounded p-2 font-mono leading-relaxed focus:outline-none focus:border-blue-500/50 resize-none" style="max-height: calc(100vh - 200px); min-height: 300px; background: #0a0d14;" spellcheck="false" oninput="syncHighlightLayer()" onscroll="syncHighlightScroll()"></textarea>
+                        <textarea id="rawJSON" class="w-full text-[10px] rounded p-2 font-mono leading-relaxed focus:outline-none focus:border-blue-500/50 resize-none" style="max-height: calc(100vh - 200px); min-height: 300px; background: var(--json-bg); color:var(--text-secondary); border:1px solid var(--border-medium);" spellcheck="false" oninput="syncHighlightLayer()" onscroll="syncHighlightScroll()"></textarea>
                         <div id="jsonLocator" class="json-locator"></div>
                     </div>
                     <div id="jsonError" class="text-[10px] text-red-400 mt-1 hidden"></div>
@@ -342,12 +451,12 @@
 </div>
 
 <!-- BOTTOM PANEL: Commentary + Chatbot -->
-<div id="bottomPanel" class="hidden border-t border-white/10 bg-[#0d1019]" style="position:fixed; bottom:0; left:0; right:0; z-index:40; height:252px;">
-    <div class="resize-handle" id="resizeHandle"></div>
-    <div class="flex items-center justify-between px-4" style="height:32px; border-bottom: 1px solid rgba(255,255,255,0.06);">
-        <div class="flex items-center gap-4">
-            <button onclick="switchBottomTab('commentary')" class="text-xs font-semibold pb-0 text-blue-400 border-b-2 border-blue-400" data-btab="commentary" data-term="AI-generated analyst commentary derived from chart data — summary, detailed analysis, and key takeaways">COMMENTARY</button>
-            <button onclick="switchBottomTab('chatbot')" class="text-xs font-semibold pb-0 text-gray-500 hover:text-gray-300" data-btab="chatbot" data-term="Ask natural language questions about the chart data — trends, peaks, correlations, anomalies">ASK DATA</button>
+<div id="bottomPanel" class="hidden" style="position:fixed; bottom:12px; left:12px; right:12px; z-index:40; height:252px; background:var(--bottom-panel-bg); backdrop-filter:blur(16px); border:1px solid var(--bg-glass-border); border-radius:16px; box-shadow:var(--shadow-panel);">
+    <div class="resize-handle" id="resizeHandle" style="top:-4px;"></div>
+    <div class="flex items-center justify-between px-5" style="height:38px; border-bottom: 1px solid var(--border-subtle); border-radius:16px 16px 0 0;">
+        <div class="flex items-center gap-1">
+            <button onclick="switchBottomTab('commentary')" class="text-xs font-semibold px-3 py-1.5 rounded-lg text-blue-400 bg-blue-500/10" data-btab="commentary" data-term="AI-generated analyst commentary derived from chart data — summary, detailed analysis, and key takeaways">COMMENTARY</button>
+            <button onclick="switchBottomTab('chatbot')" class="text-xs font-semibold px-3 py-1.5 rounded-lg text-gray-500 hover:text-gray-300 hover:bg-white/5 transition" data-btab="chatbot" data-term="Ask natural language questions about the chart data — trends, peaks, correlations, anomalies">ASK DATA</button>
             <span id="llmBadge" class="badge-sm badge-r2 ml-2" style="display:none;"></span>
             <span id="llmAttempts" class="text-[10px] text-gray-500" style="display:none;"></span>
         </div>
@@ -355,53 +464,124 @@
             <button onclick="narrateCommentary()" id="narrateBtn" class="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white text-[11px] font-medium rounded transition flex items-center gap-1" title="Voice narration">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.08"/></svg>
             </button>
-            <button onclick="copyNarrative()" class="px-2 py-1 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-[11px] rounded transition" title="Copy narrative">
+            <button onclick="copyNarrative()" class="px-2 py-1 text-[11px] rounded transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);" title="Copy narrative">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
             </button>
             <div class="relative">
-                <button onclick="toggleExportMenu()" class="px-2 py-1 bg-white/5 border border-white/10 hover:bg-white/10 text-white text-[11px] rounded transition flex items-center gap-1" title="Export">
+                <button onclick="toggleExportMenu()" class="px-2 py-1 text-[11px] rounded transition flex items-center gap-1" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-primary);" title="Export">
                     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                 </button>
-                <div id="exportMenu" class="hidden absolute bottom-full mb-1 right-0 w-36 bg-[#1a1a2e] border border-white/10 rounded-lg shadow-xl z-50 overflow-hidden">
-                    <button onclick="exportPDF()" class="w-full text-left px-3 py-1.5 text-xs hover:bg-white/10 transition">Export PDF</button>
-                    <button onclick="exportAs('json')" class="w-full text-left px-3 py-1.5 text-xs hover:bg-white/10 transition">Export JSON</button>
+                <div id="exportMenu" class="hidden absolute bottom-full mb-1 right-0 w-36 rounded-lg shadow-xl z-50 overflow-hidden" style="background:var(--bg-elevated); border:1px solid var(--border-medium);">
+                    <button onclick="exportPDF()" class="w-full text-left px-3 py-1.5 text-xs transition" style="color:var(--text-primary);">Export PDF</button>
+                    <button onclick="exportAs('json')" class="w-full text-left px-3 py-1.5 text-xs transition" style="color:var(--text-primary);">Export JSON</button>
                 </div>
             </div>
             <button onclick="regenerateWithTone('neutral')" class="px-2 py-1 bg-blue-600 hover:bg-blue-700 text-white text-[11px] rounded transition" title="Regenerate commentary">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"/></svg>
             </button>
-            <button onclick="toggleBottomPanel()" id="bottomToggleBtn" class="text-gray-400 hover:text-white ml-2 text-sm">&#9660;</button>
+            <button onclick="toggleBottomPanel()" id="bottomToggleBtn" class="ml-2 text-sm" style="color:var(--text-muted);">&#9660;</button>
         </div>
     </div>
     <!-- Commentary content -->
-    <div id="btab-commentary" class="btab-content px-4 py-3 overflow-y-auto" style="height:calc(100% - 32px);">
-        <div id="narrativeText" class="text-sm text-gray-300 leading-relaxed"></div>
+    <div id="btab-commentary" class="btab-content px-5 py-4 overflow-y-auto" style="height:calc(100% - 38px);">
+        <div id="narrativeText" class="text-sm leading-relaxed" style="color:var(--text-secondary);"></div>
         <div id="narrativeComparison" class="hidden" style="display:none;">
             <div style="display:flex; gap:12px; margin-top:8px;">
                 <div style="flex:1; border:1px solid rgba(34,197,94,0.2); border-radius:8px; padding:10px; background:rgba(34,197,94,0.03);">
                     <div style="font-size:10px; font-weight:700; color:#22c55e; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Original Narrative</div>
-                    <div id="origNarrativeText" class="text-sm text-gray-300 leading-relaxed"></div>
+                    <div id="origNarrativeText" class="text-sm leading-relaxed" style="color:var(--text-secondary);"></div>
                 </div>
                 <div style="flex:1; border:1px solid rgba(59,130,246,0.2); border-radius:8px; padding:10px; background:rgba(59,130,246,0.03);">
                     <div style="font-size:10px; font-weight:700; color:#3b82f6; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:6px;">Modified Narrative</div>
-                    <div id="modNarrativeText" class="text-sm text-gray-300 leading-relaxed"></div>
+                    <div id="modNarrativeText" class="text-sm leading-relaxed" style="color:var(--text-secondary);"></div>
                 </div>
             </div>
         </div>
         <p id="disclaimer" class="text-[9px] text-orange-400/70 mt-3 hidden">Commentary is derived strictly from chart data. No external events, causes, or forecasts are inferred. All numeric values originate from deterministic SVG parsing and are subject to &plusmn;0.5px coordinate precision.</p>
     </div>
     <!-- Chatbot content -->
-    <div id="btab-chatbot" class="btab-content hidden" style="height:calc(100% - 32px);">
-        <div id="chatMessages" class="px-4 py-2 overflow-y-auto space-y-2" style="height:calc(100% - 40px);"></div>
-        <div class="flex items-center gap-2 px-4 py-2 border-t border-white/5">
+    <div id="btab-chatbot" class="btab-content hidden" style="height:calc(100% - 38px);">
+        <div id="chatMessages" class="px-5 py-3 overflow-y-auto space-y-2" style="height:calc(100% - 48px);"></div>
+        <div class="flex items-center gap-2 px-5 py-2.5" style="border-top:1px solid var(--border-subtle);">
             <button onclick="toggleVoiceInput()" id="voiceMicBtn" class="voice-btn" title="Voice input">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 01-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
             </button>
-            <input type="text" id="chatInput" placeholder="Ask about the data... e.g. 'What is the USD trend?'" class="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50" onkeydown="if(event.key==='Enter')sendChatMessage()">
+            <input type="text" id="chatInput" placeholder="Ask about the data... e.g. 'What is the USD trend?'" class="flex-1 rounded-lg px-3 py-1.5 text-xs placeholder-gray-500 focus:outline-none focus:border-blue-500/50" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary);" onkeydown="if(event.key==='Enter')sendChatMessage()">
             <button onclick="sendChatMessage()" class="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-lg transition">Send</button>
             <button onclick="readLastBotMessage()" id="readAloudBtn" class="voice-btn" title="Read last response aloud">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14"/><path d="M15.54 8.46a5 5 0 010 7.08"/></svg>
             </button>
+        </div>
+    </div>
+</div>
+
+<!-- PREDICT MODAL -->
+<div id="predictModal" class="hidden fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50">
+    <div style="width:100%; max-width:420px; margin:0 16px; background:var(--bg-elevated); border:1px solid var(--border-medium); border-radius:12px; padding:20px; max-height:90vh; overflow-y:auto;">
+        <div class="flex items-center justify-between mb-5">
+            <span style="font-size:13px; font-weight:700; color:var(--text-heading); text-transform:uppercase; letter-spacing:0.05em;">Forecast Configuration</span>
+            <button onclick="closePredictModal()" style="background:none; border:none; color:var(--text-muted); font-size:20px; cursor:pointer; line-height:1;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color=''">&times;</button>
+        </div>
+
+        <!-- Series selector -->
+        <div id="pmSeriesGroup" class="mb-3">
+            <label class="block mb-1" style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Series</label>
+            <select id="pmSeries" class="w-full rounded-lg px-3 py-2 text-sm" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none;"></select>
+        </div>
+
+        <!-- Model selector -->
+        <div class="mb-3">
+            <label class="block mb-1" style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Model</label>
+            <select id="pmModel" onchange="onPMModelChange()" class="w-full rounded-lg px-3 py-2 text-sm" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none;">
+                <option value="linear">Linear Regression</option>
+                <option value="ridge">Ridge Regression</option>
+                <option value="lasso">Lasso Regression</option>
+                <option value="svr">Support Vector Regression (SVR)</option>
+                <option value="rf" selected>Random Forest</option>
+                <option value="gb">Gradient Boosting</option>
+                <option value="mlp">MLP Neural Network</option>
+            </select>
+        </div>
+
+        <!-- Common hyperparams -->
+        <div class="grid grid-cols-3 gap-2 mb-3">
+            <div>
+                <label class="block mb-1" style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Forecast Steps</label>
+                <input id="pmForecastSteps" type="number" value="20" min="1" max="500" class="w-full rounded px-2 py-1.5 text-xs" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none;" placeholder="e.g. 30">
+            </div>
+            <div>
+                <label class="block mb-1" style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Lookback Window</label>
+                <input id="pmLookback" type="number" value="5" min="2" max="30" class="w-full rounded px-2 py-1.5 text-xs" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none;">
+            </div>
+            <div>
+                <label class="block mb-1" style="font-size:10px; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em;">Test Split</label>
+                <input id="pmTestSplit" type="number" value="0.2" min="0.1" max="0.5" step="0.05" class="w-full rounded px-2 py-1.5 text-xs" style="background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none;">
+            </div>
+        </div>
+
+        <!-- Auto-tune toggle -->
+        <div class="flex items-center gap-3 mb-3" style="background:rgba(59,130,246,0.06);border:1px solid rgba(59,130,246,0.15);border-radius:8px;padding:8px 12px;">
+            <input type="checkbox" id="pmAutoTune" onchange="onAutoTuneToggle()" style="width:14px;height:14px;accent-color:#3b82f6;cursor:pointer;flex-shrink:0;">
+            <div style="flex:1;min-width:0;">
+                <span style="font-size:11px;color:#93c5fd;font-weight:600;">Auto-tune with Optuna</span>
+                <span style="font-size:10px;color:var(--text-muted);display:block;">Finds best hyperparams automatically</span>
+            </div>
+            <div id="pmNTrialsWrap" style="display:none;flex-shrink:0;text-align:right;">
+                <span style="font-size:9px;color:var(--text-muted);display:block;">Trials</span>
+                <input type="number" id="pmNTrials" value="30" min="5" max="100" style="width:52px;background:var(--bg-input);border:1px solid rgba(59,130,246,0.3);color:var(--text-primary);border-radius:4px;padding:2px 6px;font-size:11px;outline:none;">
+            </div>
+        </div>
+
+        <!-- Model-specific hyperparams (dynamically filled) -->
+        <div id="pmSpecificParams" class="mb-4"></div>
+
+        <!-- Error -->
+        <div id="pmError" class="hidden mb-3" style="font-size:12px; color:#f87171; background:rgba(239,68,68,0.08); border:1px solid rgba(239,68,68,0.2); border-radius:8px; padding:8px 12px;"></div>
+
+        <!-- Buttons -->
+        <div class="flex gap-2">
+            <button onclick="runPrediction()" id="pmRunBtn" class="flex-1 py-2 text-sm font-bold rounded-lg transition" style="background:#2563eb; color:#fff; border:none; cursor:pointer; letter-spacing:0.05em;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">PREDICT</button>
+            <button onclick="closePredictModal()" class="px-4 py-2 text-sm rounded-lg transition" style="background:var(--bg-btn); border:1px solid var(--bg-btn-border); color:var(--text-muted); cursor:pointer;">Cancel</button>
         </div>
     </div>
 </div>
@@ -415,6 +595,31 @@
 </div>
 
 <script>
+// === THEME ===
+function initTheme() {
+    var saved = localStorage.getItem('nova_theme');
+    if (saved === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+        document.getElementById('themeIconSun').style.display = '';
+        document.getElementById('themeIconMoon').style.display = 'none';
+    }
+}
+function toggleTheme() {
+    var isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('nova_theme', 'dark');
+        document.getElementById('themeIconSun').style.display = 'none';
+        document.getElementById('themeIconMoon').style.display = '';
+    } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+        localStorage.setItem('nova_theme', 'light');
+        document.getElementById('themeIconSun').style.display = '';
+        document.getElementById('themeIconMoon').style.display = 'none';
+    }
+}
+initTheme();
+
 // === STATE ===
 const API = '';
 let charts = {};
@@ -499,8 +704,14 @@ function logout() {
     document.getElementById('authScreen').classList.remove('hidden');
 })();
 let panX = 0, panY = 0, isPanning = false, panStartX = 0, panStartY = 0;
+let predOrigZoom = 1, predOrigPanX = 0, predOrigPanY = 0;
+let predOrigPanning = false, predOrigPanStartX = 0, predOrigPanStartY = 0;
+let predExtZoom = 1, predExtPanX = 0, predExtPanY = 0;
+let predExtSVGW = 960, predExtSVGH = 720;
+let predExtPanning = false, predExtPanStartX = 0, predExtPanStartY = 0;
 let originalInsightJSON = {};  // stores original JSON per chart_id
 let modifiedInsight = null;    // stores modified insight after edit
+var narrativeRevealedCharts = new Set(); // tracks charts whose commentary has been shown
 
 // === API ===
 function authHeaders() { return authToken ? {'Authorization': 'Bearer ' + authToken} : {}; }
@@ -1294,7 +1505,7 @@ function _drawBarChart(svg, el, txt, ns, insight, pa, xLabels, xPixels, yLabels,
                 highlightJSONPoint(series.name, idx);
                 var diff = dp.value - meanVal;
                 var html = '<div class="tt-series"><span class="tt-dot" style="background:'+barColor+'"></span>' + dp.x_label + '</div>';
-                html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:#fff">' + dp.value.toFixed(2) + '%</span></div>';
+                html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:var(--text-heading)">' + dp.value.toFixed(2) + '%</span></div>';
                 html += '<div class="tt-row"><span class="tt-label">Rank</span><span class="tt-value">#' + rank + ' of ' + series.data_points.length + '</span></div>';
                 html += '<div class="tt-row"><span class="tt-label">% of Max</span><span class="tt-value">' + (pct*100).toFixed(1) + '%</span></div>';
                 html += '<div class="tt-divider"></div>';
@@ -1369,7 +1580,7 @@ function _drawVerticalBarChart(svg, el, txt, ns, insight, pa, xLabels, xPixels, 
                     var diff = dp.value - meanVal;
                     var html = '<div class="tt-series"><span class="tt-dot" style="background:'+color+'"></span>' + s.name + '</div>';
                     html += '<div class="tt-row"><span class="tt-label">Period</span><span class="tt-value">' + windowYearLabel(dp.x_label) + '</span></div>';
-                    html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:#fff">' + dp.value.toFixed(2) + '</span></div>';
+                    html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:var(--text-heading)">' + dp.value.toFixed(2) + '</span></div>';
                     html += '<div class="tt-row"><span class="tt-label">vs Mean</span><span class="tt-value" style="color:' + (diff>=0?'#22c55e':'#ef4444') + '">' + (diff>=0?'+':'') + diff.toFixed(2) + '</span></div>';
                     tooltip.innerHTML = html;
                     tooltip.style.display = 'block';
@@ -1458,7 +1669,7 @@ function _drawLineChart(svg, el, txt, ns, insight, pa, xLabels, xPixels, yLabels
 
                     var html = '<div class="tt-series"><span class="tt-dot" style="background:'+color+'"></span>' + s.name + '</div>';
                     html += '<div class="tt-row"><span class="tt-label">Period</span><span class="tt-value">' + windowYearLabel(dp.x_label) + '</span></div>';
-                    html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:#fff">' + dp.value.toFixed(2) + '</span></div>';
+                    html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:14px;color:var(--text-heading)">' + dp.value.toFixed(2) + '</span></div>';
 
                     if (idx > 0) {
                         var prev = s.data_points[idx-1].value;
@@ -1609,7 +1820,7 @@ function buildHoverOverlay(chartId) {
         if (isBar) {
             // Bar chart: show category, value, rank, % of max
             html += '<div class="tt-row"><span class="tt-label">Region</span><span class="tt-value">' + dp.x_label + '</span></div>';
-            html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:13px;color:#fff">' + dp.value.toFixed(2) + '%</span></div>';
+            html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:13px;color:var(--text-heading)">' + dp.value.toFixed(2) + '%</span></div>';
             if (extraInfo.rank !== undefined) {
                 html += '<div class="tt-row"><span class="tt-label">Rank</span><span class="tt-value">#' + extraInfo.rank + ' of ' + totalPts + '</span></div>';
             }
@@ -1632,7 +1843,7 @@ function buildHoverOverlay(chartId) {
         } else {
             // Line chart: show time, value, change
             html += '<div class="tt-row"><span class="tt-label">Period</span><span class="tt-value">' + dp.x_label + '</span></div>';
-            html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:13px;color:#fff">' + dp.value.toFixed(2) + '</span></div>';
+            html += '<div class="tt-row"><span class="tt-label">Value</span><span class="tt-value" style="font-size:13px;color:var(--text-heading)">' + dp.value.toFixed(2) + '</span></div>';
 
             // Change from previous point
             if (idx > 0) {
@@ -1923,8 +2134,8 @@ function triggerRangeAnalysis(x1, x2, insight) {
         filteredNews.slice(0, 4).forEach(function(ev) {
             html += '<div style="padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:10px;">';
             if (ev.url) html += '<a href="' + escapeHtml(ev.url) + '" target="_blank" rel="noopener noreferrer" style="color:#93c5fd;text-decoration:none;">' + escapeHtml(ev.headline) + '</a>';
-            else html += '<span style="color:#d1d5db;">' + escapeHtml(ev.headline) + '</span>';
-            if (ev.snippet) html += '<div style="color:#9ca3af;font-size:9px;margin-top:1px;line-height:1.3;">' + escapeHtml(ev.snippet).substring(0, 120) + '</div>';
+            else html += '<span style="color:var(--text-secondary);">' + escapeHtml(ev.headline) + '</span>';
+            if (ev.snippet) html += '<div style="color:var(--text-muted);font-size:9px;margin-top:1px;line-height:1.3;">' + escapeHtml(ev.snippet).substring(0, 120) + '</div>';
             html += '</div>';
         });
         html += '</div>';
@@ -2332,7 +2543,7 @@ function selectChart(id) {
     av.classList.remove('hidden'); av.style.display = '';
     document.getElementById('bottomPanel').classList.remove('hidden');
     document.getElementById('bottomPanel').style.height = bottomPanelHeight + 'px';
-    av.style.height = 'calc(100vh - 42px - ' + bottomPanelHeight + 'px)';
+    av.style.height = 'calc(100vh - 42px - ' + (bottomPanelHeight + 24) + 'px)';
 
     var meta = data.insight.metadata;
     var insight = data.insight;
@@ -2347,7 +2558,7 @@ function selectChart(id) {
     setMetaBadge('metaUnit', 'UNIT ' + (meta.subtitle || ''));
     setMetaBadge('metaType', 'TYPE ' + meta.chart_type.replace('_',' '));
     setMetaBadge('metaSeries', 'SERIES ' + insight.series.length);
-    document.getElementById('metaSource').textContent = meta.source ? 'Source: ' + meta.source : '';
+    document.getElementById('metaSource').textContent = meta.source ? (meta.source.toLowerCase().startsWith('source') ? meta.source : 'Source: ' + meta.source) : '';
 
     fullInsight = JSON.parse(JSON.stringify(insight));
     renderExtractedSVG(id);
@@ -2361,10 +2572,38 @@ function selectChart(id) {
     originalInsightJSON[id] = JSON.stringify(insight, null, 2);
     clearComparisonView();
 
-    document.getElementById('narrativeText').innerHTML = formatNarrative(narrative);
-    document.getElementById('disclaimer').classList.remove('hidden');
-    document.getElementById('llmBadge').textContent = narrative.tone ? narrative.tone.toUpperCase() : '';
-    document.getElementById('llmAttempts').textContent = '';
+    // If commentary was already revealed for this chart, show it immediately
+    if (narrativeRevealedCharts.has(id)) {
+        document.getElementById('narrativeText').innerHTML = formatNarrative(narrative);
+        document.getElementById('disclaimer').classList.remove('hidden');
+        document.getElementById('llmBadge').textContent = narrative.tone ? narrative.tone.toUpperCase() : '';
+        document.getElementById('llmAttempts').textContent = '';
+    } else {
+        // First load — show "Generating..." for 30s
+        document.getElementById('disclaimer').classList.add('hidden');
+        document.getElementById('llmBadge').textContent = '';
+        document.getElementById('llmAttempts').textContent = '';
+        document.getElementById('narrativeText').innerHTML =
+            '<div style="display:flex;align-items:center;gap:10px;padding:12px 0;">' +
+            '<div style="width:16px;height:16px;border:2px solid #3b82f6;border-top-color:transparent;border-radius:50%;animation:spin 0.8s linear infinite;flex-shrink:0;"></div>' +
+            '<span style="font-size:13px;color:var(--text-muted);font-style:italic;">Generating commentary<span id="genDots"></span></span>' +
+            '</div>';
+        var dotCount = 0;
+        var dotInterval = setInterval(function() {
+            dotCount = (dotCount + 1) % 4;
+            var dotsEl = document.getElementById('genDots');
+            if (dotsEl) dotsEl.textContent = '.'.repeat(dotCount);
+        }, 500);
+        var capturedId = id;
+        setTimeout(function() {
+            clearInterval(dotInterval);
+            if (activeChartId !== capturedId) return; // user switched away
+            narrativeRevealedCharts.add(capturedId);
+            document.getElementById('narrativeText').innerHTML = formatNarrative(narrative);
+            document.getElementById('disclaimer').classList.remove('hidden');
+            document.getElementById('llmBadge').textContent = narrative.tone ? narrative.tone.toUpperCase() : '';
+        }, 30000);
+    }
 
     switchRightTab('series');
     switchBottomTab('commentary');
@@ -2389,12 +2628,12 @@ function switchRightTab(name) {
 function switchBottomTab(name) {
     document.querySelectorAll('.btab-content').forEach(function(el){el.classList.add('hidden');});
     document.querySelectorAll('[data-btab]').forEach(function(el){
-        el.classList.remove('text-blue-400','border-b-2','border-blue-400');
+        el.classList.remove('text-blue-400','bg-blue-500/10');
         el.classList.add('text-gray-500');
     });
     document.getElementById('btab-'+name).classList.remove('hidden');
     var btn = document.querySelector('[data-btab="'+name+'"]');
-    if (btn) {btn.classList.add('text-blue-400','border-b-2','border-blue-400');btn.classList.remove('text-gray-500');}
+    if (btn) {btn.classList.add('text-blue-400','bg-blue-500/10');btn.classList.remove('text-gray-500');}
 }
 
 var bottomPanelHeight = 252;
@@ -2404,12 +2643,12 @@ function toggleBottomPanel() {
     if (bottomExpanded) {
         document.querySelectorAll('.btab-content').forEach(function(el){ el.style.display = ''; });
         document.getElementById('bottomPanel').style.height = bottomPanelHeight + 'px';
-        av.style.height = 'calc(100vh - 42px - ' + bottomPanelHeight + 'px)';
+        av.style.height = 'calc(100vh - 42px - ' + (bottomPanelHeight + 24) + 'px)';
         document.getElementById('bottomToggleBtn').innerHTML = '&#9660;';
     } else {
         document.querySelectorAll('.btab-content').forEach(function(el){ el.style.display = 'none'; });
-        document.getElementById('bottomPanel').style.height = '32px';
-        av.style.height = 'calc(100vh - 42px - 32px)';
+        document.getElementById('bottomPanel').style.height = '38px';
+        av.style.height = 'calc(100vh - 42px - 62px)';
         document.getElementById('bottomToggleBtn').innerHTML = '&#9650;';
     }
 }
@@ -2435,7 +2674,7 @@ function toggleBottomPanel() {
         panel.style.height = newH + 'px';
         bottomPanelHeight = newH;
         var av = document.getElementById('analysisView');
-        if (av) av.style.height = 'calc(100vh - 42px - ' + newH + 'px)';
+        if (av) av.style.height = 'calc(100vh - 42px - ' + (newH + 24) + 'px)';
     });
     document.addEventListener('mouseup', function() {
         if (!dragging) return;
@@ -2787,7 +3026,7 @@ async function exportPDF() {
     pdf.setFont('helvetica', 'bold');
     pdf.setFontSize(14);
     pdf.setTextColor(255, 255, 255);
-    pdf.text('Chart Insight Analyst', margin, 12);
+    pdf.text('Nova', margin, 12);
     pdf.setFontSize(8);
     pdf.setTextColor(150, 150, 150);
     pdf.text(new Date().toLocaleDateString(), pageW - margin, 12, { align: 'right' });
@@ -2952,7 +3191,7 @@ async function exportPDF() {
         pdf.setPage(p);
         pdf.setFontSize(7);
         pdf.setTextColor(160, 160, 160);
-        pdf.text('Generated by Chart Insight Analyst  |  Page ' + p + ' of ' + totalPages, pageW / 2, pageH - 6, { align: 'center' });
+        pdf.text('Generated by Nova  |  Page ' + p + ' of ' + totalPages, pageW / 2, pageH - 6, { align: 'center' });
     }
 
     pdf.save('chart-report-' + activeChartId + '.pdf');
@@ -3932,7 +4171,7 @@ function renderComparisonSVG(insight, wrapperId, svgId, chartAreaId, tooltipId) 
                         highlightJSONPoint(barSeries.name, idx);
                         if (compTooltip && compChartArea) {
                             compTooltip.innerHTML = '<div style="font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:'+barColor+';display:inline-block;"></span>' + dp.x_label + '</div>' +
-                                '<div style="display:flex;justify-content:space-between;"><span style="color:#9ca3af;">Value</span><span style="font-weight:600;color:#fff;">' + dp.value.toFixed(2) + '</span></div>';
+                                '<div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Value</span><span style="font-weight:600;color:var(--text-heading);">' + dp.value.toFixed(2) + '</span></div>';
                             compTooltip.style.display = 'block';
                             positionTooltip(e, compTooltip, compChartArea);
                         }
@@ -3985,12 +4224,12 @@ function renderComparisonSVG(insight, wrapperId, svgId, chartAreaId, tooltipId) 
                         highlightJSONPoint(sName, idx);
                         if (compTooltip && compChartArea) {
                             var html = '<div style="font-weight:700;margin-bottom:4px;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;border-radius:50%;background:'+color+';display:inline-block;"></span>' + sName + '</div>';
-                            html += '<div style="display:flex;justify-content:space-between;"><span style="color:#9ca3af;">Period</span><span style="font-weight:600;">' + dp.x_label + '</span></div>';
-                            html += '<div style="display:flex;justify-content:space-between;"><span style="color:#9ca3af;">Value</span><span style="font-weight:600;color:#fff;">' + dp.value.toFixed(2) + '</span></div>';
+                            html += '<div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Period</span><span style="font-weight:600;">' + dp.x_label + '</span></div>';
+                            html += '<div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Value</span><span style="font-weight:600;color:var(--text-heading);">' + dp.value.toFixed(2) + '</span></div>';
                             if (idx > 0) {
                                 var prev = dps[idx-1].value;
                                 var chg = dp.value - prev;
-                                html += '<div style="display:flex;justify-content:space-between;"><span style="color:#9ca3af;">Change</span><span style="font-weight:600;color:' + (chg>=0?'#22c55e':'#ef4444') + ';">' + (chg>=0?'+':'') + chg.toFixed(2) + '</span></div>';
+                                html += '<div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Change</span><span style="font-weight:600;color:' + (chg>=0?'#22c55e':'#ef4444') + ';">' + (chg>=0?'+':'') + chg.toFixed(2) + '</span></div>';
                             }
                             html += '<div style="border-top:1px solid rgba(255,255,255,0.08);margin:4px 0;"></div>';
                             html += '<div style="text-align:center;font-size:8px;color:#3b82f6;">\u2190 JSON synced</div>';
@@ -4180,6 +4419,1076 @@ function narrateCommentary() {
 if (window.speechSynthesis) {
     window.speechSynthesis.getVoices();
     window.speechSynthesis.onvoiceschanged = function() { window.speechSynthesis.getVoices(); };
+}
+
+// === PREDICTION ===
+var predictionChartInstance = null;
+var predChartAllLabels = [];
+var predChartZoomStart = 0;
+var predChartZoomEnd = -1;
+
+var SEL_STYLE = 'background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none; border-radius:4px; padding:4px 8px; font-size:12px; width:100%;';
+var INP_STYLE = 'background:var(--bg-input); border:1px solid var(--bg-input-border); color:var(--text-primary); outline:none; border-radius:4px; padding:4px 8px; font-size:12px; width:100%;';
+
+var PM_MODEL_PARAMS = {
+    linear: [],
+    ridge: [
+        { id: 'pmAlpha', label: 'Alpha (regularization)', type: 'number', value: '1.0', min: '0.001', step: '0.1', key: 'alpha' }
+    ],
+    lasso: [
+        { id: 'pmAlpha', label: 'Alpha (regularization)', type: 'number', value: '0.1', min: '0.001', step: '0.01', key: 'alpha' }
+    ],
+    svr: [
+        { id: 'pmC', label: 'C (regularization)', type: 'number', value: '1.0', min: '0.01', step: '0.5', key: 'C' },
+        { id: 'pmKernel', label: 'Kernel', type: 'select', options: ['rbf','linear','poly'], value: 'rbf', key: 'kernel' },
+        { id: 'pmEpsilon', label: 'Epsilon', type: 'number', value: '0.1', min: '0.001', step: '0.05', key: 'epsilon' }
+    ],
+    rf: [
+        { id: 'pmNEstimators', label: 'Trees', type: 'number', value: '100', min: '10', max: '500', step: '10', key: 'n_estimators' },
+        { id: 'pmMaxDepth', label: 'Max Depth (blank = unlimited)', type: 'number', value: '', min: '1', max: '20', key: 'max_depth' }
+    ],
+    gb: [
+        { id: 'pmNEstimators', label: 'Estimators', type: 'number', value: '100', min: '10', max: '500', step: '10', key: 'n_estimators' },
+        { id: 'pmLR', label: 'Learning Rate', type: 'number', value: '0.1', min: '0.001', max: '1', step: '0.01', key: 'learning_rate' },
+        { id: 'pmMaxDepth2', label: 'Max Depth', type: 'number', value: '3', min: '1', max: '10', key: 'max_depth' }
+    ],
+    mlp: [
+        { id: 'pmHL', label: 'Hidden Layers (e.g. 64,32)', type: 'text', value: '64,32', placeholder: '64,32', key: 'hidden_layer_sizes' },
+        { id: 'pmMaxIter', label: 'Max Iterations', type: 'number', value: '500', min: '50', max: '2000', step: '50', key: 'max_iter' }
+    ]
+};
+
+function openPredictModal() {
+    if (!activeChartId || !charts[activeChartId]) return;
+    var insight = charts[activeChartId].insight;
+    var sel = document.getElementById('pmSeries');
+    sel.innerHTML = '';
+    // All series option (always first)
+    var allOpt = document.createElement('option');
+    allOpt.value = 'all';
+    allOpt.textContent = 'All Series';
+    sel.appendChild(allOpt);
+    insight.series.forEach(function(s) {
+        var opt = document.createElement('option');
+        opt.value = s.name;
+        opt.textContent = s.name;
+        sel.appendChild(opt);
+    });
+    // Default: first individual series selected
+    if (insight.series.length > 0) sel.value = insight.series[0].name;
+    document.getElementById('pmSeriesGroup').style.display = '';
+    document.getElementById('pmModel').value = 'rf';
+    document.getElementById('pmForecastSteps').value = '20';
+    document.getElementById('pmLookback').value = '5';
+    document.getElementById('pmTestSplit').value = '0.2';
+    document.getElementById('pmError').classList.add('hidden');
+    document.getElementById('pmAutoTune').checked = false;
+    onAutoTuneToggle();
+    onPMModelChange();
+    document.getElementById('predictModal').classList.remove('hidden');
+}
+
+function closePredictModal() {
+    document.getElementById('predictModal').classList.add('hidden');
+}
+
+function onAutoTuneToggle() {
+    var on = document.getElementById('pmAutoTune').checked;
+    document.getElementById('pmNTrialsWrap').style.display = on ? 'block' : 'none';
+    var sp = document.getElementById('pmSpecificParams');
+    sp.style.opacity = on ? '0.3' : '1';
+    sp.style.pointerEvents = on ? 'none' : '';
+    document.getElementById('pmRunBtn').textContent = on ? 'TUNE & PREDICT' : 'PREDICT';
+}
+
+function onPMModelChange() {
+    var model = document.getElementById('pmModel').value;
+    var params = PM_MODEL_PARAMS[model] || [];
+    var container = document.getElementById('pmSpecificParams');
+    if (!params.length) { container.innerHTML = ''; return; }
+
+    var cols = Math.min(params.length, 3);
+    var html = '<div class="grid gap-2" style="grid-template-columns:repeat('+cols+',1fr);">';
+    params.forEach(function(p) {
+        html += '<div>';
+        html += '<label class="block mb-1" style="font-size:10px; color:#6b7280; text-transform:uppercase; letter-spacing:0.05em;">' + p.label + '</label>';
+        if (p.type === 'select') {
+            html += '<select id="' + p.id + '" style="' + SEL_STYLE + '">';
+            p.options.forEach(function(o) {
+                html += '<option value="' + o + '"' + (o === p.value ? ' selected' : '') + '>' + o + '</option>';
+            });
+            html += '</select>';
+        } else {
+            var extras = '';
+            if (p.min !== undefined) extras += ' min="' + p.min + '"';
+            if (p.max !== undefined) extras += ' max="' + p.max + '"';
+            if (p.step !== undefined) extras += ' step="' + p.step + '"';
+            if (p.placeholder) extras += ' placeholder="' + p.placeholder + '"';
+            html += '<input id="' + p.id + '" type="' + p.type + '" value="' + (p.value||'') + '"' + extras + ' style="' + INP_STYLE + '">';
+        }
+        html += '</div>';
+    });
+    html += '</div>';
+    container.innerHTML = html;
+}
+
+function _collectPMHyperparams() {
+    var model = document.getElementById('pmModel').value;
+    var params = PM_MODEL_PARAMS[model] || [];
+    var hp = {
+        forecast_steps: parseInt(document.getElementById('pmForecastSteps').value) || 10,
+        lookback: parseInt(document.getElementById('pmLookback').value) || 5,
+        test_split: parseFloat(document.getElementById('pmTestSplit').value) || 0.2
+    };
+    params.forEach(function(p) {
+        var el = document.getElementById(p.id);
+        if (!el) return;
+        var v = el.value.trim();
+        if (v === '') return;
+        if (p.type === 'number') {
+            var n = parseFloat(v);
+            if (!isNaN(n)) hp[p.key] = n;
+        } else {
+            hp[p.key] = v;
+        }
+    });
+    var autoTune = document.getElementById('pmAutoTune').checked;
+    if (autoTune) {
+        hp.auto_tune = true;
+        hp.n_trials = parseInt(document.getElementById('pmNTrials').value) || 30;
+    }
+    return hp;
+}
+
+async function runPrediction() {
+    var runBtn = document.getElementById('pmRunBtn');
+    var errEl = document.getElementById('pmError');
+    var isTuning = document.getElementById('pmAutoTune').checked;
+    errEl.classList.add('hidden');
+    runBtn.textContent = isTuning ? 'Tuning...' : 'Running...';
+    runBtn.disabled = true;
+    runBtn.style.opacity = '0.6';
+
+    try {
+        var seriesVal = document.getElementById('pmSeries').value;
+        var response = await apiPost('/api/predict', {
+            chart_id: activeChartId,
+            series_name: seriesVal,
+            model: document.getElementById('pmModel').value,
+            hyperparams: _collectPMHyperparams()
+        });
+        console.log('[PREDICT] raw response:', JSON.stringify(response));
+        closePredictModal();
+        window._lastPredModel = document.getElementById('pmModel').value;
+        renderPredictionPanel(response);
+    } catch (e) {
+        console.error('[PREDICT] error:', e);
+        errEl.textContent = e.message || 'Prediction failed.';
+        errEl.classList.remove('hidden');
+    } finally {
+        runBtn.textContent = isTuning ? 'TUNE & PREDICT' : 'PREDICT';
+        runBtn.disabled = false;
+        runBtn.style.opacity = '1';
+    }
+}
+
+function _setMetricEl(id, value, isR2) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (isR2) {
+        el.textContent = value.toFixed(3);
+        el.style.color = value >= 0.7 ? '#22c55e' : value >= 0.4 ? '#eab308' : '#ef4444';
+    } else {
+        el.textContent = typeof value === 'number' ? value.toFixed(3) : value;
+        el.style.color = '#e5e5e5';
+    }
+}
+
+function renderPredictionInSVG(successResults, model, metricsToShow, seriesBadge, bestParams) {
+    var modelLabels = {
+        linear:'Linear Regression', ridge:'Ridge', lasso:'Lasso',
+        svr:'SVR', rf:'Random Forest', gb:'Gradient Boosting', mlp:'MLP Neural Net'
+    };
+    var ZOOM_BTN = 'width:28px;height:28px;background:var(--bg-btn);border:1px solid var(--bg-btn-border);border-radius:6px;color:var(--text-primary);font-weight:bold;cursor:pointer;line-height:1;font-size:15px;transition:background 0.15s;';
+    var ZOOM_BTN_SM = 'padding:0 7px;height:28px;background:var(--bg-btn);border:1px solid var(--bg-btn-border);border-radius:6px;color:var(--text-primary);font-size:9px;font-weight:700;cursor:pointer;transition:background 0.15s;';
+
+    var prev = document.getElementById('predictionView');
+    if (prev) {
+        if (predictionChartInstance) { predictionChartInstance.destroy(); predictionChartInstance = null; }
+        prev.remove();
+    }
+    var chartArea = document.getElementById('chartArea');
+    chartArea.style.display = 'none';
+    predExtZoom = 1; predExtPanX = 0; predExtPanY = 0;
+
+    // Outer column container
+    var predDiv = document.createElement('div');
+    predDiv.id = 'predictionView';
+    predDiv.style.cssText = 'display:flex;flex:1;min-height:0;min-width:0;flex-direction:column;overflow:hidden;background:#0f1117;';
+
+    // ── Header bar ────────────────────────────────────────────────────────────
+    var hdr = document.createElement('div');
+    hdr.style.cssText = 'display:flex;align-items:center;flex-shrink:0;background:#0d1019;border-bottom:1px solid rgba(255,255,255,0.08);';
+
+    var titleStrip = document.createElement('div');
+    titleStrip.style.cssText = 'display:flex;align-items:center;gap:10px;padding:0 12px;height:32px;border-right:1px solid rgba(255,255,255,0.06);flex-shrink:0;';
+    titleStrip.innerHTML =
+        '<span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#3b82f6;">Forecast</span>' +
+        '<span style="font-size:10px;color:var(--text-muted);font-weight:600;">' + (modelLabels[model] || model) + '</span>' +
+        '<span style="font-size:10px;color:#6b7280;">' + seriesBadge + '</span>';
+
+    var mStrip = document.createElement('div');
+    mStrip.style.cssText = 'display:flex;align-items:center;gap:14px;padding:0 14px;height:32px;overflow-x:auto;flex:1;';
+    var mItems = [
+        ['ppMAE','MAE'],['ppMSE','MSE'],['ppRMSE','RMSE'],['ppR2','R\u00b2'],
+        ['ppMAPE','MAPE'],['ppEV','Expl.Var'],['ppMaxErr','MaxErr'],['ppMedAE','MedAE'],['ppDirAcc','DirAcc']
+    ];
+    mItems.forEach(function(m) {
+        var d = document.createElement('div');
+        d.style.cssText = 'display:flex;align-items:center;gap:4px;flex-shrink:0;font-size:10px;';
+        d.innerHTML = '<span style="color:#6b7280;">' + m[1] + '</span><span id="' + m[0] + '" style="font-weight:600;color:#e5e5e5;"></span>';
+        mStrip.appendChild(d);
+    });
+
+    var closeBtn = document.createElement('button');
+    closeBtn.innerHTML = '&#215;';
+    closeBtn.style.cssText = 'color:#6b7280;background:none;border:none;cursor:pointer;font-size:20px;line-height:1;padding:0 14px;flex-shrink:0;height:32px;';
+    closeBtn.onmouseover = function(){ this.style.color='#ef4444'; };
+    closeBtn.onmouseout  = function(){ this.style.color='#6b7280'; };
+    closeBtn.onclick = closePredictionPanel;
+
+    hdr.appendChild(titleStrip);
+    hdr.appendChild(mStrip);
+    hdr.appendChild(closeBtn);
+    predDiv.appendChild(hdr);
+
+    // Best-params sub-row — only visible after auto-tune
+    if (bestParams && Object.keys(bestParams).length > 0) {
+        var bpRow = document.createElement('div');
+        bpRow.style.cssText = 'display:flex;align-items:center;gap:10px;padding:0 14px;height:26px;background:#0a0d15;border-bottom:1px solid rgba(59,130,246,0.12);overflow-x:auto;flex-shrink:0;';
+        var bpLbl = document.createElement('span');
+        bpLbl.style.cssText = 'font-size:9px;font-weight:700;color:#3b82f6;text-transform:uppercase;letter-spacing:0.08em;flex-shrink:0;margin-right:4px;';
+        bpLbl.textContent = 'Best Params';
+        bpRow.appendChild(bpLbl);
+        Object.keys(bestParams).forEach(function(k) {
+            var v = bestParams[k];
+            var fv = typeof v === 'number' ? (Number.isInteger(v) ? String(v) : v.toFixed(4)) : String(v);
+            var sp = document.createElement('span');
+            sp.style.cssText = 'font-size:9px;flex-shrink:0;white-space:nowrap;';
+            sp.innerHTML = '<span style="color:#6b7280;">' + k + '</span><span style="color:#e5e5e5;">\u00a0' + fv + '</span>';
+            bpRow.appendChild(sp);
+        });
+        predDiv.appendChild(bpRow);
+    }
+
+    // ── SVG wrapper (scroll + zoom) ───────────────────────────────────────────
+    var svgWrap = document.createElement('div');
+    svgWrap.id = 'predSVGWrap';
+    svgWrap.style.cssText = 'flex:1;position:relative;overflow:hidden;min-height:0;cursor:grab;';
+
+    var extSVG = buildExtendedSVG(successResults);
+    svgWrap.appendChild(extSVG);
+
+    // Zoom button overlay (top-right corner)
+    var zoomCtrls = document.createElement('div');
+    zoomCtrls.style.cssText = 'position:absolute;top:8px;right:8px;z-index:20;display:flex;flex-direction:column;gap:4px;';
+    var zIn = document.createElement('button'); zIn.title='Zoom In'; zIn.innerHTML='+'; zIn.style.cssText=ZOOM_BTN;
+    zIn.onmouseover=function(){this.style.background='rgba(255,255,255,0.22)'}; zIn.onmouseout=function(){this.style.background='rgba(255,255,255,0.1)'};
+    zIn.onclick=function(){ zoomPredExt(1.25); };
+    var zOut = document.createElement('button'); zOut.title='Zoom Out'; zOut.innerHTML='&minus;'; zOut.style.cssText=ZOOM_BTN;
+    zOut.onmouseover=function(){this.style.background='rgba(255,255,255,0.22)'}; zOut.onmouseout=function(){this.style.background='rgba(255,255,255,0.1)'};
+    zOut.onclick=function(){ zoomPredExt(0.8); };
+    var zRst = document.createElement('button'); zRst.title='Reset'; zRst.textContent='1:1'; zRst.style.cssText=ZOOM_BTN_SM;
+    zRst.onmouseover=function(){this.style.background='rgba(255,255,255,0.22)'}; zRst.onmouseout=function(){this.style.background='rgba(255,255,255,0.1)'};
+    zRst.onclick=function(){ zoomPredExtReset(); };
+    zoomCtrls.appendChild(zIn); zoomCtrls.appendChild(zOut); zoomCtrls.appendChild(zRst);
+    svgWrap.appendChild(zoomCtrls);
+
+    _setupPredExtZoomEvents(svgWrap);
+
+    predDiv.appendChild(svgWrap);
+    chartArea.parentNode.insertBefore(predDiv, chartArea);
+
+    // Populate metrics
+    if (metricsToShow) {
+        _setMetricEl('ppMAE', metricsToShow.mae);
+        _setMetricEl('ppMSE', metricsToShow.mse);
+        _setMetricEl('ppRMSE', metricsToShow.rmse);
+        _setMetricEl('ppR2', metricsToShow.r2, true);
+        var mapeEl = document.getElementById('ppMAPE');
+        if (mapeEl) { mapeEl.textContent = metricsToShow.mape.toFixed(1) + '%'; mapeEl.style.color = '#e5e5e5'; }
+        _setMetricEl('ppEV', metricsToShow.explained_variance);
+        _setMetricEl('ppMaxErr', metricsToShow.max_error);
+        _setMetricEl('ppMedAE', metricsToShow.median_ae);
+        var daEl = document.getElementById('ppDirAcc');
+        if (daEl) { daEl.textContent = metricsToShow.directional_accuracy.toFixed(1) + '%'; daEl.style.color = '#e5e5e5'; }
+    }
+}
+
+function buildExtendedSVG(successResults) {
+    var ns = 'http://www.w3.org/2000/svg';
+    var insight = charts[activeChartId] ? charts[activeChartId].insight : null;
+    if (!insight) { var empty = document.createElementNS(ns,'svg'); return empty; }
+
+    var pa = insight.plot_area || {};
+    pa = { x: pa.x||130, y: pa.y||90, width: pa.width||800, height: pa.height||520 };
+    var baselineY = pa.y + pa.height;
+    var yVals = (insight.y_axis || {}).values || [];
+    var yPxs  = (insight.y_axis || {}).pixel_positions || [];
+    var xPxs  = (insight.x_axis || {}).pixel_positions || [];
+
+    // Build sorted y-axis pairs for interpolation
+    var yPairs = [];
+    for (var yi = 0; yi < yVals.length && yi < yPxs.length; yi++) {
+        if (typeof yVals[yi] === 'number' && typeof yPxs[yi] === 'number') {
+            yPairs.push({ v: yVals[yi], p: yPxs[yi] });
+        }
+    }
+    yPairs.sort(function(a, b) { return a.v - b.v; });
+
+    // Derive the axis slope (px per unit) from the calibrated y-axis.
+    // We extrapolate linearly using this slope — no clamping — so forecast
+    // points that fall outside the original range keep the same scale.
+    var axisSlope = null; // px per data-unit (negative: value↑ → y↓ in SVG)
+    var axisRef   = null; // reference pair { v, p }
+    if (yPairs.length >= 2) {
+        var lo = yPairs[0], hi = yPairs[yPairs.length - 1];
+        if (hi.v !== lo.v) {
+            axisSlope = (hi.p - lo.p) / (hi.v - lo.v);
+            axisRef   = lo;
+        }
+    }
+
+    function valToYPix(val) {
+        if (axisSlope !== null) {
+            // Pure linear extrapolation — same scale as original, no clamp
+            return axisRef.p + axisSlope * (val - axisRef.v);
+        }
+        // Last-resort fallback: use original data points only (not forecast)
+        var origVals = [];
+        successResults.forEach(function(d) { origVals = origVals.concat(d.original_values); });
+        var mn = Math.min.apply(null, origVals), mx = Math.max.apply(null, origVals);
+        if (mx === mn) return pa.y + pa.height / 2;
+        return baselineY - ((val - mn) / (mx - mn)) * pa.height;
+    }
+
+    // ── xStep: measured from actual data-point pixel coords in the SVG ────────
+    // pa.width / nDataPts is wrong when the parser extracts fewer points than
+    // the chart renders — it makes each forecast step far too wide.
+    // Instead, compute the median pixel gap between consecutive data points
+    // directly from the series data_points (which carry x_pixel coords).
+    var nDataPts = successResults[0] ? successResults[0].original_values.length : 1;
+    var xStep = null;
+    var lastDataX = pa.x + pa.width; // fallback
+
+    (function() {
+        // Try every series; use the one with the most data points
+        var bestDPs = null;
+        (insight.series || []).forEach(function(s) {
+            if (s.data_points && s.data_points.length > (bestDPs ? bestDPs.length : 0)) {
+                bestDPs = s.data_points;
+            }
+        });
+        if (bestDPs && bestDPs.length >= 2) {
+            lastDataX = bestDPs[bestDPs.length - 1].x_pixel;
+            // Collect all consecutive x gaps, take the median (robust to outliers)
+            var gaps = [];
+            for (var i = 1; i < bestDPs.length; i++) {
+                var dx = bestDPs[i].x_pixel - bestDPs[i - 1].x_pixel;
+                if (dx > 0.1) gaps.push(dx);
+            }
+            if (gaps.length > 0) {
+                gaps.sort(function(a, b) { return a - b; });
+                xStep = gaps[Math.floor(gaps.length / 2)]; // median gap
+            }
+        }
+    })();
+
+    // Fallback: distribute nDataPts evenly across the label span (or plot width)
+    if (!xStep || xStep <= 0) {
+        if (xPxs.length >= 2) {
+            xStep = (xPxs[xPxs.length - 1] - xPxs[0]) / Math.max(1, nDataPts - 1);
+        } else {
+            xStep = pa.width / Math.max(1, nDataPts - 1);
+        }
+    }
+    xStep = xStep || 2;
+
+    var forecastSteps = successResults[0] ? successResults[0].future_predictions.length : 0;
+
+    // Forecast uses exactly the same px-per-point as the original chart
+    var fxStep = xStep;
+    var forecW = forecastSteps * fxStep;
+
+    // --- Derive continuing x-axis labels from the original label sequence ---
+    var xLabels = (insight.x_axis || {}).labels || [];
+    var origDataLen = nDataPts;
+    // How many data-points span one original x-axis tick interval
+    var origPointsPerLabel = xLabels.length > 1 ? Math.max(1, Math.round(origDataLen / (xLabels.length - 1))) : Math.max(1, origDataLen);
+    var pointsPerLabel = origPointsPerLabel; // same density, no compression
+
+    // Try to continue numeric labels (years, months, plain numbers)
+    // Parse last few labels to detect a pattern
+    function inferNextLabels(labels, count) {
+        if (!labels.length) {
+            var out = []; for (var i = 0; i < count; i++) out.push(''); return out;
+        }
+        // Try pure integer increment
+        var nums = labels.map(function(l) { return parseInt(l, 10); });
+        var allNumeric = nums.every(function(n) { return !isNaN(n); });
+        if (allNumeric && nums.length >= 2) {
+            var step = nums[nums.length - 1] - nums[nums.length - 2];
+            if (step === 0 && nums.length >= 3) step = nums[nums.length - 1] - nums[nums.length - 3];
+            step = step || 1;
+            var last = nums[nums.length - 1];
+            var out = [];
+            for (var i = 0; i < count; i++) { last += step; out.push(String(last)); }
+            return out;
+        }
+        // Try "YYYY Qn" or "Qn YYYY" or "Jan-YY" style — just return blanks; rely on density thinning
+        return labels.slice(-count).map(function() { return ''; });
+    }
+
+    // How many forecast x-axis label ticks to place (same density as original)
+    var forecLabelCount = Math.max(1, Math.round(forecastSteps / pointsPerLabel));
+    // Labels that continue the original sequence
+    var forecAxisLabels = inferNextLabels(xLabels, forecLabelCount);
+
+    // Overall SVG dimensions
+    // Start the forecast section right after the last real data point — not at
+    // pa.x+pa.width which may be far to the right of where data actually ends.
+    var separatorX = lastDataX + Math.round(xStep * 0.5); // half-step gap
+    var newSVGW = separatorX + forecW + 60; // right padding
+    predExtSVGW = newSVGW;
+    predExtSVGH = 720;
+
+    // Clone the live SVG (all original series already rendered)
+    var liveSVG = document.getElementById('extractedSVG');
+    var svg;
+    if (liveSVG) {
+        svg = liveSVG.cloneNode(true);
+    } else {
+        svg = document.createElementNS(ns, 'svg');
+        svg.setAttribute('xmlns', ns);
+    }
+    svg.id = 'predExtSVG';
+    svg.style.cssText = 'width:100%;height:100%;display:block;';
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    svg.setAttribute('viewBox', '0 0 ' + newSVGW + ' ' + predExtSVGH);
+
+    // Extend the background rect to new width
+    var bg = svg.querySelector('rect[fill="#0f1117"]');
+    if (!bg) bg = svg.querySelector('rect');
+    if (bg) bg.setAttribute('width', newSVGW);
+
+    // ── Forecast background tint ────────────────────────────────────────────
+    var fcBg = document.createElementNS(ns, 'rect');
+    fcBg.setAttribute('x', separatorX);
+    fcBg.setAttribute('y', pa.y);
+    fcBg.setAttribute('width', forecW + 65);
+    fcBg.setAttribute('height', pa.height);
+    fcBg.setAttribute('fill', 'rgba(0, 120, 70, 0.09)');
+    fcBg.setAttribute('pointer-events', 'none');
+    svg.appendChild(fcBg);
+
+    // ── Dotted vertical separator ─────────────────────────────────────────────
+    var sepLine = document.createElementNS(ns, 'line');
+    sepLine.setAttribute('x1', separatorX); sepLine.setAttribute('y1', pa.y - 12);
+    sepLine.setAttribute('x2', separatorX); sepLine.setAttribute('y2', baselineY + 12);
+    sepLine.setAttribute('stroke', 'rgba(255,255,255,0.45)');
+    sepLine.setAttribute('stroke-width', '1.5');
+    sepLine.setAttribute('stroke-dasharray', '5,4');
+    svg.appendChild(sepLine);
+
+    // ── HISTORICAL label (left of separator) ─────────────────────────────────
+    var hLbl = document.createElementNS(ns, 'text');
+    hLbl.setAttribute('x', separatorX - 10);
+    hLbl.setAttribute('y', pa.y - 16);
+    hLbl.setAttribute('text-anchor', 'end');
+    hLbl.setAttribute('fill', '#8a8a8a');
+    hLbl.setAttribute('font-size', '11');
+    hLbl.setAttribute('font-family', 'Arial,sans-serif');
+    hLbl.setAttribute('font-weight', '600');
+    hLbl.setAttribute('letter-spacing', '0.08em');
+    hLbl.textContent = '\u2190 HISTORICAL';
+    svg.appendChild(hLbl);
+
+    // ── FORECAST label box (right of separator) ───────────────────────────────
+    var fBgBox = document.createElementNS(ns, 'rect');
+    fBgBox.setAttribute('x', separatorX + 8);
+    fBgBox.setAttribute('y', pa.y - 28);
+    fBgBox.setAttribute('width', 108);
+    fBgBox.setAttribute('height', 20);
+    fBgBox.setAttribute('fill', 'rgba(74,222,128,0.10)');
+    fBgBox.setAttribute('rx', '3');
+    svg.appendChild(fBgBox);
+    var fLbl = document.createElementNS(ns, 'text');
+    fLbl.setAttribute('x', separatorX + 14);
+    fLbl.setAttribute('y', pa.y - 13);
+    fLbl.setAttribute('fill', '#4ade80');
+    fLbl.setAttribute('font-size', '11');
+    fLbl.setAttribute('font-family', 'Arial,sans-serif');
+    fLbl.setAttribute('font-weight', '700');
+    fLbl.setAttribute('letter-spacing', '0.08em');
+    fLbl.textContent = 'FORECAST \u2192';
+    svg.appendChild(fLbl);
+
+    // ── Model subtitle line ───────────────────────────────────────────────────
+    // Replace or supplement existing subtitle with forecast model info
+    var modelName = (successResults[0] && successResults[0].model_name) ||
+        (window._lastPredModel ? window._lastPredModel : 'FORECAST');
+    var modelDispNames = {
+        linear:'LINEAR REGRESSION', ridge:'RIDGE', lasso:'LASSO', svr:'SVR',
+        rf:'RANDOM FOREST', gb:'GRADIENT BOOSTING', mlp:'MLP NEURAL NET'
+    };
+    var modelDisp = (modelDispNames[modelName] || modelName.toUpperCase()) + ' forecast';
+    var existingSubtitles = svg.querySelectorAll('text');
+    var subtitleUpdated = false;
+    existingSubtitles.forEach(function(t) {
+        if (parseFloat(t.getAttribute('y')) <= 80 && parseFloat(t.getAttribute('y')) >= 55 &&
+            parseFloat(t.getAttribute('x')) <= 30) {
+            // This is the subtitle element — prepend model name
+            var origText = t.textContent || '';
+            t.textContent = modelDisp + (origText ? '  ·  ' + origText : '');
+            t.setAttribute('fill', '#7dd3b4');
+            t.setAttribute('font-size', '14');
+            subtitleUpdated = true;
+        }
+    });
+    if (!subtitleUpdated) {
+        // Add new subtitle
+        var newSub = document.createElementNS(ns, 'text');
+        newSub.setAttribute('x', 20); newSub.setAttribute('y', 66);
+        newSub.setAttribute('fill', '#7dd3b4');
+        newSub.setAttribute('font-size', '14');
+        newSub.setAttribute('font-family', 'Arial,sans-serif');
+        newSub.textContent = modelDisp + '  \u2014  solid = historical  \u00b7  dotted = predicted';
+        svg.insertBefore(newSub, svg.children[2] || null);
+    }
+    // Add "solid = historical · dotted = predicted" hint to existing subtitle
+    if (subtitleUpdated) {
+        var hintTxt = document.createElementNS(ns, 'text');
+        hintTxt.setAttribute('x', 20); hintTxt.setAttribute('y', 84);
+        hintTxt.setAttribute('fill', '#6b7280');
+        hintTxt.setAttribute('font-size', '11');
+        hintTxt.setAttribute('font-family', 'Arial,sans-serif');
+        hintTxt.textContent = 'solid = historical (unchanged)  \u00b7  dotted = predicted';
+        svg.appendChild(hintTxt);
+    }
+
+    // Extend x-axis baseline into forecast area
+    var extBase = document.createElementNS(ns, 'line');
+    extBase.setAttribute('x1', pa.x + pa.width); extBase.setAttribute('y1', baselineY);
+    extBase.setAttribute('x2', separatorX + forecW + 10); extBase.setAttribute('y2', baselineY);
+    extBase.setAttribute('stroke', '#444'); extBase.setAttribute('stroke-width', '1');
+    svg.appendChild(extBase);
+
+    // X-axis labels & gridlines — same tick density as the original chart
+    for (var j = 0; j < forecastSteps; j++) {
+        var lx = separatorX + (j + 1) * fxStep;
+        // Subtle gridline at every data point
+        var gl = document.createElementNS(ns, 'line');
+        gl.setAttribute('x1', lx); gl.setAttribute('y1', pa.y);
+        gl.setAttribute('x2', lx); gl.setAttribute('y2', baselineY);
+        gl.setAttribute('stroke', 'rgba(255,255,255,0.04)');
+        gl.setAttribute('stroke-width', '1');
+        gl.setAttribute('stroke-dasharray', '4,4');
+        svg.appendChild(gl);
+        // Tick mark + label only at same interval as original x-axis
+        if ((j + 1) % pointsPerLabel === 0) {
+            var tickIdx = Math.round((j + 1) / pointsPerLabel) - 1;
+            var tickLabel = (tickIdx < forecAxisLabels.length) ? forecAxisLabels[tickIdx] : '';
+            // Tick mark
+            var tick = document.createElementNS(ns, 'line');
+            tick.setAttribute('x1', lx); tick.setAttribute('y1', baselineY);
+            tick.setAttribute('x2', lx); tick.setAttribute('y2', baselineY + 6);
+            tick.setAttribute('stroke', '#555'); tick.setAttribute('stroke-width', '1');
+            svg.appendChild(tick);
+            if (tickLabel) {
+                var lbl = document.createElementNS(ns, 'text');
+                lbl.setAttribute('x', lx);
+                lbl.setAttribute('y', baselineY + 22);
+                lbl.setAttribute('text-anchor', 'middle');
+                lbl.setAttribute('fill', '#888');
+                lbl.setAttribute('font-size', '14');
+                lbl.setAttribute('font-family', 'Arial,sans-serif');
+                lbl.textContent = tickLabel;
+                svg.appendChild(lbl);
+            }
+        }
+    }
+
+    // Per-series forecast lines
+    var FORECAST_COLORS = ['#ff3b3b','#00f5a0','#ff6fff','#ff9500','#c084fc','#ffe600','#00d4ff'];
+    // Collect legend items for bottom legend
+    var legendItems = [];
+
+    successResults.forEach(function(data, idx) {
+        var fcolor = FORECAST_COLORS[idx % FORECAST_COLORS.length];
+        // Match forecast color to the original series color when available
+        for (var si2 = 0; si2 < insight.series.length; si2++) {
+            if (insight.series[si2].name === data.series_name && insight.series[si2].color) {
+                fcolor = insight.series[si2].color;
+                break;
+            }
+        }
+        var futVals = data.future_predictions.map(function(p){ return p.value; });
+        var origVals = data.original_values;
+        if (!origVals.length || !futVals.length) return;
+
+        // MAE for legend
+        var mae = (data.metrics && typeof data.metrics.mae === 'number') ? data.metrics.mae : null;
+        legendItems.push({ name: data.series_name, color: fcolor, mae: mae });
+
+        // Find last original data point pixel coords
+        var origSeries = null;
+        for (var si = 0; si < insight.series.length; si++) {
+            if (insight.series[si].name === data.series_name) { origSeries = insight.series[si]; break; }
+        }
+        var startX, startY;
+        if (origSeries && origSeries.data_points.length > 0) {
+            var lastDP = origSeries.data_points[origSeries.data_points.length - 1];
+            startX = lastDP.x_pixel;
+            startY = lastDP.y_pixel;
+        } else {
+            startX = pa.x + pa.width;
+            startY = valToYPix(origVals[origVals.length - 1]);
+        }
+
+        // Std dev of original values → base uncertainty for the confidence band
+        var oMean = origVals.reduce(function(s,v){return s+v;}, 0) / origVals.length;
+        var oVar  = origVals.reduce(function(s,v){return s+(v-oMean)*(v-oMean);}, 0) / origVals.length;
+        var oStd  = Math.sqrt(oVar);
+        var pxPerUnit = (axisSlope !== null) ? Math.abs(axisSlope) : pa.height / Math.max(1, oStd * 6);
+        var maxHalfPx = pa.height * 0.35;
+
+        // Teal/green confidence band that widens with sqrt(k) from the anchor
+        var upperPts = [[startX, startY]];
+        var lowerPts = [[startX, startY]];
+        for (var i = 0; i < futVals.length; i++) {
+            var fx = separatorX + (i + 1) * fxStep;
+            var fy = valToYPix(futVals[i]);
+            var halfPx = Math.min(pxPerUnit * oStd * Math.sqrt(i + 1) * 0.30, maxHalfPx);
+            upperPts.push([fx, fy - halfPx]);
+            lowerPts.push([fx, fy + halfPx]);
+        }
+        var bandPoly = upperPts.concat(lowerPts.slice().reverse())
+            .map(function(p){ return p[0]+','+p[1]; }).join(' ');
+        // Convert fcolor hex to rgba for band
+        var band = document.createElementNS(ns, 'polygon');
+        band.setAttribute('points', bandPoly);
+        band.setAttribute('fill', 'rgba(0, 210, 120, 0.13)');
+        band.setAttribute('stroke', 'rgba(0, 180, 100, 0.20)');
+        band.setAttribute('stroke-width', '0.5');
+        svg.appendChild(band);
+
+        // Forecast line: DOTTED, starts from last original point
+        var linePts = startX + ',' + startY;
+        for (var i = 0; i < futVals.length; i++) {
+            var fx = separatorX + (i + 1) * fxStep;
+            var fy = valToYPix(futVals[i]);
+            linePts += ' ' + fx + ',' + fy;
+        }
+        var poly = document.createElementNS(ns, 'polyline');
+        poly.setAttribute('fill', 'none');
+        poly.setAttribute('stroke', fcolor);
+        poly.setAttribute('stroke-width', '2.5');
+        poly.setAttribute('stroke-linecap', 'round');
+        poly.setAttribute('stroke-linejoin', 'round');
+        poly.setAttribute('stroke-dasharray', '7,5');
+        poly.setAttribute('points', linePts);
+        svg.appendChild(poly);
+
+        // Terminal dot at end of forecast line
+        if (futVals.length > 0) {
+            var endX = separatorX + futVals.length * fxStep;
+            var endY = valToYPix(futVals[futVals.length - 1]);
+            var outerDot = document.createElementNS(ns, 'circle');
+            outerDot.setAttribute('cx', endX); outerDot.setAttribute('cy', endY);
+            outerDot.setAttribute('r', '6');
+            outerDot.setAttribute('fill', fcolor);
+            outerDot.setAttribute('stroke', '#0f1117');
+            outerDot.setAttribute('stroke-width', '2');
+            outerDot.setAttribute('pointer-events', 'none');
+            svg.appendChild(outerDot);
+            var innerDot = document.createElementNS(ns, 'circle');
+            innerDot.setAttribute('cx', endX); innerDot.setAttribute('cy', endY);
+            innerDot.setAttribute('r', '2.5');
+            innerDot.setAttribute('fill', '#fff');
+            innerDot.setAttribute('pointer-events', 'none');
+            svg.appendChild(innerDot);
+        }
+    });
+
+    // ── Bottom legend: historical + forecast rows ─────────────────────────────
+    var legStartY = baselineY + 44;
+    var legX2 = pa.x;
+    var legRowH = 18;
+    // Historical items (from original series)
+    insight.series.forEach(function(s, si) {
+        var sColor = s.color || FORECAST_COLORS[si % FORECAST_COLORS.length];
+        if (legX2 + s.name.length * 6 + 80 > newSVGW - 20) { legX2 = pa.x; legStartY += legRowH; }
+        var legLine = document.createElementNS(ns, 'line');
+        legLine.setAttribute('x1', legX2); legLine.setAttribute('y1', legStartY - 4);
+        legLine.setAttribute('x2', legX2 + 16); legLine.setAttribute('y2', legStartY - 4);
+        legLine.setAttribute('stroke', sColor); legLine.setAttribute('stroke-width', '2.5');
+        svg.appendChild(legLine);
+        var legTxt = document.createElementNS(ns, 'text');
+        legTxt.setAttribute('x', legX2 + 20); legTxt.setAttribute('y', legStartY);
+        legTxt.setAttribute('fill', '#bbb'); legTxt.setAttribute('font-size', '11');
+        legTxt.setAttribute('font-family', 'Arial,sans-serif');
+        legTxt.textContent = s.name + ' (historical)';
+        svg.appendChild(legTxt);
+        legX2 += s.name.length * 6 + 90;
+    });
+    // Forecast items
+    legStartY += legRowH;
+    legX2 = pa.x;
+    legendItems.forEach(function(li) {
+        var maeTxt = li.mae !== null ? ' (forecast \u00b7 MAE=' + li.mae.toFixed(3) + ')' : ' (forecast)';
+        var lblW = (li.name + maeTxt).length * 6 + 55;
+        if (legX2 + lblW > newSVGW - 20) { legX2 = pa.x; legStartY += legRowH; }
+        var flegLine = document.createElementNS(ns, 'line');
+        flegLine.setAttribute('x1', legX2); flegLine.setAttribute('y1', legStartY - 4);
+        flegLine.setAttribute('x2', legX2 + 16); flegLine.setAttribute('y2', legStartY - 4);
+        flegLine.setAttribute('stroke', li.color); flegLine.setAttribute('stroke-width', '2');
+        flegLine.setAttribute('stroke-dasharray', '5,3');
+        svg.appendChild(flegLine);
+        var flegDot = document.createElementNS(ns, 'circle');
+        flegDot.setAttribute('cx', legX2 + 8); flegDot.setAttribute('cy', legStartY - 4);
+        flegDot.setAttribute('r', '3'); flegDot.setAttribute('fill', li.color);
+        svg.appendChild(flegDot);
+        var flegTxt = document.createElementNS(ns, 'text');
+        flegTxt.setAttribute('x', legX2 + 22); flegTxt.setAttribute('y', legStartY);
+        flegTxt.setAttribute('fill', '#bbb'); flegTxt.setAttribute('font-size', '11');
+        flegTxt.setAttribute('font-family', 'Arial,sans-serif');
+        flegTxt.textContent = li.name + maeTxt;
+        svg.appendChild(flegTxt);
+        legX2 += lblW;
+    });
+
+    // Adjust SVG height if legend overflows
+    var minH = legStartY + 25;
+    if (minH > predExtSVGH) {
+        predExtSVGH = minH;
+        svg.setAttribute('viewBox', '0 0 ' + newSVGW + ' ' + predExtSVGH);
+        var bgRect = svg.querySelector('rect');
+        if (bgRect) bgRect.setAttribute('height', predExtSVGH);
+    }
+
+    return svg;
+}
+
+// ── Extended SVG zoom & pan ────────────────────────────────────────────────────
+function _applyPredExtZoom() {
+    var svgEl = document.getElementById('predExtSVG');
+    if (!svgEl) return;
+    var w = predExtSVGW / predExtZoom;
+    var h = predExtSVGH / predExtZoom;
+    var vx = Math.max(0, Math.min(predExtPanX, predExtSVGW - w));
+    var vy = Math.max(0, Math.min(predExtPanY, predExtSVGH - h));
+    predExtPanX = vx; predExtPanY = vy;
+    svgEl.setAttribute('viewBox', vx + ' ' + vy + ' ' + w + ' ' + h);
+}
+function zoomPredExt(factor) {
+    var svgEl = document.getElementById('predExtSVG');
+    if (!svgEl) return;
+    var newZoom = Math.max(0.5, Math.min(predExtZoom * factor, 8));
+    var oldW = predExtSVGW / predExtZoom, oldH = predExtSVGH / predExtZoom;
+    var newW = predExtSVGW / newZoom, newH = predExtSVGH / newZoom;
+    predExtPanX += (oldW - newW) / 2;
+    predExtPanY += (oldH - newH) / 2;
+    predExtZoom = newZoom;
+    _applyPredExtZoom();
+}
+function zoomPredExtReset() {
+    predExtZoom = 1; predExtPanX = 0; predExtPanY = 0;
+    var svgEl = document.getElementById('predExtSVG');
+    if (svgEl) svgEl.setAttribute('viewBox', '0 0 ' + predExtSVGW + ' ' + predExtSVGH);
+}
+function _setupPredExtZoomEvents(wrapper) {
+    // Scroll-wheel zoom centered on mouse
+    wrapper.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        var svgEl = document.getElementById('predExtSVG');
+        if (!svgEl) return;
+        var rect = svgEl.getBoundingClientRect();
+        var mx = (e.clientX - rect.left) / rect.width;
+        var my = (e.clientY - rect.top) / rect.height;
+        var oldW = predExtSVGW / predExtZoom, oldH = predExtSVGH / predExtZoom;
+        var factor = e.deltaY < 0 ? 1.15 : 0.87;
+        var newZoom = Math.max(0.5, Math.min(predExtZoom * factor, 8));
+        var newW = predExtSVGW / newZoom, newH = predExtSVGH / newZoom;
+        predExtPanX += (oldW - newW) * mx;
+        predExtPanY += (oldH - newH) * my;
+        predExtZoom = newZoom;
+        _applyPredExtZoom();
+    }, { passive: false });
+    // Drag to pan
+    wrapper.addEventListener('mousedown', function(e) {
+        if (e.button !== 0) return;
+        predExtPanning = true;
+        predExtPanStartX = e.clientX;
+        predExtPanStartY = e.clientY;
+        wrapper.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    window.addEventListener('mousemove', function(e) {
+        if (!predExtPanning) return;
+        var svgEl = document.getElementById('predExtSVG');
+        if (!svgEl) return;
+        var rect = svgEl.getBoundingClientRect();
+        var vw = predExtSVGW / predExtZoom, vh = predExtSVGH / predExtZoom;
+        predExtPanX -= (e.clientX - predExtPanStartX) * (vw / rect.width);
+        predExtPanY -= (e.clientY - predExtPanStartY) * (vh / rect.height);
+        predExtPanStartX = e.clientX;
+        predExtPanStartY = e.clientY;
+        _applyPredExtZoom();
+    });
+    window.addEventListener('mouseup', function() {
+        if (predExtPanning) {
+            predExtPanning = false;
+            var w = document.getElementById('predSVGWrap');
+            if (w) w.style.cursor = 'grab';
+        }
+    });
+}
+
+
+
+    // Remove previous prediction view
+    var prev = document.getElementById('predictionView');
+    if (prev) {
+        if (predictionChartInstance) { predictionChartInstance.destroy(); predictionChartInstance = null; }
+        prev.remove();
+    }
+
+    // Hide the original chartArea
+    var chartArea = document.getElementById('chartArea');
+    chartArea.style.display = 'none';
+    predOrigZoom = 1; predOrigPanX = 0; predOrigPanY = 0;
+
+    // Outer flex row container
+    var predDiv = document.createElement('div');
+    predDiv.id = 'predictionView';
+    predDiv.style.cssText = 'display:flex;flex:1;min-height:0;min-width:0;overflow:hidden;';
+
+    // ── LEFT PANE: original chart ─────────────────────────────────────────────
+    var leftPane = document.createElement('div');
+    leftPane.style.cssText = 'flex:1;min-width:0;background:#0f1117;overflow:hidden;position:relative;border-right:1px solid rgba(255,255,255,0.08);';
+
+    // Clone the live extracted SVG (preserves all drawn paths/series)
+    var liveSVG = document.getElementById('extractedSVG');
+    if (liveSVG) {
+        var clonedSVG = liveSVG.cloneNode(true);
+        clonedSVG.id = 'predOrigSVG';
+        clonedSVG.style.cssText = 'width:100%;height:100%;display:block;';
+        clonedSVG.setAttribute('viewBox', '0 0 960 720');
+        leftPane.appendChild(clonedSVG);
+    } else {
+        var fallImg = document.createElement('img');
+        fallImg.src = (document.getElementById('svgDisplay')||{}).src || '';
+        fallImg.style.cssText = 'width:100%;height:100%;object-fit:contain;display:block;';
+        leftPane.appendChild(fallImg);
+    }
+
+    // "Original" badge
+    var origLabel = document.createElement('div');
+    origLabel.style.cssText = 'position:absolute;top:8px;left:10px;font-size:10px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;pointer-events:none;background:rgba(11,14,23,0.8);padding:2px 8px;border-radius:3px;z-index:5;';
+
+
+function renderPredictionPanel(response) {
+    var results = response.results || [];
+    var successResults = results.filter(function(r) { return !r.error; });
+    var model = response.model || '';
+
+    if (!successResults.length) {
+        var errMsgs = results.map(function(r){ return (r.series_name||'?') + ': ' + (r.error||'Unknown error'); }).join('; ');
+        console.error('[PREDICT] all series failed. Results:', JSON.stringify(results));
+        // Show error in the modal error element (re-open modal briefly)
+        var errEl2 = document.getElementById('pmError');
+        if (errEl2) { errEl2.textContent = 'Prediction failed — ' + errMsgs; errEl2.classList.remove('hidden'); }
+        document.getElementById('predictModal').classList.remove('hidden');
+        return;
+    }
+
+    var seriesBadge = successResults.length === 1 ? successResults[0].series_name : successResults.length + ' series';
+    var metricsToShow = successResults[0].metrics;
+    if (successResults.length > 1) {
+        var keys = ['mae','mse','rmse','r2','mape','explained_variance','max_error','median_ae','directional_accuracy'];
+        var avg = {};
+        keys.forEach(function(k) {
+            avg[k] = successResults.reduce(function(s,r){ return s + (r.metrics[k]||0); }, 0) / successResults.length;
+        });
+        metricsToShow = avg;
+        seriesBadge += ' (avg)';
+    }
+
+    renderPredictionInSVG(successResults, model, metricsToShow, seriesBadge,
+        successResults.length > 0 ? (successResults[0].best_params || null) : null);
+}
+
+function _applyPredChartWindow() {
+    if (!predictionChartInstance || !predChartAllLabels.length) return;
+    predictionChartInstance.options.scales.x.min = predChartAllLabels[predChartZoomStart];
+    predictionChartInstance.options.scales.x.max = predChartAllLabels[predChartZoomEnd];
+    predictionChartInstance.update('none');
+}
+
+var predChartPanActive = false, predChartPanStartX = 0, predChartPanStartIdx = 0;
+function _setupPredChartInteraction(canvas) {
+    // Scroll-wheel: zoom centered on mouse X position
+    canvas.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        if (!predChartAllLabels.length) return;
+        var total = predChartAllLabels.length;
+        var span = predChartZoomEnd - predChartZoomStart + 1;
+        var rect = canvas.getBoundingClientRect();
+        var mouseRatio = Math.max(0, Math.min(1, (e.clientX - rect.left) / rect.width));
+        var anchorIdx = predChartZoomStart + Math.round(mouseRatio * (span - 1));
+        var factor = e.deltaY < 0 ? 0.75 : 1.33;
+        var newSpan = Math.max(5, Math.min(total, Math.round(span * factor)));
+        var before = Math.round(mouseRatio * newSpan);
+        var newStart = Math.max(0, anchorIdx - before);
+        var newEnd = Math.min(total - 1, newStart + newSpan - 1);
+        if (newEnd - newStart + 1 < newSpan) newStart = Math.max(0, newEnd - newSpan + 1);
+        predChartZoomStart = newStart;
+        predChartZoomEnd = newEnd;
+        _applyPredChartWindow();
+    }, { passive: false });
+    // Drag-to-pan
+    canvas.addEventListener('mousedown', function(e) {
+        if (e.button !== 0) return;
+        predChartPanActive = true;
+        predChartPanStartX = e.clientX;
+        predChartPanStartIdx = predChartZoomStart;
+        canvas.style.cursor = 'grabbing';
+        e.preventDefault();
+    });
+    window.addEventListener('mousemove', function(e) {
+        if (!predChartPanActive) return;
+        var total = predChartAllLabels.length;
+        var span = predChartZoomEnd - predChartZoomStart + 1;
+        var rect = canvas.getBoundingClientRect();
+        var pxPerLabel = rect.width / Math.max(1, span);
+        var deltaIdx = Math.round((predChartPanStartX - e.clientX) / pxPerLabel);
+        var newStart = Math.max(0, Math.min(total - span, predChartPanStartIdx + deltaIdx));
+        predChartZoomStart = newStart;
+        predChartZoomEnd = Math.min(total - 1, newStart + span - 1);
+        _applyPredChartWindow();
+    });
+    window.addEventListener('mouseup', function() {
+        if (predChartPanActive) {
+            predChartPanActive = false;
+            var c = document.getElementById('predictionChart');
+            if (c) c.style.cursor = 'grab';
+        }
+    });
+}
+
+function zoomPredChart(direction) {
+    if (!predictionChartInstance || !predChartAllLabels.length) return;
+    var total = predChartAllLabels.length;
+    var span = predChartZoomEnd - predChartZoomStart + 1;
+    var step = Math.max(2, Math.floor(span * 0.25));
+    if (direction > 0) {
+        // Zoom in: keep right (forecast) end fixed, shrink from the left
+        var newStart = Math.min(predChartZoomStart + step, predChartZoomEnd - 4);
+        predChartZoomStart = newStart;
+    } else {
+        // Zoom out: expand leftward first, then rightward if at left boundary
+        predChartZoomStart = Math.max(0, predChartZoomStart - step);
+        if (predChartZoomEnd < total - 1) {
+            predChartZoomEnd = Math.min(total - 1, predChartZoomEnd + Math.floor(step / 2));
+        }
+    }
+    _applyPredChartWindow();
+}
+
+function zoomPredReset() {
+    if (!predictionChartInstance || !predChartAllLabels.length) return;
+    predChartZoomStart = 0;
+    predChartZoomEnd = predChartAllLabels.length - 1;
+    predictionChartInstance.options.scales.x.min = undefined;
+    predictionChartInstance.options.scales.x.max = undefined;
+    predictionChartInstance.update('none');
+}
+
+// ── Pred-orig SVG zoom (left pane) ───────────────────────────────────────────
+function _applyPredOrigZoom() {
+    var svgEl = document.getElementById('predOrigSVG');
+    if (!svgEl) return;
+    var w = 960 / predOrigZoom;
+    var h = 720 / predOrigZoom;
+    var vx = Math.max(0, Math.min(predOrigPanX, 960 - w));
+    var vy = Math.max(0, Math.min(predOrigPanY, 720 - h));
+    predOrigPanX = vx; predOrigPanY = vy;
+    svgEl.setAttribute('viewBox', vx + ' ' + vy + ' ' + w + ' ' + h);
+}
+function zoomPredOrig(factor) {
+    var svgEl = document.getElementById('predOrigSVG');
+    if (!svgEl) return;
+    var newZoom = Math.max(0.5, Math.min(predOrigZoom * factor, 8));
+    var oldW = 960 / predOrigZoom, oldH = 720 / predOrigZoom;
+    var newW = 960 / newZoom, newH = 720 / newZoom;
+    predOrigPanX += (oldW - newW) / 2;
+    predOrigPanY += (oldH - newH) / 2;
+    predOrigZoom = newZoom;
+    _applyPredOrigZoom();
+}
+function zoomPredOrigReset() {
+    predOrigZoom = 1; predOrigPanX = 0; predOrigPanY = 0;
+    _applyPredOrigZoom();
+}
+function _setupPredOrigZoomEvents(wrapper) {
+    wrapper.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        var svgEl = document.getElementById('predOrigSVG');
+        if (!svgEl) return;
+        var rect = svgEl.getBoundingClientRect();
+        var mx = (e.clientX - rect.left) / rect.width;
+        var my = (e.clientY - rect.top) / rect.height;
+        var oldW = 960 / predOrigZoom, oldH = 720 / predOrigZoom;
+        var factor = e.deltaY < 0 ? 1.15 : 0.87;
+        var newZoom = Math.max(0.5, Math.min(predOrigZoom * factor, 8));
+        var newW = 960 / newZoom, newH = 720 / newZoom;
+        predOrigPanX += (oldW - newW) * mx;
+        predOrigPanY += (oldH - newH) * my;
+        predOrigZoom = newZoom;
+        _applyPredOrigZoom();
+    }, {passive: false});
+    wrapper.addEventListener('mousedown', function(e) {
+        if (predOrigZoom <= 1) return;
+        if (e.button === 0 || e.button === 1) {
+            predOrigPanning = true;
+            predOrigPanStartX = e.clientX;
+            predOrigPanStartY = e.clientY;
+            wrapper.style.cursor = 'grabbing';
+            e.preventDefault();
+        }
+    });
+    window.addEventListener('mousemove', function(e) {
+        if (!predOrigPanning) return;
+        var svgEl = document.getElementById('predOrigSVG');
+        if (!svgEl) return;
+        var rect = svgEl.getBoundingClientRect();
+        var vw = 960 / predOrigZoom, vh = 720 / predOrigZoom;
+        predOrigPanX -= (e.clientX - predOrigPanStartX) * (vw / rect.width);
+        predOrigPanY -= (e.clientY - predOrigPanStartY) * (vh / rect.height);
+        predOrigPanStartX = e.clientX;
+        predOrigPanStartY = e.clientY;
+        _applyPredOrigZoom();
+    });
+    window.addEventListener('mouseup', function() {
+        if (predOrigPanning) { predOrigPanning = false; wrapper.style.cursor = ''; }
+    });
+}
+
+function closePredictionPanel() {
+    var pv = document.getElementById('predictionView');
+    if (pv) pv.remove();
+    document.getElementById('chartArea').style.display = '';
+    if (predictionChartInstance) { predictionChartInstance.destroy(); predictionChartInstance = null; }
 }
 </script>
 </body>
